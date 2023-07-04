@@ -1,0 +1,56 @@
+#script with my aliases
+alias c="clear"
+alias ls="ls --color=auto"
+alias l="ls -la --color=auto"
+alias ll="ls -l --color=auto"
+alias la="ls -a --color=auto"
+alias s="systemctl start"
+alias st="systemctl status"
+alias ss="systemctl stop"
+alias sr="systemctl restart"
+alias se="systemctl enable"
+alias sd="systemctl disable"
+alias sh="~/.scripts/hibernate.sh"
+alias suspend="systemctl suspend"
+
+#balena
+alias balena="nohup /usr/bin/balenaEtcher-1.14.3-x64.AppImage > /dev/null &"
+
+#git
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gl="git log"
+alias gs="git status"
+
+#config edit
+alias i="vim ~/.config/i3/config"
+alias ic="vim ~/.config/i3/custom.config"
+alias p="vim ~/.config/polybar/config.ini"
+alias pc="vim ~/.config/polybar/custom.config.ini"
+alias r="vim ~/.config/rofi/config.rasi"
+alias x=startx
+
+#dotman / .dotfiles repo
+alias dotman="~/.dotfiles/dotman.sh"
+
+# hibernation
+alias sleep="systemctl hibernate"
+
+# wifi on/off
+alias wifion="nmcli radio wifi on"
+alias wifioff="nmcli radio wifi off"
+
+# Arch based distro
+alias install="sudo pacman -S"
+alias upgrade="sudo pacman -Syu"
+
+# Vim for root
+alias rvim="sudo -E vim"
+
+# Bash shortcuts
+alias mx="chmod +x"
+
+# 7Z
+alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
