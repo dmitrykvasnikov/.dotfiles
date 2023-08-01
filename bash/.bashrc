@@ -12,7 +12,7 @@ parse_git_branch() {
 
 prompt_color='\[\033[;1;32m\]'
 info_color='\[\033[1;34m\]'
-prompt_symbol='   '
+prompt_symbol=' 󰣇  '
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
