@@ -5,7 +5,7 @@ configuration {
   display-windowcd: "Workspace:";
   display-filebrowser: "Files:";
   drun-display-format: "{name}";
-  font: "IBM Plex Mono 16";
+  font: "Fira Code Medium 12";
 }
 
 @theme "/dev/null"
