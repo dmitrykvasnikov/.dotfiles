@@ -1,8 +1,8 @@
 configuration {
   display-drun: "Applications:";
   display-run: "Applications (run):";
-  display-window: "Windows:";
-  display-windowcd: "Workspace:";
+  display-window: "Windows / All Workspaces:";
+  display-windowcd: "windows / Current Workspace:";
   display-filebrowser: "Files:";
   drun-display-format: "{name}";
   font: "Fira Code Medium 12";
@@ -11,12 +11,12 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #bbccdd;
-  bg-alt: #585b7066;
-  bg-selected: #31324466;
+  bg: #27374d;
+  bg-prompt: #526d82;
+  bg-selected: #526d82;
 
-  fg: #333333;
-  fg-alt: #5f3dc4;
+  fg: #dde6ed;
+  fg-prompt: #dde6ed;
 
 
   border: 0;
@@ -28,17 +28,22 @@ configuration {
 window {
   width: 40%;
   background-color: @bg;
+	border-radius: 10;
+	padding: 10;
+	border: 3;
+	border-color: @fg;
 }
 
 element {
   padding: 8 12;
   background-color: transparent;
-  text-color: @fg-alt;
+  text-color: @fg;
 }
 
 element selected {
   text-color: @fg;
   background-color: @bg-selected;
+	border-radius: 10;
 }
 
 element-text {
@@ -55,17 +60,19 @@ element-icon {
 
 entry {
   padding: 12;
-  background-color: @bg-alt;
-  text-color: @fg-alt;
+  background-color: @bg-prompt;
+  text-color: @fg-prompt;
 }
 
 inputbar {
   children: [prompt, entry];
   background-color: @bg;
-	text-color: @fg-alt;
+	text-color: @fg;
+	border-radius: 10;
 }
 
 listview {
+	padding: 12 0 0 0;
   background-color: @bg;
   columns: 1;
   lines: 10;
@@ -74,13 +81,14 @@ listview {
 mainbox {
   children: [inputbar, listview];
   background-color: @bg;
+	border-radius: 10;
 }
 
 prompt {
   enabled: true;
   padding: 12 0 0 12;
-  background-color: @bg-alt;
-  text-color: @fg-alt;
+  background-color: @bg-prompt;
+  text-color: @fg;
 }
 
 /* vim: ft=sass
