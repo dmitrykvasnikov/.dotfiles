@@ -157,6 +157,7 @@ bindsym $mod+control+g exec "google-chrome-stable"
 bindsym $mod+control+f exec "firefox"
 bindsym $mod+control+v exec "code"
 bindsym $mod+control+n exec "notion-app"
+bindsym $mod+shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym mod4+e exec "nemo ~/Downloads"
 
 #!! Custom commands / scripts
