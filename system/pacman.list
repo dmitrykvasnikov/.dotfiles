@@ -1,0 +1,50 @@
+# System
+base-oevel
+bluez
+bluez-utils
+brightnessctl
+broadcom-wl-dkms
+cups
+font-manager
+gnome-keyring
+inxi
+linux-headers
+lsof
+mtpfs
+networkmanager
+pulseaudio
+pulseaudio-alsa
+python-pydbus
+xcape
+xorg
+xorg-server
+xorg-xinit
+
+# Desktop
+alacritty
+feh
+i3
+ly
+maim
+nemo
+polybar
+python-i3ipc
+rofi
+
+# Fonts
+ttf-fira-code
+ttf-fonts-awesome
+ttf-ibm-plex
+ttf-jetbrains-mono
+ttf-nerd-fonts-symbols-mono
+ttf-roboto-mono
+
+# Applications
+calibre
+gimp
+libreoffice-fresh
+okular
+p7zip
+qbittorrent
+telegram-desktop
+vlc
