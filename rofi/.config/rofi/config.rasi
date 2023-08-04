@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-run: "Applications (run):";
   display-window: "Windows / All Workspaces:";
-  display-windowcd: "windows / Current Workspace:";
+  display-windowcd: "Windows / Current Workspace:";
   display-filebrowser: "Files:";
   drun-display-format: "{name}";
   font: "Fira Code Medium 12";
