@@ -12,6 +12,7 @@ linux-headers
 lsof
 mtpfs
 networkmanager
+plocate
 pulseaudio
 pulseaudio-alsa
 python-pydbus
@@ -41,10 +42,13 @@ ttf-roboto-mono
 
 # Applications
 calibre
+cmus # or moc
 gimp
 libreoffice-fresh
+moc # or cmus
 okular
 p7zip
 qbittorrent
 telegram-desktop
+tldr
 vlc
