@@ -169,6 +169,5 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 exec_always xset r rate 300 50
 exec_always xcape -e "Control_L=Escape"
-# exec_always picom
 exec --no-startup-id dropbox start
 include ~/.config/i3/custom*.config

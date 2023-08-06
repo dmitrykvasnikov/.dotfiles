@@ -6,6 +6,7 @@ brightnessctl
 broadcom-wl-dkms
 cups
 font-manager
+fuse2fs
 gnome-keyring
 inxi
 linux-headers
