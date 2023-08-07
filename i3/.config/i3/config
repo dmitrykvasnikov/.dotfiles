@@ -20,7 +20,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 #!! Touchpad for non-MacBook laptop - from custom.config
 
 # Keyboard
-exec_always --no-startup-id setxkbmap -model pc -layout us,ru -option grp:rctrl_rshift_toggle,ctrl:nocaps
+# exec_always --no-startup-id setxkbmap -model pc -layout us,ru -option grp:rctrl_rshift_toggle,ctrl:nocaps
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
