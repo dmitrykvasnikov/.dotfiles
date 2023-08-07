@@ -1,5 +1,5 @@
 # Set mod key for i3
-set $mod mod1
+set $mod mod4
 
 # Font for window titles.
 font pango:Roboto Mono Medium 14
