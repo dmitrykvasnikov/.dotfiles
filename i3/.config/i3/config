@@ -1,5 +1,5 @@
 # Set mod key for i3
-set $mod mod1
+set $mod mod4
 
 # Font for window titles.
 font pango:Roboto Mono Medium 14
@@ -162,7 +162,7 @@ bindsym $mod+control+f exec "firefox"
 bindsym $mod+control+v exec "code"
 bindsym $mod+control+n exec "notion-app"
 bindsym $mod+shift+p exec "maim ~/Pictures/$(date +%s).png"
-bindsym mod4+e exec "nemo ~/Downloads"
+bindsym ctrl+e exec "nemo ~/Downloads"
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
