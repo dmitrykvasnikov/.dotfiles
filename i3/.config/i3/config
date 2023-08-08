@@ -158,15 +158,15 @@ bindsym $mod+control+g exec "google-chrome-stable"
 bindsym $mod+control+f exec "firefox"
 bindsym $mod+control+v exec "code"
 bindsym $mod+control+n exec "notion-app"
+bindsym $mod+control+e exec "nemo ~/Downloads"
 bindsym $mod+shift+p exec "maim ~/Pictures/$(date +%s).png"
-bindsym ctrl+e exec "nemo ~/Downloads"
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec_always xset r rate 300 50
-# exec_always killall xcape & sleep 2 && nohup xcape -t 500 &
+# exec_always --no-startup-id xset r rate 300 50
+# exec_always --no-startup-id killall xcape & sleep 2 && xcape -t 500
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 exec --no-startup-id dropbox start
 include ~/.config/i3/custom*.config

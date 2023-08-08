@@ -18,7 +18,7 @@ plocate
 pulseaudio
 pulseaudio-alsa
 python-pydbus
-xcape
+# xcape
 xorg
 xorg-server
 xorg-xinit
