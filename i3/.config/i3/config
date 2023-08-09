@@ -54,6 +54,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+a focus parent
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -163,7 +164,7 @@ bindsym $mod+shift+p exec "maim ~/Pictures/$(date +%s).png"
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id xset r rate 300 50
 # exec_always --no-startup-id killall xcape & sleep 2 && xcape -t 500
