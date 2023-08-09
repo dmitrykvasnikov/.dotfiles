@@ -7,7 +7,8 @@ set smartcase
 set mouse=a
 set termguicolors
 set cursorline
-colorscheme codedark
+colorscheme gruvbox
+set bg=dark
 syntax on
 set wildmode=longest,list,full
 set splitbelow splitright
