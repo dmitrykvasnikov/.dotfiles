@@ -54,9 +54,10 @@ alias rvim="sudo -E vim"
 
 # Bash shortcuts
 alias mx="chmod +x"
+alias psg="ps -aux | grep"
 
 # 7Z
 alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 
 # cmus
-alias cmus="[ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd-"
+alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
