@@ -1,4 +1,4 @@
-# Set mod key for i3
+
 set $mod mod4
 
 # Setting variables
@@ -192,9 +192,7 @@ for_window [window_role="About"] floating enable
 
 # Setting scratchpads
 for_window [title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
-for_window [title="top"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
 bindsym $mod+p [title="cmus"] scratchpad show, move position center
-bindsym $mod+i [title="top"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
@@ -214,6 +212,5 @@ exec_always --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id killall xcape & sleep 2 && xcape -t 500
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 exec --no-startup-id dropbox start
-exec --no-startup-id alacritty --title top -e top
 exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
 include ~/.config/i3/custom*.config
