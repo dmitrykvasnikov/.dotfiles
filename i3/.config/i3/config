@@ -175,6 +175,7 @@ for_window [title="cmus"] move scratchpad, resize set 1200 800
 for_window [title="top"] move scratchpad, resize set 1200 800
 bindsym $mod+p [title="cmus"] scratchpad show, move position center
 bindsym $mod+i [title="top"] scratchpad show, move position center
+bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
 bindsym $mod+control+g exec "google-chrome-stable"
