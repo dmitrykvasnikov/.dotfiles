@@ -51,6 +51,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # bindsym XF86AudioPlay exec --no-startup-id sayonara-ctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
+bindsym $mod+XF86AudioPrev exec --no-startup-id cmus-remote --seek -20
+bindsym $mod+XF86AudioNext exec --no-startup-id cmus-remote --seek +20
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 bindsym $mod+XF86AudioPlay exec --no-startup-id cmus-remote -p
 bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
@@ -191,8 +193,8 @@ for_window [class="vlc"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
-bindsym $mod+p [title="cmus"] scratchpad show, move position center
+for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
+bindsym $mod+p [title="^cmus$"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
