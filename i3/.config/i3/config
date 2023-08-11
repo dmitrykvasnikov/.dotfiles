@@ -194,7 +194,7 @@ for_window [class="vlc"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="Alacritty" title="cmus"] move scratchpad, resize set 50% 50%
+for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
 for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
 bindsym $mod+p [class="Alacritty" title="cmus"] scratchpad show, move position center
 bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move position center
