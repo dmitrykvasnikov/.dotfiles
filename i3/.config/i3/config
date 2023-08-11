@@ -1,4 +1,4 @@
-
+# Setting MOD key
 set $mod mod4
 
 # Setting variables
@@ -17,23 +17,24 @@ tiling_drag modifier titlebar
 focus_wrapping force
 
 # Colors
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $bg1 #928374
+set $red #ea6962
+set $green #a9b665
+set $yellow #d8a657
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $text #fbf1c7
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #770077 #285577 #ffffff #770777   #770077
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-client.background       #ff0000
-
-
-#exec --no-startup-id dex --autostart --environment i3
-
-
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-#exec --no-startup-id nm-applet
-
-#!! XServer setting - from custom.config
+client.focused          $aqua		$blue 	$text 	$aqua			$blue
+client.focused_inactive $aqua		$blue		$text		$aqua			$gray
+client.unfocused        $gray		$bg1		$text		$aqua			$gray
+client.urgent           $red		$red		$blue		$aqua			$gray
 
 # Setting input devices
 #!! Touchpad for non-MacBook laptop - from custom.config
@@ -193,8 +194,10 @@ for_window [class="vlc"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
-bindsym $mod+p [title="^cmus$"] scratchpad show, move position center
+for_window [class="Alacritty" title="cmus"] move scratchpad, resize set 50% 50%
+for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
+bindsym $mod+p [class="Alacritty" title="cmus"] scratchpad show, move position center
+bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
@@ -205,14 +208,18 @@ bindsym $mod+Control+n exec "notion-app"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+p exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
+bindsym $mod+Control+t exec --no-startup-id alacritty --title terminal
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-# exec_always --no-startup-id xset r rate 300 50
-# exec_always --no-startup-id killall xcape & sleep 2 && xcape -t 500
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 exec --no-startup-id dropbox start
+
+# Scratchpads
 exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
+exec --no-startup-id alacritty --title terminal
+
+# Include customs settings
 include ~/.config/i3/custom*.config
