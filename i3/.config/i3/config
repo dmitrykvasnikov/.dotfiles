@@ -6,8 +6,8 @@ set $scratchpad_defW 1200
 set $scratchpad_defH 800
 
 # Font for window titles.
-font pango:Roboto Mono Medium 14
-default_border pixel 4
+font pango:Roboto Mono Medium 11
+default_border pixel 2
 default_floating_border pixel 6
 
 # Default behaviour
@@ -19,21 +19,26 @@ focus_wrapping force
 # Colors
 # set primary gruvbox colorscheme colors
 set $bg #282828
+set $bg2 #3c3836
 set $bg1 #928374
 set $red #ea6962
-set $green #a9b665
+set $green #b8bb26
 set $yellow #d8a657
+set $yellow2 #b57614
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
-set $text #fbf1c7
+set $orange #d65d0e
+set $orange2 #fe8019
+set $text #ebdbb2
+set $text2 #f9f5d7
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $aqua		$blue 	$text 	$aqua			$blue
-client.focused_inactive $aqua		$blue		$text		$aqua			$gray
-client.unfocused        $gray		$bg1		$text		$aqua			$gray
+client.focused          $blue		$blue 	$text2 	$green			$blue
+client.focused_inactive $bg2		$bg2		$text2	$aqua			$gray
+client.unfocused        $bg1		$bg1		$text		$aqua			$gray
 client.urgent           $red		$red		$blue		$aqua			$gray
 
 # Setting input devices
@@ -67,8 +72,8 @@ bindsym $mod+shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons"
 bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons"
 
-gaps inner 4px
-gaps outer 4px
+gaps inner 6px
+gaps outer 3px
 smart_gaps on
 hide_edge_borders smart
 
