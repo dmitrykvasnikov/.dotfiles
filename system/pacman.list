@@ -55,3 +55,8 @@ qbittorrent
 telegram-desktop
 tldr
 vlc
+
+# Haskel
+ghc
+ghc-static
+stack
