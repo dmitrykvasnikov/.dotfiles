@@ -11,13 +11,16 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #27374d;
-  bg-prompt: #526d82;
-  bg-selected: #526d82;
+  bg: #3c3836; /* dark1 */
+  bg-prompt: #458588; /* n_blue */
+  bg-selected: #458588; /* n_blue */
 
-  fg: #dde6ed;
-  fg-prompt: #dde6ed;
+  fg: #fbf1c7; /* light0 */
+  fg-prompt: #282828; /* dark0 */
+  fg-selected: #282828; /* dark0 */
+	fg-highlight: #fabd2f; /* yellow */
 
+	brd: #458488; /* border color, f_orange */
 
   border: 0;
   margin: 0;
@@ -29,9 +32,10 @@ window {
   width: 40%;
   background-color: @bg;
 	border-radius: 10;
-	padding: 10;
-	border: 3;
-	border-color: @fg;
+	padding: 12;
+	border: 8;
+	border-color: @brd;
+	position: north;
 }
 
 element {
@@ -41,7 +45,7 @@ element {
 }
 
 element selected {
-  text-color: @fg;
+  text-color: @fg-selected;
   background-color: @bg-selected;
 	border-radius: 10;
 }
@@ -50,6 +54,7 @@ element-text {
   background-color: transparent;
   text-color: inherit;
   vertical-align: 0.5;
+	highlight: @fg-highlight;
 }
 
 element-icon {
@@ -74,8 +79,9 @@ inputbar {
 listview {
 	padding: 12 0 0 0;
   background-color: @bg;
-  columns: 1;
+  columns: 2;
   lines: 10;
+	spacing: 10;
 }
 
 mainbox {
@@ -90,5 +96,6 @@ prompt {
   background-color: @bg-prompt;
   text-color: @fg;
 }
+
 
 /* vim: ft=sass

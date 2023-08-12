@@ -8,7 +8,7 @@ set $scratchpad_defH 800
 # Font for window titles.
 font pango:Roboto Mono Medium 11
 default_border pixel 2
-default_floating_border pixel 6
+# default_floating_border pixel 15
 
 # Default behaviour
 workspace_auto_back_and_forth yes
@@ -17,29 +17,58 @@ tiling_drag modifier titlebar
 focus_wrapping force
 
 # Colors
-# set primary gruvbox colorscheme colors
-set $bg #282828
-set $bg2 #3c3836
-set $bg1 #928374
-set $red #ea6962
-set $green #b8bb26
-set $yellow #d8a657
-set $yellow2 #b57614
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-set $orange #d65d0e
-set $orange2 #fe8019
-set $text #ebdbb2
-set $text2 #f9f5d7
+# set primary gruvbox colorscheme colors (based on Vim gruvbox)
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $blue		$blue 	$text2 	$green			$blue
-client.focused_inactive $bg2		$bg2		$text2	$aqua			$gray
-client.unfocused        $bg1		$bg1		$text		$aqua			$gray
-client.urgent           $red		$red		$blue		$aqua			$gray
+set $dark0_d 		 #1d2021
+set $dark0       #282828
+set $dark0_s 		 #32302f
+set $dark1       #3c3836
+set $dark2       #504945
+set $dark3       #665c54
+set $dark4       #7c6f64
+set $dark4_256   #7c6f64
+
+set $gray_245    #928374
+set $gray_244    #928374
+
+set $light0_h		 #f9f5d7
+set $light0      #fbf1c7
+set $light0_s		 #f2e5bc
+set $light1    	 #ebdbb2
+set $light2      #d5c4a1
+set $light3      #bdae93
+set $light4      #a89984
+set $light4_256  #a89984
+
+set $red     #fb4934
+set $green   #b8bb26
+set $yellow  #fabd2f
+set $blue    #83a598
+set $purple  #d3869b
+set $aqua    #8ec07c
+set $orange  #fe8019
+
+set $n_red    #cc241d
+set $n_green  #98971a
+set $n_yellow #d79921
+set $n_blue   #458588
+set $n_purple #b16286
+set $n_aqua   #689d6a
+set $n_orange #d65d0e
+
+set $f_red      #9d0006
+set $f_green    #79740e
+set $f_yellow   #b57614
+set $f_blue     #076678
+set $f_purple   #8f3f71
+set $f_aqua     #427b58
+set $f_orange   #af3a03
+
+# class                 border  		backgr. 		text    		indicator 	child_border
+client.focused          $n_blue			$n_blue 		$light0_h 	$green			$n_blue
+client.focused_inactive $dark1			$dark1			$yellow	  	$n_aqua			$light4
+client.unfocused        $light4_245	$light4_245	$light1			$n_aqua			$light4
+client.urgent           $n_red			$n_red			$n_blue			$n_aqua			$light4
 
 # Setting input devices
 #!! Touchpad for non-MacBook laptop - from custom.config
@@ -199,8 +228,8 @@ for_window [class="vlc"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
-for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH
+for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 8
+for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 8
 bindsym $mod+p [class="Alacritty" title="cmus"] scratchpad show, move position center
 bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
