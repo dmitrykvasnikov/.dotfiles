@@ -20,7 +20,7 @@ configuration {
   fg-selected: #282828; /* dark0 */
 	fg-highlight: #fabd2f; /* yellow */
 
-	brd: #458488; /* border color, f_orange */
+	brd: #458488; /* border color, n_blue */
 
   border: 0;
   margin: 0;

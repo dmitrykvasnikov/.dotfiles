@@ -1,0 +1,24 @@
+; Color Scheme: Custom1
+; dark1
+bg = #153c3836
+; light0
+fg = #fbf1c7
+; aqua
+icon = #8ec07c
+; n_blue
+bg-ws = #458588
+; light0
+bg-ws-und = #fbf1c7
+; dark1
+bg-ws-alt = #3c3836
+; red
+fg-alert = #fb4934
+; gray_245
+fg-disabled = #928374
+; light0_h
+fg-title = #f9f5d7
+; green
+fg-btfull = #b8bb26
+; orange
+sep = #458588
+
