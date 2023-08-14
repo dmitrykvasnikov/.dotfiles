@@ -6,7 +6,7 @@ set $scratchpad_defW 1200
 set $scratchpad_defH 800
 
 # Font for window titles.
-font pango:Roboto Mono Medium 11
+font pango:Fira Code Medium 11
 default_border pixel 2
 # default_floating_border pixel 15
 
@@ -67,7 +67,7 @@ set $f_orange   #af3a03
 # class                 border  		backgr. 		text    		indicator 	child_border
 client.focused          $n_blue			$n_blue 		$light0_h 	$green			$n_blue
 client.focused_inactive $dark1			$dark1			$yellow	  	$n_aqua			$light4
-client.unfocused        $light4_245	$light4_245	$light1			$n_aqua			$light4
+client.unfocused        $gray_245		$light4_245	$light1			$n_aqua			$light4
 client.urgent           $n_red			$n_red			$n_blue			$n_aqua			$light4
 
 # Setting input devices
