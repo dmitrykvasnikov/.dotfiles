@@ -1,0 +1,20 @@
+List (as recursive structure) in Haskell is either:
+	* empty list
+	* an element and another list
+
+Rules of recursion:
+	* Indetify the end (goal)
+	* Determine what happens when goal achived (what to return)
+	* List all alternative possibilities
+	* Determine your "rinse and repeat"
+	* Ensure that each alternatives moves you towards the goal
+
+Pattern matching:
+	case x of
+	1 -> "one"
+	...
+
+foldr works on infinite lists
+
+
+
