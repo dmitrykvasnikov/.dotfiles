@@ -4,6 +4,7 @@ alias ls="ls --color=auto"
 alias l="ls -la --color=auto"
 alias ll="ls -l --color=auto"
 alias la="ls -a --color=auto"
+alias lt="ls -h --size -1 -S --classify"
 alias s="systemctl start"
 alias st="systemctl status"
 alias ss="systemctl stop"
@@ -13,19 +14,46 @@ alias sd="systemctl disable"
 alias sh="~/.scripts/hibernate.sh"
 alias suspend="systemctl suspend"
 
+#common foders
+alias dl="cd ~/Downloads"
+alias ms="cd ~/Music"
+alias dr="cd ~/Dropbox"
+alias pr="cd ~/Projects"
+alias dots="cd ~/.dotfiles"
+
 #balena
 alias balena="nohup /usr/bin/balenaEtcher-1.14.3-x64.AppImage > /dev/null &"
 
 #git
-alias ga="git add ."
-alias gc="git commit -m"
-alias gp="git push"
-alias gpl="git pull"
-alias gl="git log"
+alias g="git $1"
+
 alias gs="git status"
-alias gch="git checkout"
-alias gm="git merge"
-alias gr="git rebase"
+alias gl="git log"
+alias gd="git diff $1 $2"
+
+alias gi="git init $1"
+alias gr="git remote $1"
+alias gf="git fetch $1"
+alias gm="git merge $1"
+
+alias gr="git reset $"
+
+alias gco="git checkout $1"
+alias gcb="git checkout -b $1"
+
+alias ga="git add $1"
+alias gaa="git add ."
+alias gcm="git commit -m 'minor fixes'"
+alias gc="git commit -m $1"
+alias gp="git push $1 $2"
+alias gpo="git push origin $1"
+alias gpom="git push origin master"
+
+alias gplom="git pull origin master"
+alias pgl="git pull $1 $2"
+
+alias gsh="git stash"
+alias gshp="git stash pop"
 
 #config edit
 alias i="vim ~/.config/i3/config"
