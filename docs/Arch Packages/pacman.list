@@ -34,6 +34,7 @@ polybar
 python-i3ipc
 ranger
 rofi
+ueberzug # image preview for rangerh
 
 # Fonts
 ttf-fira-code
