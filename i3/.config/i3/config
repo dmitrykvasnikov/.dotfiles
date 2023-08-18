@@ -241,6 +241,7 @@ bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+n exec "notion-app"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
+bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+p exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
 bindsym $mod+Control+t exec --no-startup-id alacritty --title terminal
 

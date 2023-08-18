@@ -4,6 +4,7 @@ bluez
 bluez-utils
 brightnessctl
 broadcom-wl-dkms
+btop
 cups
 font-manager
 fuse2fs
