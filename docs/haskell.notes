@@ -16,5 +16,12 @@ Pattern matching:
 
 foldr works on infinite lists
 
+Power of map is isn't iteration but transforming list of one type to list of another type
 
+type keyword make new type synonyms
+date keyword make new type
+
+data Currency = Rub | Eur
+	Currency is type constructor
+	Rub & Eur are data constructors
 
