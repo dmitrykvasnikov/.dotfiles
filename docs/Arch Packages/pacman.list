@@ -19,6 +19,7 @@ plocate
 pulseaudio
 pulseaudio-alsa
 python-pydbus
+tmux
 # xcape
 xorg
 xorg-server
