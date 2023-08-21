@@ -2,6 +2,7 @@
 set nocompatible
 set number relativenumber
 set tabstop=2
+set expandtab
 set ignorecase
 set smartcase
 set mouse=a
