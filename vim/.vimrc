@@ -5,6 +5,7 @@ set tabstop=2
 set expandtab
 set ignorecase
 set smartcase
+set hidden
 set mouse=a
 set termguicolors
 set cursorline
