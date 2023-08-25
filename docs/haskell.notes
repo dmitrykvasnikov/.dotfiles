@@ -1,3 +1,5 @@
+Single quotes is a character, double quotes is a list of characters
+
 List (as recursive structure) in Haskell is either:
 	* empty list
 	* an element and another list
@@ -24,4 +26,11 @@ date keyword make new type
 data Currency = Rub | Eur
 	Currency is type constructor
 	Rub & Eur are data constructors
+
+Ord deriving use the order that the data constructors are defined
+
+Algebraic Data Types are any types that can be made by combining other types (with
+  AND - product types, or
+  OR  - sum types)
+
 

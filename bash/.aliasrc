@@ -48,6 +48,7 @@ alias gc="git commit -m $1"
 alias gp="git push $1 $2"
 alias gpo="git push origin $1"
 alias gpom="git push origin master"
+alias gpm="gaa && gcm && gp"
 
 alias gplom="git pull origin master"
 alias gpl="git pull $1 $2"
