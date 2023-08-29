@@ -53,6 +53,7 @@ alias gpm="gaa && gcm && gp"
 
 alias gplom="git pull origin master"
 alias gpl="git pull $1 $2"
+alias gplr="git pull --rebase $1 $2"
 
 alias gsh="git stash"
 alias gshp="git stash pop"
