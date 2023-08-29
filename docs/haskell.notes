@@ -33,4 +33,12 @@ Algebraic Data Types are any types that can be made by combining other types (wi
   AND - product types, or
   OR  - sum types)
 
+Maps: Map.fromList - create map from touples (id, val), Map.lookup key map - take a value with id == key and return in as Maybe type
+
+Data.Maybe module containes functions isJust & isNothing
+
+intersperse / intercalate - add element / list between elements / lists last one concatenate the result
+intersperse :: a -> [a] -> [a]
+intercalate :: [a] -> [[a]] -> [a]
+
 

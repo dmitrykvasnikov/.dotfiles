@@ -13,6 +13,7 @@ alias se="systemctl enable"
 alias sd="systemctl disable"
 alias sh="~/.scripts/hibernate.sh"
 alias suspend="systemctl suspend"
+alias locate="plocate -i"
 
 #common foders
 alias dl="cd ~/Downloads"

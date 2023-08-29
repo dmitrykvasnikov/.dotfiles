@@ -3,6 +3,7 @@ set nocompatible
 set number relativenumber
 set tabstop=2
 set expandtab
+set linebreak
 set ignorecase
 set smartcase
 set hidden
