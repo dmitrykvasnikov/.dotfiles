@@ -41,4 +41,9 @@ intersperse / intercalate - add element / list between elements / lists last one
 intersperse :: a -> [a] -> [a]
 intercalate :: [a] -> [[a]] -> [a]
 
+IO ()
+use *<-* when you need type *IO a* to be just type *a*
+use *let* when you need to create non-IO variables inside IO context
 
+getArgs {System.Environment} :: IO [String] - function to get arguments, presented in
+replicateM {Control.Monad} n IOaction - repeats IOaction n times

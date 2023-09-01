@@ -93,5 +93,8 @@ alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 # cmus
 alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
 
+# haskell
+alias hs="ghc -dynamic $1"
+
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
