@@ -98,5 +98,5 @@ alias hs="ghc -dynamic $1"
 
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
-alias yt="yt-dlp -F $1 $2"
+alias yt="yt-dlp -f $1 $2"
 
