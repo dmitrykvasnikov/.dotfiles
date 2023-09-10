@@ -65,3 +65,7 @@ vlc
 ghc
 ghc-static
 stack
+
+# USB-connection to iPhone internet, use nmtui
+usbmuxd
+libimobiledevice

@@ -1,5 +1,7 @@
 Single quotes is a character, double quotes is a list of characters
 
+"If" is an operator in Haskell, it always shoudl have "else" and both "if"/"else" returning types should be the same
+
 List (as recursive structure) in Haskell is either:
 	* empty list
 	* an element and another list
