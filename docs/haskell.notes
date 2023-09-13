@@ -1,3 +1,19 @@
+Lambda terms could be of 3 kinds: expressions, variables and abstraction. Expression is a superset of all of them - it could be variable, abstraction or combinations of them. Variable has no meaning or value, it's just name for potential input of functions. Abstracions are *functions*. Abstraction has a head (lambda), body and applied to argument (input).
+
+In Haskell there are six categories of entities that have names:
+  - term-level
+    * variables
+    * data constructors
+  - type-level
+    * type variables
+    * type constructors
+    * type classes
+  - project level
+    * modules
+
+
+Combinator is a lambda term without free variables.
+
 Single quotes is a character, double quotes is a list of characters
 
 "If" is an operator in Haskell, it always shoudl have "else" and both "if"/"else" returning types should be the same
