@@ -14,6 +14,9 @@ alias sd="systemctl disable"
 alias sh="~/.scripts/hibernate.sh"
 alias suspend="systemctl suspend"
 alias locate="plocate -i"
+alias v="vim"
+alias untar="tar -axvf"
+alias du="du -h --max-depth=1"
 
 #common foders
 alias dl="cd ~/Downloads"
@@ -21,6 +24,9 @@ alias ms="cd ~/Music"
 alias dr="cd ~/Dropbox"
 alias pr="cd ~/Projects"
 alias dots="cd ~/.dotfiles"
+alias ~="cd ~"
+alias ..="cd ..;pwd"
+alias ...="cd ..\..;pwd"
 
 #balena
 alias balena="nohup /usr/bin/balenaEtcher-1.14.3-x64.AppImage > /dev/null &"

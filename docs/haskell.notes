@@ -64,3 +64,9 @@ use *let* when you need to create non-IO variables inside IO context
 
 getArgs {System.Environment} :: IO [String] - function to get arguments, presented in
 replicateM {Control.Monad} n IOaction - repeats IOaction n times
+
+Two types of polymorphism: parametric and constrained (or Ad-Hoc, also known as typeclasses) polymorphism. Parametric polymorphism is wider, but constrained could provide set of operations (from constrained types).
+
+Declaration of type describes how type is created, declaration of typeclass describes how set of types are consumed or used in computations.
+
+
