@@ -69,4 +69,7 @@ Two types of polymorphism: parametric and constrained (or Ad-Hoc, also known as 
 
 Declaration of type describes how type is created, declaration of typeclass describes how set of types are consumed or used in computations.
 
+'seq' could be helpful with tail recursion (to avoid overflow)
+
+'$' is not just a parentheses, but it's a application operator wich is right associative and has 0 priority (standard application has a highest priority - 10)
 

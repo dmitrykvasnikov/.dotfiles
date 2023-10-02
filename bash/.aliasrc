@@ -26,7 +26,7 @@ alias pr="cd ~/Projects"
 alias dots="cd ~/.dotfiles"
 alias ~="cd ~"
 alias ..="cd ..;pwd"
-alias ...="cd ..\..;pwd"
+alias ...="cd ../..;pwd"
 
 #balena
 alias balena="nohup /usr/bin/balenaEtcher-1.14.3-x64.AppImage > /dev/null &"
