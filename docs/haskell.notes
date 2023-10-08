@@ -69,7 +69,16 @@ Two types of polymorphism: parametric and constrained (or Ad-Hoc, also known as 
 
 Declaration of type describes how type is created, declaration of typeclass describes how set of types are consumed or used in computations.
 
-'seq' could be helpful with tail recursion (to avoid overflow)
+'seq' could be helpful with tail recursion (to avoid overflow).
 
-'$' is not just a parentheses, but it's a application operator wich is right associative and has 0 priority (standard application has a highest priority - 10)
+'$' is not just a parentheses, but it's a application operator wich is right associative and has 0 priority (standard application has a highest priority - 10).
+
+Patterns are matched again values or data constructors, not types.
+
+WHNF means that expression is evaluated only as far as it necessary to reach data constructor (or lambda awaiting for argument). WHNF means that further evaluation may be possible when necessary argument is provided. If no further inputs are possible - WHNF == NF
+
+fold replace the cons constructor with the function and reduce the list.
+
+Type and data constructors which don't take an arguments are constants.
+
 

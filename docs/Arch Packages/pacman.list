@@ -6,6 +6,7 @@ brightnessctl
 broadcom-wl-dkms
 btop
 cups
+dosfstools
 font-manager
 fuse2fs
 gnome-keyring
