@@ -81,4 +81,11 @@ fold replace the cons constructor with the function and reduce the list.
 
 Type and data constructors which don't take an arguments are constants.
 
+There are two thigns we can do with a value: we can generate or construte it or we can match on it and consume it.
+
+Functions could be parameters in type definition, means that function IS A type variable
+
+Monoid is a binary associative operation (function) with an identity. Associativity means that all arguments can be regrouped with the same result (as with addition). So monoid as a typeclass which generalize associativity and identity across custom types.
+
+
 
