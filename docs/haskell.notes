@@ -87,5 +87,10 @@ Functions could be parameters in type definition, means that function IS A type 
 
 Monoid is a binary associative operation (function) with an identity. Associativity means that all arguments can be regrouped with the same result (as with addition). So monoid as a typeclass which generalize associativity and identity across custom types.
 
+Functor: everything that is not an argument of f(a-<b) function should be considered as structure and should not be cnahged (second law).
+Laws of Functor:
+  fmap id = id
+  fmap (f . g) = fmap f . fmap g
+
 
 
