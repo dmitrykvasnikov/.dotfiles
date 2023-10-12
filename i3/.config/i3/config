@@ -98,8 +98,8 @@ bindsym XF86MonBrightnessUp exec "brightnessctl s 1%+"
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons"
-bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons"
+bindsym $mod+d exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
+bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons -sort"
 
 gaps inner 6px
 gaps outer 3px
