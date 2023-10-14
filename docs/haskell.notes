@@ -93,4 +93,11 @@ Laws of Functor:
   fmap (f . g) = fmap f . fmap g
 
 
+(f .) . g = \ x y -> f (g x y)
+((f .) .) . g = \x y z -> f (g x y z)
+  and so on ...
+Two simple rules: (f . g) x = f (g x); (f ?) g = f ? x (for any ? operator)
+
+
+
 
