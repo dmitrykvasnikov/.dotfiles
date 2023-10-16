@@ -98,6 +98,9 @@ Laws of Functor:
   and so on ...
 Two simple rules: (f . g) x = f (g x); (f ?) g = f ? x (for any ? operator)
 
+You can see Functor as: fmap :: (a -> b) -> (f a -> f b)
+  so fmap take one argument (transforming function) and return another function which works with values in context. So we LIFT our function over context, from a "normal" world to a "f" world
+
 
 
 
