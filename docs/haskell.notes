@@ -92,7 +92,6 @@ Laws of Functor:
   fmap id = id
   fmap (f . g) = fmap f . fmap g
 
-
 (f .) . g = \ x y -> f (g x y)
 ((f .) .) . g = \x y z -> f (g x y z)
   and so on ...
@@ -101,6 +100,27 @@ Two simple rules: (f . g) x = f (g x); (f ?) g = f ? x (for any ? operator)
 You can see Functor as: fmap :: (a -> b) -> (f a -> f b)
   so fmap take one argument (transforming function) and return another function which works with values in context. So we LIFT our function over context, from a "normal" world to a "f" world
 
+Applicative functors represents an abstruction lying between functor and monads.
+Laws of applicative functor:
+  * pure id <*> v = v / Identity law
+  * pure f <*> pure x = pure (f x) / Homomorphism
+  * u <*> pure y = pure (\f -> f y) <*> u / Interchange
+  * u <*> (v <*> w) = pure (.) <*> u <*> v <*> w / Composition
+  * fmap g x = pure g <*> x / g <$> x = pure g <*> x
 
+CATEGORIY THEORY
+A category is simple collection. It's set of 3 elements:
+  * A collection of objects (object is a type in Haskell)
+  * A collection of morphisms, each of them ties 2 objects together (source object and target object)
+  * A notion of composition of those morphisms
+Morphism isn't necessary a functions. Also could be multiple morphisms between source and target objects.
 
+Category laws:
+  * Composition of morphisms needs to be associative: f (g x) = (f g) x
+  * Composition have to be closed under composition operation: So if f :: A -> B and g :: B -> C, than must be morphism h :: A -> C and h = f . g
+  * Every object has to have an identity morphism id :: A -> A, so id . f = f . id = f
+
+Functor relates categories together.
+
+Monas is a special functor from category to this same category, that supports some additional structure.
 
