@@ -108,6 +108,19 @@ Laws of applicative functor:
   * u <*> (v <*> w) = pure (.) <*> u <*> v <*> w / Composition
   * fmap g x = pure g <*> x / g <$> x = pure g <*> x
 
+Functor relates categories together.
+
+Monad is a special functor from category to this same category, that supports some additional structure.
+
+Laws of Monad:
+  * identity:
+    m >>= return = m
+    return x >>= f = f x
+  * Associativity:
+    (m >>= f) >>= g = m >>= (\x -> f x >>= g)
+    in right part we need to apply f to an argument, so g in turn will have argument to bind
+
+
 CATEGORIY THEORY
 A category is simple collection. It's set of 3 elements:
   * A collection of objects (object is a type in Haskell)
@@ -120,7 +133,4 @@ Category laws:
   * Composition have to be closed under composition operation: So if f :: A -> B and g :: B -> C, than must be morphism h :: A -> C and h = f . g
   * Every object has to have an identity morphism id :: A -> A, so id . f = f . id = f
 
-Functor relates categories together.
-
-Monas is a special functor from category to this same category, that supports some additional structure.
 
