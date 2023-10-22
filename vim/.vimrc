@@ -19,6 +19,7 @@ set autoindent
 set hlsearch
 set title
 set noswapfile
+set wildmenu wildoptions+=pum
 
 " Use system clipboard
 set clipboard+=unnamedplus
