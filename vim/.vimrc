@@ -20,6 +20,7 @@ set hlsearch
 set title
 set noswapfile
 set wildmenu wildoptions+=pum
+set path+=**
 
 " Use system clipboard
 set clipboard+=unnamedplus
