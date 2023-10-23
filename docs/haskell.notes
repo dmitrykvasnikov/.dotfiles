@@ -1,5 +1,7 @@
 Lambda terms could be of 3 kinds: expressions, variables and abstraction. Expression is a superset of all of them - it could be variable, abstraction or combinations of them. Variable has no meaning or value, it's just name for potential input of functions. Abstracions are *functions*. Abstraction has a head (lambda), body and applied to argument (input).
 
+'where' clause can't see anything from 'let' clause, but 'let' can see and use objects from 'where' clause
+
 In Haskell there are six categories of entities that have names:
   - term-level
     * variables

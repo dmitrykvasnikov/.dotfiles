@@ -221,7 +221,18 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+mode "web" {
+  bindsym g exec "google-chrome-stable", mode "default"
+  bindsym f exec "firefox", mode "default"
+  bindsym v exec "vivaldi-stable", mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+i mode "default"
+}
+
 bindsym $mod+r mode "resize"
+
+bindsym $mod+i mode "web"
 
 # Rules for windows
 for_window [class="vlc"] floating enable, resize set 1200 800, move position center
@@ -235,9 +246,6 @@ bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move positi
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
-bindsym $mod+Control+g exec "google-chrome-stable"
-bindsym $mod+Control+f exec "firefox"
-bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+n exec "notion-app"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
