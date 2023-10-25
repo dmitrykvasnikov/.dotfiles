@@ -41,6 +41,7 @@ Power of map is isn't iteration but transforming list of one type to list of ano
 
 type keyword make new type synonyms
 date keyword make new type
+type variables can represent any type of appropriable kind
 
 data Currency = Rub | Eur
 	Currency is type constructor

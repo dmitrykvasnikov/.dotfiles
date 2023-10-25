@@ -40,5 +40,8 @@ let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_keepdir = 0
 
+" keyboard mappings
 inoremap <c-space> <esc>
+inoremap jj <esc>
+
 
