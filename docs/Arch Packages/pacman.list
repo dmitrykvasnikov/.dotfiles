@@ -71,3 +71,9 @@ stack
 # USB-connection to iPhone internet, use nmtui
 usbmuxd
 libimobiledevice
+
+# emacs / doom emacs
+emacs
+fd
+ripgrep
+shellcheck
