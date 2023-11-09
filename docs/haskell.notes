@@ -137,3 +137,7 @@ Category laws:
   * Every object has to have an identity morphism id :: A -> A, so id . f = f . id = f
 
 
+Working with keyboard (import System.IO):
+  hSetBuffering stdin NoBufferint - so we can get each key without waiting for Entert
+  hSetEcho stdin False - cancel echoing to the screen
+  hGetChar - to get single char from terminal
