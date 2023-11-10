@@ -51,6 +51,7 @@ ttf-roboto-mono
 # Applications
 calibre
 cmus # or moc
+fbreader
 gimp
 libreoffice-fresh
 moc # or cmus

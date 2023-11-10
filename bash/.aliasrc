@@ -18,6 +18,7 @@ alias locate="plocate -i"
 alias v="vim"
 alias untar="tar -axvf"
 alias du="du -h --max-depth=1"
+alias search="yay -Ss"
 
 #common foders
 alias dl="cd ~/Downloads"
