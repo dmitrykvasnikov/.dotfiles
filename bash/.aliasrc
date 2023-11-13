@@ -19,6 +19,8 @@ alias v="vim"
 alias untar="tar -axvf"
 alias du="du -h --max-depth=1"
 alias search="yay -Ss"
+alias install="sudo pacman -S"
+alias ynstall="yay -S"
 
 #common foders
 alias dl="cd ~/Downloads"

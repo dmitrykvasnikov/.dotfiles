@@ -15,12 +15,14 @@ interception-caps2esc
 linux-headers
 lsof
 mtpfs
+ncdu
 networkmanager
 notification-daemon # check /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 plocate
 pulseaudio
 pulseaudio-alsa
 python-pydbus
+tlp
 tmux
 # xcape
 xorg
