@@ -247,6 +247,7 @@ bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
 bindsym $mod+Control+n exec "notion-app"
+bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
