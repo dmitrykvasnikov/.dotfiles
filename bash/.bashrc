@@ -25,6 +25,13 @@ PS1=$prompt_color'┌──${VIRTUAL_ENV:+(\[\033[0;1m\]$(basename $VIRTUAL_ENV)
 # Source aliases
 source .aliasrc
 
+# Functions
+mkcd(){
+  mkdir "$1"
+  cd "$1"
+  pwd
+}
+
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
