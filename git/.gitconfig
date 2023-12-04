@@ -3,6 +3,7 @@
 	name = Dmitry Kvasnikov
 [core]
 	editor = vim
+	pager = delta
 [init]
 	defaultBranch = master
 [pull]
