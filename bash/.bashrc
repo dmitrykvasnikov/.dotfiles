@@ -35,4 +35,5 @@ mkcd(){
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
-[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
+# ghcup-env
+[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env"
