@@ -13,7 +13,7 @@ parse_git_branch() {
 prompt_color='\[\033[;1;32m\]'
 info_color='\[\033[1;34m\]'
 prompt_symbol=' 󰣇  '
-export PATH="~/.scripts:~/.ghcup/bin:$PATH"
+export PATH="~/.scripts:~/.ghcup/bin:~/.local/bin:$PATH"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
