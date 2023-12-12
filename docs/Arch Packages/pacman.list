@@ -12,7 +12,7 @@ font-manager
 fuse2fs
 gnome-keyring
 inxi
-interception-caps2esc
+interception-caps2esc # systemctl enable udevmon, check /etc/interception ...
 linux-headers
 lsof
 mtpfs
