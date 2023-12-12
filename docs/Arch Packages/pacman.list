@@ -26,6 +26,7 @@ python-pydbus
 tlp
 tmux
 # xcape
+xf86-input-synaptics # for Apple laptops
 xorg
 xorg-server
 xorg-xinit
