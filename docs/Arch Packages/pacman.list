@@ -1,5 +1,5 @@
 # System
-base-oevel
+base-devel
 blueman
 bluez
 bluez-utils
@@ -45,7 +45,7 @@ ueberzug # image preview for rangerh
 
 # Fonts
 ttf-fira-code
-ttf-fonts-awesome
+ttf-font-awesome
 ttf-ibm-plex
 ttf-jetbrains-mono
 ttf-nerd-fonts-symbols-mono
