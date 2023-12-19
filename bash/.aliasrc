@@ -106,6 +106,7 @@ alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
 # haskell
 alias hs="ghc -dynamic $1"
 alias hc="stack ghci"
+alias hp="cd ~/Projects/haskell"
 
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
