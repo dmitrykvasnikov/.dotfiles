@@ -146,3 +146,5 @@ Functions which ends with a tick (fold') are typically strict variant of lazy fu
 Functions which ends with an _ (map_) are typically variant of function which discards the output and returns void
 
 When you export newtype from module - you should export as Name(..) to export data constructor as well. Without parenthesees only type constructor will be exported.
+
+When we create analogue of foldr for different structures number of parameters equals to number of elements of structur, i.e for lists there are 2 parameters: function for (:) and value for []
