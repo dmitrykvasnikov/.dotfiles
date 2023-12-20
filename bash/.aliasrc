@@ -104,9 +104,10 @@ alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
 
 # haskell
-alias hs="ghc -dynamic $1"
-alias hc="stack ghci"
-alias hp="cd ~/Projects/haskell"
+alias hr="stack repl --no-build"
+alias hb="stack build"
+alias hi="stack install"
+alias h="cd ~/Projects/haskell"
 
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
