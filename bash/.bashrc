@@ -35,5 +35,10 @@ mkcd(){
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
+<<<<<<< Updated upstream
 # ghcup-env
 [ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env"
+=======
+#[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
+[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
+>>>>>>> Stashed changes
