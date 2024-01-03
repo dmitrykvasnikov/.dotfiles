@@ -1,5 +1,6 @@
 #script with my aliases
 alias c="clear"
+alias ff="fastfetch"
 alias ls="ls --color=auto"
 alias l="ls -la --color=auto"
 alias ll="ls -l --color=auto"

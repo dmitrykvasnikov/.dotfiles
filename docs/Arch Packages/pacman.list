@@ -8,6 +8,7 @@ broadcom-wl-dkms
 btop
 cups
 dosfstools
+fastfetch
 font-manager
 fuse2fs
 gnome-keyring
