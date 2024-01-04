@@ -13,7 +13,6 @@ parse_git_branch() {
 prompt_color='\[\033[;1;32m\]'
 info_color='\[\033[1;34m\]'
 prompt_symbol=' 󰣇  '
-export PATH="~/.scripts:~/.ghcup/bin:~/.local/bin:~/.config/emacs/bin:~/.cabal/bin:$PATH"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -39,3 +38,5 @@ source /usr/share/nvm/init-nvm.sh
 [ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env"
 #[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
 [ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
+
+export PATH="~/.ghcup/bin:~/.scripts:~/.local/bin:~/.config/emacs/bin:~/.cabal/bin:$PATH"
