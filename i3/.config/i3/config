@@ -236,6 +236,7 @@ bindsym $mod+i mode "web"
 
 # Rules for windows
 for_window [class="vlc"] floating enable, resize set 1200 800, move position center
+for_window [class="smplayer"] floating enable, resize set 1200 800, move position center
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
