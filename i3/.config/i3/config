@@ -258,7 +258,7 @@ bindsym $mod+Control+t exec --no-startup-id alacritty --title terminal
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 exec --no-startup-id dropbox start
 
 # Scratchpads
