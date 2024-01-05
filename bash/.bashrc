@@ -34,9 +34,4 @@ mkcd(){
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
-# ghcup-env
-[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env"
-#[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
-[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
-
 export PATH="$HOME/.ghcup/bin:$HOME/.cabal/bin:$HOME/.scripts:$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH"
