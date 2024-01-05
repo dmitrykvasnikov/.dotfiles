@@ -32,6 +32,7 @@ wget
 # xcape
 xf86-input-synaptics # for Apple laptops
 xf86-video-intel # for Intel videocards + V sync - see also 20-intel.conf
+xf86-video-nouveau # for Nvidia videocards + V sync - see also /etc/X11/xorg.conf
 xorg
 xorg-server
 xorg-xinit
