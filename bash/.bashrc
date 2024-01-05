@@ -39,4 +39,4 @@ source /usr/share/nvm/init-nvm.sh
 #[ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
 [ -f "/home/dmitry/.ghcup/env" ] && source "/home/dmitry/.ghcup/env" # ghcup-env
 
-export PATH="~/.ghcup/bin:~/.scripts:~/.local/bin:~/.config/emacs/bin:~/.cabal/bin:$PATH"
+export PATH="/home/dmitry/.ghcup/bin:/home/dmitry/.cabal/bin:~/.scripts:/home/dmitry/.local/bin:~/.config/emacs/bin:$PATH"
