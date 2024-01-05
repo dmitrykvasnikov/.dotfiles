@@ -105,9 +105,10 @@ alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
 
 # haskell
-alias hr="stack repl --no-build"
-alias hb="stack build"
-alias hi="stack install"
+alias hr="cabal repl"
+alias hb="cabal build"
+alias hi="cabal init"
+alias hg="ghcid "
 alias h="cd ~/Projects/haskell"
 
 # misc
