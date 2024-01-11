@@ -1,0 +1,28 @@
+Vim Commands
+
+## EDIT COMMANDS ##
+e! - reload last saved version of a file
+0 - go to the beginning of line
+~ - toggle case
+s - substitution (delete symbol and go into "INSERT" mode)
+J - join 2 lines (current and next, 1J = 2J)
+
+## MOVE COMMANDS ##
+^B - back on one screen
+^F - forward on one screen
+^U - back on half screen
+^D - forward on half screen
+z+Enter - moves current line to the top of screen
+z+. - moves current line to the middle of the screen
+H, M, L - move on fisrt symbol of first, midlle, last line on tthe
+`` - return to the last position of current line before G command
+'' - return to the beginning of current line before G command
+mx - bookmark to x-register
+`x - return to bookmark position
+'x - return to the beginning of line with bookmark
+
+## SEARCH COMMANDS ##
+fx - search ans stops ON symbol x (Fx - in opposite direction)
+tx - search and stops BEFORE symbol x (Tx - in opposite direction)
+; - repeat previous command in the same direction
+, - repeat previous command in the opposite direction

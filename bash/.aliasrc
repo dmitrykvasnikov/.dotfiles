@@ -1,0 +1,117 @@
+#script with my aliases
+alias c="clear"
+alias ff="fastfetch"
+alias ls="ls --color=auto"
+alias l="ls -la --color=auto"
+alias ll="ls -l --color=auto"
+alias la="ls -a --color=auto"
+alias lt="ls -h --size -1 -S --classify"
+alias ll="ls -Alhp --group-directories-first"
+alias s="systemctl start"
+alias st="systemctl status"
+alias ss="systemctl stop"
+alias sr="systemctl restart"
+alias se="systemctl enable"
+alias sd="systemctl disable"
+alias sh="~/.scripts/hibernate.sh"
+alias suspend="systemctl suspend"
+alias locate="plocate -i"
+alias v="vim"
+alias untar="tar -axvf"
+alias du="du -h --max-depth=1"
+alias search="yay -Ss"
+alias install="sudo pacman -S"
+alias ynstall="yay -S"
+
+#common foders
+alias dl="cd ~/Downloads"
+alias ms="cd ~/Music"
+alias dr="cd ~/Dropbox"
+alias pr="cd ~/Projects"
+alias dots="cd ~/.dotfiles"
+alias ~="cd ~"
+alias ..="cd ..;pwd"
+alias ...="cd ../..;pwd"
+
+#balena
+alias balena="nohup /usr/bin/balenaEtcher-1.14.3-x64.AppImage > /dev/null &"
+
+#git
+alias g="git $1"
+
+alias gs="git status"
+alias gl="git log"
+alias gd="git diff $1 $2"
+
+alias gi="git init $1"
+alias gr="git remote $1"
+alias gf="git fetch $1"
+alias gm="git merge $1"
+
+alias gr="git reset $"
+
+alias gco="git checkout $1"
+alias gcb="git checkout -b $1"
+
+alias ga="git add $1"
+alias gaa="git add ."
+alias gcm="git commit -m 'minor fixes'"
+alias gc="git commit -m $1"
+alias gp="git push $1 $2"
+alias gpo="git push origin $1"
+alias gpom="git push origin master"
+alias gpm="gaa && gcm && gp"
+
+alias gplom="git pull origin master"
+alias gpl="git pull $1 $2"
+alias gplr="git pull --rebase $1 $2"
+
+alias gsh="git stash"
+alias gshp="git stash pop"
+
+#config edit
+alias i="vim ~/.config/i3/config"
+alias ic="vim ~/.config/i3/custom.config"
+alias p="vim ~/.config/polybar/config.ini"
+alias pc="vim ~/.config/polybar/custom.config.ini"
+alias r="vim ~/.config/rofi/config.rasi"
+alias x=startx
+
+#dotman / .dotfiles repo
+alias dotman="~/.dotfiles/dotman.sh"
+
+# hibernation
+alias sleep="systemctl hibernate"
+
+# wifi on/off
+alias wifion="nmcli radio wifi on"
+alias wifioff="nmcli radio wifi off"
+
+# Arch based distro
+alias install="sudo pacman -S"
+alias upgrade="sudo pacman -Syu"
+
+# Vim for root
+alias rvim="sudo -E vim"
+
+# Bash shortcuts
+alias mx="chmod +x"
+alias psg="ps -aux | grep"
+
+# 7Z
+alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
+
+# cmus
+alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
+
+# haskell
+alias hr="cabal repl"
+alias hb="cabal build"
+alias hi="cabal init"
+alias hg="ghcid "
+alias h="cd ~/Projects/haskell"
+
+# misc
+alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
+alias yt="yt-dlp -f $1 $2"
+

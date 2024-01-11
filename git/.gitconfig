@@ -1,0 +1,10 @@
+[user]
+	email = dmitry.kvasnikov@gmail.com
+	name = Dmitry Kvasnikov
+[core]
+	editor = vim
+	pager = delta
+[init]
+	defaultBranch = master
+[pull]
+	rebase = false

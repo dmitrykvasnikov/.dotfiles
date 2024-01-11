@@ -1,0 +1,18 @@
+
+; Color Scheme: Custom1
+bg = #27374d
+fg = #dde6ed
+i = #91c8e4
+i-cpu = #4682a9
+i-mem = #4682a9
+i-vlm = #fffad7
+i-brt = #fffad7
+i-clk = #d3d04f
+i-kbd = #d3d04f
+bg-ws = #526d82
+bg-ws-alt = #9db2b8
+fg-alert = #e84545
+fg-disabled = #707880
+fg-title = #ffffff
+fg-btfull = #57c5b6
+

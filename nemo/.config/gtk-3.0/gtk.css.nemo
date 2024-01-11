@@ -1,0 +1,48 @@
+.nemo-window > *, .nemo-window .view {
+  background-color: #526d82;
+  color: #dde6ed;
+}
+
+.nemo-window .sidebar .view > * {
+  background-color: #27374d;
+  color: #dde6ed;
+}
+
+.nemo-window .nemo-inactive-pane .view, .nemo-window .nemo-inactive-pane .view  {
+  background-color: #e2e2e2;
+	color: #545657;
+}
+
+.nemo-window .primary-toolbar *, .nemo-window .primary-toolbar, .nemo-window menubar, .nemo-window menubar > *, .nemo-window menu {
+  background-color: #526d82;
+	color: white;
+}
+
+.nemo-window .primary-toolbar {
+border-bottom: 1px solid #dde6ed;
+border-top: 1px solid white;
+}
+
+.nemo-window menubar >  menuitem:hover {
+  box-shadow: inset 0 -4px 0 0 #57c5b6;
+}
+
+
+.nemo-window menu menuitem:hover {
+	background-color: #27374d;
+}
+
+.nemo-window menu {
+	padding: 4px;
+	border: 2px solid #ffffff;
+	}
+
+.nemo-window .view:selected {
+  background-color: #27374d;
+  color: #d3d04f;
+}
+.nemo-window .sidebar .view:selected {
+  background-color: #526d82;
+  color: #57c5b6;
+}
+

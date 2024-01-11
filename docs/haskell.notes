@@ -1,0 +1,150 @@
+Lambda terms could be of 3 kinds: expressions, variables and abstraction. Expression is a superset of all of them - it could be variable, abstraction or combinations of them. Variable has no meaning or value, it's just name for potential input of functions. Abstracions are *functions*. Abstraction has a head (lambda), body and applied to argument (input).
+
+'where' clause can't see anything from 'let' clause, but 'let' can see and use objects from 'where' clause
+
+In Haskell there are six categories of entities that have names:
+  - term-level
+    * variables
+    * data constructors
+  - type-level
+    * type variables
+    * type constructors
+    * type classes
+  - project level
+    * modules
+
+Combinator is a lambda term without free variables.
+
+Single quotes is a character, double quotes is a list of characters
+
+"If" is an operator in Haskell, it always shoudl have "else" and both "if"/"else" returning types should be the same
+
+List (as recursive structure) in Haskell is either:
+	* empty list
+	* an element and another list
+
+Rules of recursion:
+	* Indetify the end (goal)
+	* Determine what happens when goal achived (what to return)
+	* List all alternative possibilities
+	* Determine your "rinse and repeat"
+	* Ensure that each alternatives moves you towards the goal
+
+Pattern matching:
+	case x of
+	1 -> "one"
+	...
+
+foldr works on infinite lists
+
+Power of map is isn't iteration but transforming list of one type to list of another type
+
+type keyword make new type synonyms
+date keyword make new type
+type variables can represent any type of appropriable kind
+
+data Currency = Rub | Eur
+	Currency is type constructor
+	Rub & Eur are data constructors
+
+Ord deriving use the order that the data constructors are defined
+
+Algebraic Data Types are any types that can be made by combining other types (with
+  AND - product types, or
+  OR  - sum types)
+
+Maps: Map.fromList - create map from touples (id, val), Map.lookup key map - take a value with id == key and return in as Maybe type
+
+Data.Maybe module containes functions isJust & isNothing
+
+intersperse / intercalate - add element / list between elements / lists last one concatenate the result
+intersperse :: a -> [a] -> [a]
+intercalate :: [a] -> [[a]] -> [a]
+
+IO ()
+use *<-* when you need type *IO a* to be just type *a*
+use *let* when you need to create non-IO variables inside IO context
+
+getArgs {System.Environment} :: IO [String] - function to get arguments, presented in
+replicateM {Control.Monad} n IOaction - repeats IOaction n times
+
+Two types of polymorphism: parametric and constrained (or Ad-Hoc, also known as typeclasses) polymorphism. Parametric polymorphism is wider, but constrained could provide set of operations (from constrained types).
+
+Declaration of type describes how type is created, declaration of typeclass describes how set of types are consumed or used in computations.
+
+'seq' could be helpful with tail recursion (to avoid overflow).
+
+'$' is not just a parentheses, but it's a application operator wich is right associative and has 0 priority (standard application has a highest priority - 10).
+
+Patterns are matched again values or data constructors, not types.
+
+WHNF means that expression is evaluated only as far as it necessary to reach data constructor (or lambda awaiting for argument). WHNF means that further evaluation may be possible when necessary argument is provided. If no further inputs are possible - WHNF == NF
+
+fold replace the cons constructor with the function and reduce the list.
+
+Type and data constructors which don't take an arguments are constants.
+
+There are two thigns we can do with a value: we can generate or construte it or we can match on it and consume it.
+
+Functions could be parameters in type definition, means that function IS A type variable
+
+Monoid is a binary associative operation (function) with an identity. Associativity means that all arguments can be regrouped with the same result (as with addition). So monoid as a typeclass which generalize associativity and identity across custom types.
+
+Functor: everything that is not an argument of f(a-<b) function should be considered as structure and should not be cnahged (second law).
+Laws of Functor:
+  fmap id = id
+  fmap (f . g) = fmap f . fmap g
+
+(f .) . g = \ x y -> f (g x y)
+((f .) .) . g = \x y z -> f (g x y z)
+  and so on ...
+Two simple rules: (f . g) x = f (g x); (f ?) g = f ? x (for any ? operator)
+
+You can see Functor as: fmap :: (a -> b) -> (f a -> f b)
+  so fmap take one argument (transforming function) and return another function which works with values in context. So we LIFT our function over context, from a "normal" world to a "f" world
+
+Applicative functors represents an abstruction lying between functor and monads.
+Laws of applicative functor:
+  * pure id <*> v = v / Identity law
+  * pure f <*> pure x = pure (f x) / Homomorphism
+  * u <*> pure y = pure (\f -> f y) <*> u / Interchange
+  * u <*> (v <*> w) = pure (.) <*> u <*> v <*> w / Composition
+  * fmap g x = pure g <*> x / g <$> x = pure g <*> x
+
+Functor relates categories together.
+
+Monad is a special functor from category to this same category, that supports some additional structure.
+
+Laws of Monad:
+  * identity:
+    m >>= return = m
+    return x >>= f = f x
+  * Associativity:
+    (m >>= f) >>= g = m >>= (\x -> f x >>= g)
+    in right part we need to apply f to an argument, so g in turn will have argument to bind
+
+
+CATEGORIY THEORY
+A category is simple collection. It's set of 3 elements:
+  * A collection of objects (object is a type in Haskell)
+  * A collection of morphisms, each of them ties 2 objects together (source object and target object)
+  * A notion of composition of those morphisms
+Morphism isn't necessary a functions. Also could be multiple morphisms between source and target objects.
+
+Category laws:
+  * Composition of morphisms needs to be associative: f (g x) = (f g) x
+  * Composition have to be closed under composition operation: So if f :: A -> B and g :: B -> C, than must be morphism h :: A -> C and h = f . g
+  * Every object has to have an identity morphism id :: A -> A, so id . f = f . id = f
+
+
+Working with keyboard (import System.IO):
+  hSetBuffering stdin NoBufferint - so we can get each key without waiting for Enter
+  hSetEcho stdin False - cancel echoing to the screen
+  hGetChar - to get single char from terminal
+
+Functions which ends with a tick (fold') are typically strict variant of lazy function
+Functions which ends with an _ (map_) are typically variant of function which discards the output and returns void
+
+When you export newtype from module - you should export as Name(..) to export data constructor as well. Without parenthesees only type constructor will be exported.
+
+When we create analogue of foldr for different structures number of parameters equals to number of elements of structur, i.e for lists there are 2 parameters: function for (:) and value for []

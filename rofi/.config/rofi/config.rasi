@@ -1,0 +1,101 @@
+configuration {
+  display-drun: "Applications:";
+  display-run: "Applications (run):";
+  display-window: "Windows / All Workspaces:";
+  display-windowcd: "Windows / Current Workspace:";
+  display-filebrowser: "Files:";
+  drun-display-format: "{name}";
+  font: "Fira Code Medium 12";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #3c3836; /* dark1 */
+  bg-prompt: #458588; /* n_blue */
+  bg-selected: #458588; /* n_blue */
+
+  fg: #fbf1c7; /* light0 */
+  fg-prompt: #282828; /* dark0 */
+  fg-selected: #282828; /* dark0 */
+	fg-highlight: #fabd2f; /* yellow */
+
+	brd: #458488; /* border color, n_blue */
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 40%;
+  background-color: @bg;
+	border-radius: 10;
+	padding: 12;
+	border: 8;
+	border-color: @brd;
+	position: north;
+}
+
+element {
+  padding: 8 12;
+  background-color: transparent;
+  text-color: @fg;
+}
+
+element selected {
+  text-color: @fg-selected;
+  background-color: @bg-selected;
+	border-radius: 10;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+	highlight: @fg-highlight;
+}
+
+element-icon {
+  size: 14;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}
+
+entry {
+  padding: 12;
+  background-color: @bg-prompt;
+  text-color: @fg-prompt;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @bg;
+	text-color: @fg;
+	border-radius: 10;
+}
+
+listview {
+	padding: 12 0 0 0;
+  background-color: @bg;
+  columns: 2;
+  lines: 10;
+	spacing: 10;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: @bg;
+	border-radius: 10;
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+  background-color: @bg-prompt;
+  text-color: @fg;
+}
+
+
+/* vim: ft=sass

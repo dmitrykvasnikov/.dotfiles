@@ -1,0 +1,97 @@
+# System
+base-devel
+blueman
+bluez
+bluez-utils
+brightnessctl
+broadcom-wl-dkms
+btop
+cups
+curl
+dosfstools
+fastfetch
+font-manager
+fuse2fs
+gnome-keyring
+inxi
+interception-caps2esc # systemctl enable udevmon, check /etc/interception, interception-tools must be installed ...
+linux-headers
+lsof
+mtpfs
+ncdu
+networkmanager
+notification-daemon # check /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+nvidia-470xx-dkms # for iMac - 750M
+nvidia-470xx-settings # for iMac - 750M
+nvidia-470xx-utils # for iMac - 750M
+openssh
+plocate
+pulseaudio
+pulseaudio-alsa
+python-pydbus
+tlp
+tmux
+wget
+# xcape
+xf86-input-synaptics # for Apple laptops
+xf86-video-intel # for Intel videocards + V sync - see also 20-intel.conf
+xf86-video-fbdev
+xorg
+xorg-server
+xorg-xinit
+
+# Desktop
+alacritty
+feh
+i3
+ly
+maim
+nemo
+polybar
+python-i3ipc
+ranger
+rofi
+ueberzug # image preview for rangerh
+
+# Fonts
+ttf-fira-code
+ttf-font-awesome
+ttf-ibm-plex
+ttf-jetbrains-mono
+ttf-nerd-fonts-symbols-mono
+ttf-roboto-mono
+
+# Applications
+calibre
+cmus # or moc
+fbreader
+gdu
+gimp
+libreoffice-fresh
+moc # or cmus
+okular
+p7zip
+qbittorrent
+telegram-desktop
+tldr
+yt-dlp
+vivaldi
+vlc
+
+# Haskel
+ghc
+ghc-static
+stack
+
+# USB-connection to iPhone internet, use nmtui
+usbmuxd
+libimobiledevice
+
+# emacs / doom emacs
+emacs
+fd
+ripgrep
+shellcheck
+
+# git
+git-delta
