@@ -26,8 +26,6 @@ nvidia-470xx-settings # for iMac - 750M
 nvidia-470xx-utils # for iMac - 750M
 openssh
 plocate
-pulseaudio
-pulseaudio-alsa
 python-pydbus
 tlp
 tmux
@@ -39,6 +37,11 @@ xf86-video-fbdev
 xorg
 xorg-server
 xorg-xinit
+
+#pulseaudio
+alsa-utils
+pulseaudio
+pulseaudio-alsa
 
 # Desktop
 alacritty

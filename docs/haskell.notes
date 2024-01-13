@@ -148,3 +148,10 @@ Functions which ends with an _ (map_) are typically variant of function which di
 When you export newtype from module - you should export as Name(..) to export data constructor as well. Without parenthesees only type constructor will be exported.
 
 When we create analogue of foldr for different structures number of parameters equals to number of elements of structur, i.e for lists there are 2 parameters: function for (:) and value for []
+
+PRAGMAS
+OverloadedStrings
+RecordWildCards
+NoImplicitPrelude
+NamedFieldPuns
+ViewPatterns ## (_, T.splitOn ":" -> [s1, s2])
