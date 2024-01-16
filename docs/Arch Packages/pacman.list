@@ -38,6 +38,11 @@ xorg
 xorg-server
 xorg-xinit
 
+# gestures - see .config/libinput-gestures-setup.conf, libinput-gestures-setup desktop autostart start
+# sudo gpasswd -a $USER input
+wmctrl
+xdotool
+
 #pulseaudio
 alsa-utils
 pulseaudio

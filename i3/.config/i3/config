@@ -257,6 +257,7 @@ bindsym $mod+Control+t exec --no-startup-id alacritty --title terminal
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id libinput-gestures-setup start
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
