@@ -34,4 +34,6 @@ mkcd(){
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
+export PROMPT_COMMAND="history -a"
+
 export PATH="$HOME/.ghcup/bin:$HOME/.cabal/bin:$HOME/.scripts:$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH"
