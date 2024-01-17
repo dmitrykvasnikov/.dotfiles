@@ -4,7 +4,13 @@
 [core]
 	editor = vim
 	pager = delta
+	autocrlf = input
+	safecrlf = warn
 [init]
 	defaultBranch = master
 [pull]
 	rebase = false
+[format]
+	pretty = %h %ad | %s%d [%an]
+[log]
+	date = short
