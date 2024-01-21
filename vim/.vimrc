@@ -47,3 +47,13 @@ inoremap jj <esc>
 cnoremap W w
 cnoremap WQ wq
 
+" CoC
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+
