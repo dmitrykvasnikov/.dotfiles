@@ -15,6 +15,7 @@ fuse2fs
 gnome-keyring
 inxi
 interception-caps2esc # systemctl enable udevmon, check /etc/interception, interception-tools must be installed ...
+iotop
 linux-headers
 lsof
 mtpfs
