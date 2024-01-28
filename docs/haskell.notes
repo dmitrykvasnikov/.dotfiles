@@ -149,6 +149,8 @@ When you export newtype from module - you should export as Name(..) to export da
 
 When we create analogue of foldr for different structures number of parameters equals to number of elements of structur, i.e for lists there are 2 parameters: function for (:) and value for []
 
+'seq' functions will stop as soon it reaches the constructor!
+
 PRAGMAS
 OverloadedStrings
 OverloadedRecordDot

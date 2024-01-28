@@ -21,6 +21,7 @@ set title
 set noswapfile
 set wildmenu wildoptions+=pum
 set path+=**
+hi LineNr guibg=#333644
 
 " Use system clipboard
 set clipboard+=unnamedplus
@@ -47,6 +48,9 @@ inoremap jj <esc>
 cnoremap W w
 cnoremap WQ wq
 
+cnoremap ce CocEnable
+cnoremap cd CocDisable
+
 " CoC
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
@@ -65,5 +69,4 @@ inoremap <silent><expr> <Tab>
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
 
