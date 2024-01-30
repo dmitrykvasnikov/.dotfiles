@@ -95,6 +95,9 @@ bindsym $mod+XF86AudioPlay exec --no-startup-id cmus-remote -p
 # Brightness control
 bindsym XF86MonBrightnessDown exec "brightnessctl s 1%-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s 1%+"
+bindsym XF86KbdBrightnessUp exec "brightnessctl --device='smc::kbd_backlight' set +10%"
+bindsym XF86KbdBrightnessDown exec "brightnessctl --device='smc::kbd_backlight' set 10%-"
+
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+shift+q kill
