@@ -53,6 +53,7 @@ pulseaudio-alsa
 # Desktop
 alacritty
 feh
+gtk-engine-murrine # for GTK themes enable
 i3
 ly
 maim
