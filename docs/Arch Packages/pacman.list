@@ -18,6 +18,7 @@ interception-caps2esc # systemctl enable udevmon, check /etc/interception, inter
 iotop
 linux-headers
 lsof
+lxappearance # Switch GTK themes
 mtpfs
 ncdu
 networkmanager
