@@ -17,5 +17,7 @@ nvm
 visual-studio-code-bin
 
 # Desktop
+gruvbox-dark-icons-gtk
 numix-themes-darkblue
-
+numix-icon-theme-git
+numix-cursor-theme
