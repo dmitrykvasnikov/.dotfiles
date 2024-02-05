@@ -26,6 +26,7 @@ alias update="sudo pacman -Syu"
 alias ypdate="yay -Syu"
 alias remove="sudo pacman -Rns"
 alias rymove="yay -Rns"
+alias upgrade="update && ypdate"
 
 #common foders
 alias dl="cd ~/Downloads"
