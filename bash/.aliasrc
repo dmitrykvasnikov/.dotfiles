@@ -22,6 +22,10 @@ alias du="du -h --max-depth=1"
 alias search="yay -Ss"
 alias install="sudo pacman -S"
 alias ynstall="yay -S"
+alias update="sudo pacman -Syu"
+alias ypdate="yay -Syu"
+alias remove="sudo pacman -Rns"
+alias rymove="yay -Rns"
 
 #common foders
 alias dl="cd ~/Downloads"
@@ -86,10 +90,6 @@ alias sleep="systemctl hibernate"
 # wifi on/off
 alias wifion="nmcli radio wifi on"
 alias wifioff="nmcli radio wifi off"
-
-# Arch based distro
-alias install="sudo pacman -S"
-alias upgrade="sudo pacman -Syu"
 
 # Vim for root
 alias rvim="sudo -E vim"
