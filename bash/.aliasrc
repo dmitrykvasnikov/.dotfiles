@@ -55,6 +55,7 @@ alias gm="git merge $1"
 
 alias gr="git reset $"
 
+alias gsw="git switch"
 alias gco="git checkout $1"
 alias gcb="git checkout -b $1"
 
