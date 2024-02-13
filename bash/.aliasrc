@@ -116,4 +116,7 @@ alias h="cd ~/Projects/haskell"
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
 alias yt="yt-dlp -f $1 $2"
-
+alias bd="cp -r $1 ~/Backup"
+alias bf="cp $1 ~/Backup"
+alias wb="winbox &"
+alias vm="gksu virt-manager"
