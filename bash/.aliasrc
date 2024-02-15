@@ -110,8 +110,8 @@ alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
 alias cr="cabal repl"
 alias cb="cabal build"
 alias ci="cabal install"
-alias gh="ghcid "
-alias cbi ="cabal build && cabal install --overwrite-policy=always"
+alias gh="ghcid"
+alias cbi="cabal build && cabal install --overwrite-policy=always"
 alias h="cd ~/Projects/haskell"
 
 # misc
