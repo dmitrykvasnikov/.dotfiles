@@ -6,6 +6,7 @@ libinput-gestures
 gestures
 
 # Applications
+albert
 dropbox
 google-chrome
 notion-app-electron
