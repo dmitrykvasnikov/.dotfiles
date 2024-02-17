@@ -265,6 +265,7 @@ exec_always --no-startup-id libinput-gestures-setup start
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/archlinux_01.jpg
 exec --no-startup-id dropbox start
+exec --no-startup-id albert
 
 # Scratchpads
 exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
