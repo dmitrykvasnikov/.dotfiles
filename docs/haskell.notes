@@ -159,6 +159,7 @@ DuplicateRecordFields
 RecordWildCards
 NoImplicitPrelude
 NamedFieldPuns
+PatternSynonyms
 ViewPatterns
 ScopedTypeVariables (ex.: forall a b. ...)
 TypeApplications (ex.: @Maybe @_ @Int)
