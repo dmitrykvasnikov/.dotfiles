@@ -55,6 +55,7 @@ cnoremap cd CocDisable
 
 " CoC
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+let g:coc_snippet_next = '<Tab>'
 
 " use <tab> to trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
