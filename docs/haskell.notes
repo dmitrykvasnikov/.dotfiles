@@ -152,6 +152,7 @@ When we create analogue of foldr for different structures number of parameters e
 'seq' functions will stop as soon it reaches the constructor!
 
 PRAGMAS
+AllowAmbiguousTypes
 OverloadedStrings
 OverloadedRecordDot
 NoFieldSelectors
