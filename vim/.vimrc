@@ -12,7 +12,7 @@ set termguicolors
 set cursorline
 colorscheme gruvbox
 set bg=dark
-syntax on
+syntax enable
 set wildmode=longest,list,full
 set splitbelow splitright
 set autoindent
@@ -22,6 +22,7 @@ set noswapfile
 set wildmenu wildoptions+=pum
 set path+=**
 hi LineNr guibg=#333644
+filetype plugin on
 
 " Use system clipboard
 set clipboard+=unnamedplus
@@ -36,10 +37,11 @@ autocmd BufWritePre * %s/\s\+$//e
 nnoremap S :%s//gI<Left><Left><Left>
 
 " file explorer
-let g:netrw_winsize = 30
-let g:netrw_banner = 0
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_keepdir = 0
+let g:netrw_winsize=30
+let g:netrw_banner=0
+let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_keepdir=0
+let g:netrw_liststyle=3
 
 " keyboard mappings
 nnoremap gs i<CR><ESC>
@@ -73,3 +75,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+" Commands
+command! TagsH !hasktags -x .
+command! Tags !ctags -R .

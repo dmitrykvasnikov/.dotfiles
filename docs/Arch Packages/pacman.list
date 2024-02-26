@@ -93,6 +93,8 @@ vivaldi
 vlc
 
 # Haskel
+ctags # to enable tags in Vim
+hasktags # to enable tags in Vim
 ghc
 ghc-static
 stack
