@@ -2,6 +2,7 @@
 set nocompatible
 set number relativenumber
 set tabstop=2
+set shiftwidth=2
 set expandtab
 set linebreak
 set ignorecase
