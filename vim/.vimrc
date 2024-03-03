@@ -24,6 +24,7 @@ set wildmenu wildoptions+=pum
 set path+=**
 hi LineNr guibg=#333644
 filetype plugin on
+set encoding=UTF-8
 
 " Use system clipboard
 set clipboard+=unnamedplus
@@ -71,11 +72,27 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-" Plugins
-call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+
+" Vim-Buffet
+" let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+" let g:buffet_left_trunc_icon = "\uf0a8"
+" let g:buffet_right_trunc_icon = "\uf0a9"
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
+  hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
+endfunction
 
 " Commands
 command! TagsH !hasktags -x .
 command! Tags !ctags -R .
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'bagrat/vim-buffet'
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
