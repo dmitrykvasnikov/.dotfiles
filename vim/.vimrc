@@ -83,6 +83,7 @@ noremap <S-Tab> :bp<CR>
 
 function! g:BuffetSetCustomColors()
   hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
+  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#3c3836 guifg=#ffffff
   hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
 endfunction
 
