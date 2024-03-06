@@ -95,6 +95,9 @@ endfunction
 command! TagsH !hasktags -x .
 command! Tags !ctags -R .
 
+" macros
+let @f="A/**\<CR>**/\<ESC>kA"
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
