@@ -26,6 +26,10 @@ hi LineNr guibg=#333644
 filetype plugin on
 set encoding=UTF-8
 
+" Fold markers
+set foldmethod=marker
+set foldmarker=/\*\*,\*\*/
+
 " Use system clipboard
 set clipboard+=unnamedplus
 
