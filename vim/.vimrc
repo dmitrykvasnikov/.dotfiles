@@ -1,6 +1,7 @@
 " Common settings
 set nocompatible
 set number relativenumber
+set showcmd
 set tabstop=2
 set shiftwidth=2
 set expandtab
