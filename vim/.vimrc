@@ -63,6 +63,11 @@ cnoremap WQ wq
 cnoremap ce CocEnable
 cnoremap cd CocDisable
 
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Left> <C-W><C-H>
+nnoremap <C-Right> <C-W><C-L>
+
 " CoC
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 let g:coc_snippet_next = '<Tab>'
