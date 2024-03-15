@@ -19,6 +19,7 @@ set wildmode=longest,list,full
 set splitbelow splitright
 set autoindent
 set hlsearch
+set signcolumn=yes
 set title
 set noswapfile
 set wildmenu wildoptions+=pum
