@@ -103,9 +103,13 @@ nnoremap <C-Right> <C-W><C-L>
 
 " Splits resize
 nnoremap <A-Left> <C-W><
+nnoremap <C-H> <C-W><
 nnoremap <A-Right> <C-W>>
+nnoremap <C-L> <C-W>>
 nnoremap <A-Up> <C-W>+
+nnoremap <C-K> <C-W>+
 nnoremap <A-Down> <C-W>-
+nnoremap <C-J> <C-W>-
 nnoremap == <C-W>=
 
 " Indentation
