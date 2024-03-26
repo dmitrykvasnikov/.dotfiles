@@ -154,6 +154,7 @@ command! Tags !ctags -R .
 
 " macros
 let @f="A/**\<CR>**/\<ESC>kA"
+let @c="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
 
 " Plugins
 call plug#begin('~/.vim/plugged')

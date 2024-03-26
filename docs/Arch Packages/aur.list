@@ -1,5 +1,6 @@
 # system
 gksu
+pacman-static
 
 # gestures
 libinput-gestures
