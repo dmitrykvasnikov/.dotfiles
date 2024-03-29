@@ -1,6 +1,6 @@
 " Common settings
 
-let mapleader=","
+let mapleader=" "
 set nocompatible
 set number relativenumber
 set showcmd
@@ -92,7 +92,7 @@ inoremap jj <esc>
 cnoremap W w
 cnoremap WQ wq
 
-nnoremap <Leader><space> :nohlsearch<cr>
+nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
 
 " Splits switch
@@ -155,6 +155,8 @@ command! Tags !ctags -R .
 " macros
 let @f="A/**\<CR>**/\<ESC>kA"
 let @c="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
+let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
+
 
 " Plugins
 call plug#begin('~/.vim/plugged')
