@@ -28,6 +28,7 @@ set signcolumn=yes
 set title
 set noswapfile
 set autowriteall
+set so=999
 set wildmenu wildoptions+=pum
 set path+=**
 hi LineNr guibg=#333644
@@ -94,6 +95,9 @@ cnoremap WQ wq
 
 nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
+" Haskell remaps
+nnoremap <Leader>k I-- <ESC>
+nnoremap <Leader>l 0df <ESC>
 
 " Splits switch
 nnoremap <C-Up> <C-W><C-K>
