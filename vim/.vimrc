@@ -97,7 +97,7 @@ nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
 " Haskell remaps
 nnoremap <Leader>k I-- <ESC>
-nnoremap <Leader>l 0df <ESC>
+nnoremap <Leader>l ^df <ESC>
 
 " Splits switch
 nnoremap <C-Up> <C-W><C-K>
