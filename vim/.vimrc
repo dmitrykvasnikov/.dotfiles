@@ -122,6 +122,10 @@ nnoremap <S-Right> >>
 vnoremap <S-Left> <gv
 vnoremap <S-Right> >gv
 
+" Registres
+" clear default yank register
+nnoremap <Leader>d :let @"=""<cr>
+
 " CoC
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 let g:coc_snippet_next = '<Tab>'
@@ -157,8 +161,12 @@ command! TagsH !hasktags -x .
 command! Tags !ctags -R .
 
 " macros
-let @f="A/**\<CR>**/\<ESC>kA"
-let @c="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
+" -- create fold
+" -- let @f="A/**\<CR>**/\<ESC>kA"
+" -- move selected lines to fold / in haskell with comment signs
+let @f="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
+let @h="xi-- /**\<CR>-- **/\<CR>\<up>\<ESC>P\<up>A "
+" -- insert function :: undefined
 let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
 
 
