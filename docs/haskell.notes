@@ -160,14 +160,12 @@ DuplicateRecordFields
 RecordWildCards
 NoImplicitPrelude
 NamedFieldPuns
+NumericUnderscores (1_000_000)
 PatternSynonyms
 ViewPatterns
 ScopedTypeVariables (ex.: forall a b. ...)
 TypeApplications (ex.: @Maybe @_ @Int)
 GADTs (ex.: data Expr a where ...)
 LambdaCase
-<<<<<<< Updated upstream
 MultiwayIf
-=======
 InstanceSigs (allow type signatures in instance declaration)
->>>>>>> Stashed changes
