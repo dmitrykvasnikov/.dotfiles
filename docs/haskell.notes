@@ -123,6 +123,9 @@ Laws of Monad:
     (m >>= f) >>= g = m >>= (\x -> f x >>= g)
     in right part we need to apply f to an argument, so g in turn will have argument to bind
 
+Functor doesn't change data structure
+Applicative can change data structure but preserve computation order
+Monad can change computation order as well
 
 CATEGORIY THEORY
 A category is simple collection. It's set of 3 elements:
