@@ -166,7 +166,7 @@ NamedFieldPuns
 NumericUnderscores (1_000_000)
 PatternSynonyms
 ViewPatterns
-ScopedTypeVariables (ex.: forall a b. ...)
+ScopedTypeVariables (ex.: forall a b. ... - forall is necessary in global declaration to use type variables inside the declaration)
 TypeApplications (ex.: @Maybe @_ @Int)
 GADTs (ex.: data Expr a where ...)
 LambdaCase
