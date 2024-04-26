@@ -15,7 +15,7 @@ set hidden
 set mouse=a
 set termguicolors
 set cursorline
-colorscheme gruvbox
+colorscheme darcula
 set bg=dark
 syntax enable
 set complete=.,w,b,u
