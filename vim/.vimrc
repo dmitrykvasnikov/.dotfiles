@@ -15,7 +15,7 @@ set hidden
 set mouse=a
 set termguicolors
 set cursorline
-colorscheme darcula
+colorscheme gruvbox
 set bg=dark
 syntax enable
 set complete=.,w,b,u
@@ -32,7 +32,7 @@ set so=999
 set wildmenu wildoptions+=pum
 set path+=**
 hi LineNr guibg=#333644
-filetype plugin on
+filetype plugin indent on
 set encoding=UTF-8
 set backspace=indent,eol,start
 hi Normal guibg=#1d2021
@@ -178,4 +178,5 @@ Plug 'ryanoasis/vim-devicons'
 "Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'neovimhaskell/haskell-vim'
 call plug#end()
