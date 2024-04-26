@@ -179,4 +179,5 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'dracula/vim', { 'as' : 'dracula' }
 call plug#end()
