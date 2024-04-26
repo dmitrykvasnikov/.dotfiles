@@ -15,8 +15,9 @@ set hidden
 set mouse=a
 set termguicolors
 set cursorline
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+" set background="dark"
+colorscheme dracula
 syntax enable
 set complete=.,w,b,u
 set wildmode=longest,list,full
