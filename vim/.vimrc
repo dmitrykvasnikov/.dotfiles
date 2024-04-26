@@ -15,8 +15,8 @@ set hidden
 set mouse=a
 set termguicolors
 set cursorline
-colorscheme gruvbox
-set bg=dark
+let ayucolor="dark"
+colorscheme ayu
 syntax enable
 set complete=.,w,b,u
 set wildmode=longest,list,full
