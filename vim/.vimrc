@@ -1,5 +1,21 @@
-" Common settings
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'bagrat/vim-buffet'
+Plug 'ryanoasis/vim-devicons'
+"Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'dracula/vim', { 'as' : 'dracula' }
+call plug#end()
 
+if v:version < 802
+    packadd! dracula
+endif
+
+" Common settings
+"
 let mapleader=" "
 set nocompatible
 set number relativenumber
@@ -41,6 +57,7 @@ hi CursorLine guibg=#333644
 hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
 hi vertsplit guibg=#3c3836 guifg=#3c3836
+
 
 " Auto-Commands
 augroup autosourcing
@@ -171,14 +188,3 @@ let @h="xi-- /**\<CR>-- **/\<CR>\<up>\<ESC>P\<up>A "
 let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
 
 
-" Plugins
-call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'bagrat/vim-buffet'
-Plug 'ryanoasis/vim-devicons'
-"Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'dracula/vim', { 'as' : 'dracula' }
-call plug#end()
