@@ -14,8 +14,9 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-prompt_color='\[\033[;1;32m\]'
-info_color='\[\033[1;34m\]'
+prompt_color='\[\033[;1;36m\]'
+info_color='\[\033[1;33m\]'
+info_color_branch='\[\033[1;36m\]'
 prompt_symbol=' 󰣇  '
 
 alias ls='ls --color=auto'
