@@ -18,7 +18,7 @@ configuration {
   fg: #fbf1c7; /* light0 */
   fg-prompt: #f8f8f2; /* dark0 */
   fg-selected: #f8f8f2; /* dark0 */
-	fg-highlight: #f85555; /* yellow */
+	fg-highlight: #50fa7b; /* yellow */
 
 	brd: #6272a4; /* border color, n_blue */
 
