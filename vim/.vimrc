@@ -169,9 +169,9 @@ noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
 
 function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
-  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#3c3836 guifg=#ffffff
-  hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#458588 guifg=#ffffff
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
+  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#44475a guifg=#f8f8f2
+  hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
 endfunction
 
 " Commands

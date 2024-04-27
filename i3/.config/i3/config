@@ -65,10 +65,19 @@ set $f_aqua     #427b58
 set $f_orange   #af3a03
 
 # class                 border  		backgr. 		text    		indicator 	child_border
-client.focused          $n_blue			$n_blue 		$light0_h 	$green			$n_blue
-client.focused_inactive $dark1			$dark1			$yellow	  	$n_aqua			$light4
-client.unfocused        $gray_245		$light4_245	$light1			$n_aqua			$light4
-client.urgent           $n_red			$n_red			$n_blue			$n_aqua			$light4
+#client.focused          $n_blue			$n_blue 		$light0_h 	$green			$n_blue
+#client.focused_inactive $dark1			$dark1			$yellow	  	$n_aqua			$light4
+#client.unfocused        $gray_245		$light4_245	$light1			$n_aqua			$light4
+#client.urgent           $n_red			$n_red			$n_blue			$n_aqua			$light4
+
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 # Setting input devices
 #!! Touchpad for non-MacBook laptop - from custom.config

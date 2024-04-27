@@ -1,0 +1,24 @@
+; Color Scheme: Dracula
+; dark1
+bg = #282f36
+; light0
+fg = #f8f8f2
+; aqua
+icon = #bfbfbf
+; n_blue
+bg-ws = #282a36
+; light0
+bg-ws-und = #6272a4
+; dark1
+bg-ws-alt = #44475a
+; red
+fg-alert = #f85555
+; gray_245
+fg-disabled = #282a36
+; light0_h
+fg-title = #f8f8f2
+; green
+fg-btfull = #b8bb26
+; orange
+sep = #6272a4
+
