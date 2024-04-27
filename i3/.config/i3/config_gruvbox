@@ -17,6 +17,58 @@ tiling_drag modifier titlebar
 focus_wrapping force
 
 # Colors
+# set primary gruvbox colorscheme colors (based on Vim gruvbox)
+
+set $dark0_d 		 #1d2021
+set $dark0       #282828
+set $dark0_s 		 #32302f
+set $dark1       #3c3836
+set $dark2       #504945
+set $dark3       #665c54
+set $dark4       #7c6f64
+set $dark4_256   #7c6f64
+
+set $gray_245    #928374
+set $gray_244    #928374
+
+set $light0_h		 #f9f5d7
+set $light0      #fbf1c7
+set $light0_s		 #f2e5bc
+set $light1    	 #ebdbb2
+set $light2      #d5c4a1
+set $light3      #bdae93
+set $light4      #a89984
+set $light4_256  #a89984
+
+set $red     #fb4934
+set $green   #b8bb26
+set $yellow  #fabd2f
+set $blue    #83a598
+set $purple  #d3869b
+set $aqua    #8ec07c
+set $orange  #fe8019
+
+set $n_red    #cc241d
+set $n_green  #98971a
+set $n_yellow #d79921
+set $n_blue   #458588
+set $n_purple #b16286
+set $n_aqua   #689d6a
+set $n_orange #d65d0e
+
+set $f_red      #9d0006
+set $f_green    #79740e
+set $f_yellow   #b57614
+set $f_blue     #076678
+set $f_purple   #8f3f71
+set $f_aqua     #427b58
+set $f_orange   #af3a03
+
+# class                 border  		backgr. 		text    		indicator 	child_border
+#client.focused          $n_blue			$n_blue 		$light0_h 	$green			$n_blue
+#client.focused_inactive $dark1			$dark1			$yellow	  	$n_aqua			$light4
+#client.unfocused        $gray_245		$light4_245	$light1			$n_aqua			$light4
+#client.urgent           $n_red			$n_red			$n_blue			$n_aqua			$light4
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
