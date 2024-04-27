@@ -252,8 +252,8 @@ for_window [class="mpv"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 8
-for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 8
+for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
+for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
 bindsym $mod+p [class="Alacritty" title="cmus"] scratchpad show, move position center
 bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
