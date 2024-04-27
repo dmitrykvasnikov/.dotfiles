@@ -1,4 +1,4 @@
-import = ["/home/dmitry/.config/alacritty/themes/gruvbox.toml"]
+import = ["/home/dmitry/.config/alacritty/themes/dracula.toml"]
 
 [font]
 size = 10.0
