@@ -6,7 +6,7 @@ set $scratchpad_defW 1200
 set $scratchpad_defH 800
 
 # Font for window titles.
-font pango:Fira Code Medium 11
+font pango:JetBrains Mono 10
 default_border pixel 2
 default_floating_border pixel 2
 
