@@ -172,3 +172,9 @@ GADTs (ex.: data Expr a where ...)
 LambdaCase
 MultiwayIf
 InstanceSigs (allow type signatures in instance declaration)
+
+Object (type) properties are defined by arrows -> those things which you can do with this proprety
+Incoming arrows - introduction / constructors
+Outgoing arrows - eliminations
+
+Monoindal Category has both Sum and Product types
