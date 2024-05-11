@@ -2,6 +2,8 @@ Lambda terms could be of 3 kinds: expressions, variables and abstraction. Expres
 
 'where' clause can't see anything from 'let' clause, but 'let' can see and use objects from 'where' clause
 
+Type class is a function from a type to a set of lawful operations on values of that type
+
 In Haskell there are six categories of entities that have names:
   - term-level
     * variables
