@@ -162,6 +162,7 @@ OverloadedStrings
 OverloadedRecordDot
 NoFieldSelectors
 DuplicateRecordFields
+ApplicativeDo
 RecordWildCards
 NoImplicitPrelude
 NamedFieldPuns
