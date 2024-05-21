@@ -56,7 +56,7 @@ bindsym XF86KbdBrightnessUp exec "brightnessctl --device='smc::kbd_backlight' se
 bindsym XF86KbdBrightnessDown exec "brightnessctl --device='smc::kbd_backlight' set 10%-"
 
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 bindsym $mod+shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
 bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons -sort"
