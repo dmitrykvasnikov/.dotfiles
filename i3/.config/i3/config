@@ -201,10 +201,10 @@ for_window [class="mpv"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="Alacritty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
-for_window [class="Alacritty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
-bindsym $mod+p [class="Alacritty" title="cmus"] scratchpad show, move position center
-bindsym $mod+t [class="Alacritty" title="terminal"] scratchpad show, move position center
+for_window [class="kitty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
+for_window [class="kitty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
+bindsym $mod+p [class="kitty" title="cmus"] scratchpad show, move position center
+bindsym $mod+t [class="kitty" title="terminal"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
@@ -213,8 +213,8 @@ bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
-bindsym $mod+Control+p exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
-bindsym $mod+Control+t exec --no-startup-id alacritty --title terminal
+bindsym $mod+Control+p exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && kitty --title cmus -e cmus && cd -
+bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -226,8 +226,8 @@ exec --no-startup-id dropbox start
 exec --no-startup-id albert
 
 # Scratchpads
-exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && alacritty --title cmus -e cmus && cd -
-exec --no-startup-id alacritty --title terminal
+exec --no-startup-id [ -f /sbin/cmus ] && cd ~/Music && kitty --title cmus -e cmus && cd -
+exec --no-startup-id kitty --title terminal
 
 # Include customs settings
 include ~/.config/i3/custom*.config
