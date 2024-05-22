@@ -82,6 +82,7 @@ alias ic="vim ~/.config/i3/custom.config"
 alias p="vim ~/.config/polybar/config.ini"
 alias pc="vim ~/.config/polybar/custom.config.ini"
 alias r="vim ~/.config/rofi/config.rasi"
+alias k="vim ~/.config/kitty/kitty.conf"
 alias x=startx
 
 #dotman / .dotfiles repo
