@@ -186,6 +186,7 @@ mode "web" {
   bindsym f exec "firefox", mode "default"
   bindsym v exec "vivaldi-stable", mode "default"
   bindsym c exec "chromium", mode "default"
+  bindsym b exec "brave", mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+i mode "default"
