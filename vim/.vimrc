@@ -68,6 +68,11 @@ augroup END
 " Color for non-active splits
 hi DimNormal guibg=#282828
 
+" Color for COC error / warning messages
+hi! CocErrorSign guifg=#ffb86c
+hi! CocInfoSign guibg=#353b45
+hi! CocWarningSign guifg=#d1cd66
+
 augroup ActiveWin | au!
     au WinEnter * setl wincolor=
     au WinLeave * setl wincolor=DimNormal
