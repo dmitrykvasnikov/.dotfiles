@@ -8,6 +8,8 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'dracula/vim', { 'as' : 'dracula' }
+Plug 'sdiehl/vim-ormolu'
+
 call plug#end()
 
 if v:version < 802
@@ -64,6 +66,10 @@ augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
 augroup END
+
+" Ormolu - formatter for Haskell
+autocmd BufWritePre *.hs :call RunOrmolu()
+let g:ormolu_options=["--no-cabal"]
 
 " Color for non-active splits
 hi DimNormal guibg=#282828
