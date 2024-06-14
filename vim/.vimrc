@@ -124,6 +124,8 @@ cnoremap WQ wq
 
 nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
+nnoremap <Leader>o :call RunOrmolu()<cr>
+
 " Haskell remaps
 nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
