@@ -66,6 +66,7 @@ python-i3ipc
 ranger
 rofi
 ueberzug # image preview for rangerh
+xcompmgr # compositor
 
 # Fonts
 ttf-fira-code
