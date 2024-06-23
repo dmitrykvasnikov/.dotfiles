@@ -106,7 +106,7 @@ alias psg="ps -aux | grep"
 alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 
 # cmus
-alias cmus="[ -f /sbin/cmus ] && cd ~/Music && cmus && cd - > null"
+alias cmus="[ -f /usr/local/bin/cmus ] && cd ~/Music && cmus && cd - > null"
 
 # haskell
 alias cr="cabal repl"
