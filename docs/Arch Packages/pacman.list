@@ -67,6 +67,7 @@ ranger
 rofi
 ueberzug # image preview for rangerh
 xcompmgr # compositor
+xplr # tui file explorer
 
 # Fonts
 ttf-fira-code
