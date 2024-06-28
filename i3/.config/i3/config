@@ -41,17 +41,17 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # bindsym XF86AudioPrev exec --no-startup-id sayonara-ctl previous
 # bindsym XF86AudioNext exec --no-startup-id sayonara-ctl next
 # bindsym XF86AudioPlay exec --no-startup-id sayonara-ctl play-pause
-bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
+bindsym XF86AudioPrev exec --no-startup-id /usr/bin/cmus-remote -r
 #bindsym XF86AudioPrev exec --no-startup-id mocp -r
-bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
+bindsym XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote -n
 #bindsym XF86AudioNext exec --no-startup-id mocp -f
-bindsym $mod+XF86AudioPrev exec --no-startup-id cmus-remote --seek -20
+bindsym $mod+XF86AudioPrev exec --no-startup-id /usr/bin/cmus-remote --seek -20
 #bindsym $mod+XF86AudioPrev exec --no-startup-id mocp --seek -20
-bindsym $mod+XF86AudioNext exec --no-startup-id cmus-remote --seek +20
+bindsym $mod+XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote --seek +20
 #bindsym $mod+XF86AudioNext exec --no-startup-id mocp --seek +20
-bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
+bindsym XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -u
 #bindsym XF86AudioPlay exec --no-startup-id mocp -G
-bindsym $mod+XF86AudioPlay exec --no-startup-id cmus-remote -p
+bindsym $mod+XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -p
 # bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
 
 # Brightness control
@@ -221,7 +221,7 @@ bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
-bindsym $mod+Control+p exec --no-startup-id [ -f /usr/local/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/local/bin/cmus && cd -
+bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -
 #bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
 
@@ -236,7 +236,7 @@ exec --no-startup-id albert
 exec --no-startup-id xcompmgr
 
 # Scratchpads
-exec --no-startup-id [ -f /usr/local/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/local/bin/cmus && cd -
+exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -
 #exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 exec --no-startup-id kitty --title terminal
 

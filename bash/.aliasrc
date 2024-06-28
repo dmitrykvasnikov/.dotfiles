@@ -1,6 +1,7 @@
 #script with my aliases
 alias c="clear"
 alias cl="clear && printf '\e[3J'" # real clear the terminal output history
+alias df4="df -h -t ext4"
 alias ff="fastfetch"
 alias ls="ls --color=auto"
 alias l="ls -la --color=auto"
@@ -106,7 +107,7 @@ alias psg="ps -aux | grep"
 alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
 
 # cmus
-alias cmus="[ -f /usr/local/bin/cmus ] && cd ~/Music && cmus && cd - > null"
+alias cmus="[ -f /sbin/cmus ] && cd ~/Music && /sbin/cmus && cd - > null"
 
 # haskell
 alias cr="cabal repl"
