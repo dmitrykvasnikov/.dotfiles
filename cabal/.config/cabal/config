@@ -150,7 +150,7 @@ init
   -- extra-doc-file:
   tests: False
   -- test-dir:
-  language: GHC2021
+  language: GHC2024
   application-dir: app
   source-dir: lib
 
