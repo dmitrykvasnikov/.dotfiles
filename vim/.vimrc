@@ -70,6 +70,7 @@ augroup END
 " Ormolu - formatter for Haskell
 autocmd BufWritePre *.hs :call RunOrmolu()
 let g:ormolu_options=["--no-cabal"]
+let g:ormolu_suppress_stderr=1
 
 " Color for non-active splits
 hi DimNormal guibg=#282828
