@@ -114,9 +114,9 @@ alias cr="cabal repl"
 alias cb="cabal build"
 alias ci="cabal install"
 alias cbr="cabal build && cabal run"
-alias gh="ghcid"
 alias cbi="cabal build && cabal install --overwrite-policy=always"
 alias h="cd ~/code/haskell"
+alias gh="./gh.sh"
 
 # misc
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
