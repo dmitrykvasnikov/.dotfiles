@@ -35,6 +35,10 @@ mkcd(){
   pwd
 }
 
+lsmusic() {
+  tree -d | grep -vE "[aA]rtwork|[sS]can|CD[0-9]|CD [0-9]|[Dd]isk|[Dd]isc" > "$1"
+}
+
 # Source nvm
 source /usr/share/nvm/init-nvm.sh
 
