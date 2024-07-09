@@ -9,6 +9,7 @@ btop
 cups
 curl
 dosfstools
+dust # du replacement in Rust
 fastfetch
 font-manager
 fuse2fs

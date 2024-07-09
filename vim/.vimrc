@@ -9,6 +9,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'sdiehl/vim-ormolu'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -22,6 +25,8 @@ let mapleader=" "
 set nocompatible
 set number relativenumber
 set showcmd
+set showmatch
+set matchtime=2
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -203,4 +208,8 @@ let @h="xi-- /**\<CR>-- **/\<CR>\<up>\<ESC>P\<up>A "
 " -- insert function :: undefined
 let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
 
-
+" To use with vim-airlinie
+set noshowmode
+" set eventignore=CursorHold,CursorMoved,CursorMovedC,CursorMovedI
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
