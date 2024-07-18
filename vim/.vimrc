@@ -1,7 +1,8 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'bagrat/vim-buffet'
+Plug 'mg979/coc.nvim', {'branch': 'release'}
+"Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
@@ -20,7 +21,6 @@ if v:version < 802
 endif
 
 " Common settings
-"
 let mapleader=" "
 set nocompatible
 set number relativenumber
@@ -44,7 +44,7 @@ colorscheme dracula
 syntax enable
 set complete=.,w,b,u
 set wildmode=longest,list,full
-set splitbelow splitright
+set splitright
 set autoindent
 set hlsearch
 set incsearch
@@ -55,6 +55,7 @@ set autowriteall
 set so=999
 set wildmenu wildoptions+=pum
 set path+=**
+set suffixesadd+=.hs
 hi LineNr guibg=#333644
 filetype plugin indent on
 set encoding=UTF-8
@@ -65,11 +66,15 @@ hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
 hi vertsplit guibg=#3c3836 guifg=#3c3836
 
-
 " Auto-Commands
 augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
+augroup END
+
+augroup vimrc-help-window
+  autocmd!
+  autocmd BufWinEnter * if &l:buftype ==# "help" | wincmd _ | endif
 augroup END
 
 " Ormolu - formatter for Haskell
@@ -106,7 +111,6 @@ autocmd InsertEnter * norm zz
 " Removing trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
-
 " Alias replace all to S
 nnoremap S :%s//gI<Left><Left><Left>
 
@@ -134,6 +138,14 @@ nnoremap <Leader>o :call RunOrmolu()<cr>
 
 nnoremap <Bs> ciw
 
+nnoremap <tab> gt
+nnoremap <S-tab> gT
+nnoremap <C-t> :tabnew<cr>
+
+nnoremap <f5> :!ctags -R<cr>
+" nnoremap <C-w> :tabclose<cr>
+cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
+
 " Haskell remaps
 nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
@@ -154,6 +166,12 @@ nnoremap <C-K> <C-W>+
 nnoremap <A-Down> <C-W>-
 nnoremap <C-J> <C-W>-
 nnoremap == <C-W>=
+
+" Buffers
+nnoremap <silent> [b :bprevious<cr>
+nnoremap <silent> ]b :bnext<cr>
+nnoremap <silent> [B :bfirst<cr>
+nnoremap <silent> ]B :blast<cr>
 
 " Indentation
 nnoremap <S-Left> <<
@@ -183,17 +201,17 @@ inoremap <silent><expr> <Tab>
 
 " Vim-Buffet
 " let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
+" let g:buffet_tab_icon = "\uf00a"
 " let g:buffet_left_trunc_icon = "\uf0a8"
 " let g:buffet_right_trunc_icon = "\uf0a9"
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
+" noremap <Tab> :bn<CR>
+" noremap <S-Tab> :bp<CR>
 
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
-  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#44475a guifg=#f8f8f2
-  hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
-endfunction
+"function! g:BuffetSetCustomColors()
+"  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
+"  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#44475a guifg=#f8f8f2
+"  hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#6272a4 guifg=#f8f8f2
+"endfunction
 
 " Commands
 command! TagsH !hasktags -x .
@@ -204,7 +222,7 @@ command! Tags !ctags -R .
 " -- let @f="A/**\<CR>**/\<ESC>kA"
 " -- move selected lines to fold / in haskell with comment signs
 let @f="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
-let @h="xi-- /**\<CR>-- **/\<CR>\<up>\<ESC>P\<up>A "
+let @h="xi-- /**\<CR>**/\<CR>\<BS>\<BS>\<BS>\<up>\<ESC>P\<up>A "
 " -- insert function :: undefined
 let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
 
