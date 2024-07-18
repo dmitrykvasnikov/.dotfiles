@@ -1,11 +1,17 @@
 Vim Commands
 
+Vim action composed from operator followed  by a motion
+
 ## EDIT COMMANDS ##
 e! - reload last saved version of a file
 0 - go to the beginning of line
 ~ - toggle case
 s - substitution (delete symbol and go into "INSERT" mode)
 J - join 2 lines (current and next, 1J = 2J)
+C - delete till the end of the line (including current char)
+<C-a> / <C-x> - inc / dec number
+<C-r>0 - insert last yank (0 register) in insert mode
+<C-r> = - !withour space! expression register
 
 ## MOVE COMMANDS ##
 ^B - back on one screen
@@ -20,9 +26,45 @@ H, M, L - move on fisrt symbol of first, midlle, last line on tthe
 mx - bookmark to x-register
 `x - return to bookmark position
 'x - return to the beginning of line with bookmark
+<C-o> - move to previous position in jump list
+Arrow keys in INSERT mode triggers new undo chank
+g[0^$] - move to the first/non-blank/last character of display line (or real line - if without g)
+% - jump to matching parentheses
+() / {} - jump between sentences / paragraphs
+<C-]> - jump to a keyword definition
+g; - jump to last edit
 
 ## SEARCH COMMANDS ##
 fx - search ans stops ON symbol x (Fx - in opposite direction)
 tx - search and stops BEFORE symbol x (Tx - in opposite direction)
 ; - repeat previous command in the same direction
 , - repeat previous command in the opposite direction
+* - search word under cursor
+/\v<word> - search exact word (exclude it presence in other words)
+P.S.
+Search command is an exclusive motion
+//e<CR> - motion to act on entire search match
+
+## SELECTION ##
+gv - repeat last visual selection
+o - go to another end of selected text
+dot repetition could work not as expected in visual mode
+
+## COPY / MOVE ##
+:t. - copy current line (~ yyp), but without use of default register (so it keeped wihout change)
+
+## TEXT TRANSFORMATION ##
+g[Uu~]{motion} - to uppercase / lowercase / switch case
+
+## OTHER USEFULL COMMANDS ##
+K - man page for current word
+<C-r><C-w> - insert current word into command line
+q: - command line history
+:w !{cmd} / :r !{cmd} - send buffer as input for cmd or read output from cmd to current buffer
+<C-w>T - move current window to a new tab
+:e %:h<Tab> - expand path to file in current window
+
+## MARKs ##
+m{a-zA-Z} - set mark (a-z - local for each buffer, A-Z - global)
+`{mark} - move cursor to exact position when mark was set
+'{mark} - move cursor to a first non-whitespace character of a line where mark was set
