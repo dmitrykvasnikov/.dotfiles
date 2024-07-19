@@ -69,7 +69,7 @@ hi vertsplit guibg=#3c3836 guifg=#3c3836
 " Tabline colors settins
 hi TabLineFill guifg=#6272a4 guibg=#6272a4
 hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
-hi TabLine guifg=#b8b8b8 guibg=#282a36
+" hi TabLine guifg=#b8b8b8 guibg=#282a36
 
 " Auto-Commands
 augroup autosourcing
