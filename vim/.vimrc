@@ -66,11 +66,6 @@ hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
 hi vertsplit guibg=#3c3836 guifg=#3c3836
 
-" Tabline colors settins
-hi TabLineFill guifg=#6272a4 guibg=#6272a4
-hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
-" hi TabLine guifg=#b8b8b8 guibg=#282a36
-
 " Auto-Commands
 augroup autosourcing
   autocmd!
@@ -203,7 +198,6 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-
 " Vim-Buffet
 " let g:buffet_powerline_separators = 1
 " let g:buffet_tab_icon = "\uf00a"
@@ -236,3 +230,37 @@ set noshowmode
 " set eventignore=CursorHold,CursorMoved,CursorMovedC,CursorMovedI
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
+
+" Tabline settings
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  if (exists("g:tablineclosebutton"))
+    let s .= '%=%999XX'
+  endif
+  return s
+endfunction
+set tabline=%!Tabline()
+
+hi TabLineFill guifg=#6272a4 guibg=#6272a4
+hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
+hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
+
