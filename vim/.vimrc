@@ -1,7 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mg979/vim-visual-multi', {'branch': 'release'}
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tpope/vim-vinegar'
@@ -245,11 +245,14 @@ function! Tabline()
     let s .= '%' . tab . 'T'
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tab .':'
-    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
 
     if bufmodified
-      let s .= '[+] '
+      let s .= '+'
+    else
+      let s .= ' '
     endif
+
   endfor
 
   let s .= '%#TabLineFill#'
