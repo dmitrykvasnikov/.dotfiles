@@ -1,7 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mg979/coc.nvim', {'branch': 'release'}
+Plug 'mg979/vim-visual-multi', {'branch': 'release'}
 "Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tpope/vim-vinegar'
