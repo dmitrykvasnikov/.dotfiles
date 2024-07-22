@@ -140,8 +140,10 @@ nnoremap <Leader>o :call RunOrmolu()<cr>
 
 nnoremap <Bs> ciw
 
-nnoremap <tab> gt
-nnoremap <S-tab> gT
+"nnoremap <tab> gt
+nnoremap <tab> :bn<cr>
+"nnoremap <S-tab> gT
+nnoremap <S-tab> :bp<cr>
 nnoremap <C-t> :tabnew<cr>
 
 nnoremap <f5> :!ctags -R<cr>
@@ -153,10 +155,10 @@ nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
 
 " Splits switch
-nnoremap <C-Up> <C-W><C-K>
-nnoremap <C-Down> <C-W><C-J>
-nnoremap <C-Left> <C-W><C-H>
-nnoremap <C-Right> <C-W><C-L>
+nnoremap <S-Up> <C-W><C-K>
+nnoremap <S-Down> <C-W><C-J>
+nnoremap <S-Left> <C-W><C-H>
+nnoremap <S-Right> <C-W><C-L>
 
 " Splits resize
 nnoremap <A-Left> <C-W><
@@ -232,6 +234,11 @@ set noshowmode
 " set eventignore=CursorHold,CursorMoved,CursorMovedC,CursorMovedI
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 " Tabline settings
 function! Tabline()
@@ -268,4 +275,3 @@ set tabline=%!Tabline()
 hi TabLineFill guifg=#6272a4 guibg=#6272a4
 hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
 hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
-
