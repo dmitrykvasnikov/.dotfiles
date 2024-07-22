@@ -148,19 +148,23 @@ nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
 
 " Splits switch
-nnoremap <C-A-Up> <C-W><C-K>
-nnoremap <C-A-Down> <C-W><C-J>
-nnoremap <C-A-Left> <C-W><C-H>
-nnoremap <C-A-Right> <C-W><C-L>
+nnoremap <A-Up> <C-W><C-K>
+nnoremap <A-Down> <C-W><C-J>
+nnoremap <A-Left> <C-W><C-H>
+nnoremap <A-Right> <C-W><C-L>
+nnoremap <A-k> <C-W><C-K>
+nnoremap <A-j> <C-W><C-J>
+nnoremap <A-h> <C-W><C-H>
+nnoremap <A-l> <C-W><C-L>
 
 " Splits resize
-nnoremap <A-Left> <C-W><
+nnoremap <C-A-Left> <C-W><
 nnoremap <C-H> <C-W><
-nnoremap <A-Right> <C-W>>
+nnoremap <C-A-Right> <C-W>>
 nnoremap <C-L> <C-W>>
-nnoremap <A-Up> <C-W>+
+nnoremap <C-A-Up> <C-W>+
 nnoremap <C-K> <C-W>+
-nnoremap <A-Down> <C-W>-
+nnoremap <C-A-Down> <C-W>-
 nnoremap <C-J> <C-W>-
 nnoremap == <C-W>=
 
