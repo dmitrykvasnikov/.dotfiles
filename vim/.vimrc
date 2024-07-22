@@ -243,6 +243,12 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+augroup HITABFILL
+    autocmd!
+    autocmd User AirlineAfterInit hi airline_tabfill guibg=#282a36
+    autocmd User AirlineAfterInit hi airline_tabsel guibg=#6272a4 guifg=#f8f8f2
+    autocmd User AirlineAfterInit hi airline_tabhid guibg=#282a36 guifg=#b8b8b8
+augroup END
 
 " Tabline settings
 "function! Tabline()
@@ -279,3 +285,4 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " hi TabLineFill guifg=#6272a4 guibg=#6272a4
 " hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
 " hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
+
