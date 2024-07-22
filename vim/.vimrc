@@ -1,19 +1,18 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-"Plug 'bagrat/vim-buffet'
-Plug 'ryanoasis/vim-devicons'
-"Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'sdiehl/vim-ormolu'
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'scrooloose/nerdtree'
+Plug 'dracula/vim', { 'as' : 'dracula' }
+"Plug 'bagrat/vim-buffet'
+"Plug 'tpope/vim-vinegar'
+"Plug 'tpope/vim-surround'
 call plug#end()
 
 if v:version < 802
@@ -66,31 +65,24 @@ hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
 hi vertsplit guibg=#3c3836 guifg=#3c3836
 
+" Color for non-active splits
+hi DimNormal guibg=#282828
+
 " Auto-Commands
 augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
 augroup END
 
-augroup vimrc-help-window
-  autocmd!
-  autocmd BufWinEnter * if &l:buftype ==# "help" | wincmd _ | endif
-augroup END
+"augroup vimrc-help-window
+  "autocmd!
+  "autocmd BufWinEnter * if &l:buftype ==# "help" | wincmd _ | endif
+"augroup END
 
 " Ormolu - formatter for Haskell
 autocmd BufWritePre *.hs :call RunOrmolu()
 let g:ormolu_options=["--no-cabal"]
 let g:ormolu_suppress_stderr=1
-
-" Color for non-active splits
-hi DimNormal guibg=#282828
-
-" Color for COC error / warning messages
-hi! CocErrorSign guifg=#ffb86c
-hi! CocErrorFloat guifg=#ffb86c guibg=#d1cd66
-hi! CocErrorHighlight guifg=#339933
-hi! CocInfoSign guibg=#353b45
-hi! CocWarningSign guifg=#d1cd66
 
 augroup ActiveWin | au!
     au WinEnter * setl wincolor=
@@ -151,14 +143,15 @@ nnoremap <f5> :!ctags -R<cr>
 cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
 
 " Haskell remaps
+" add / remove -- comments in the begining of the line
 nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
 
 " Splits switch
-nnoremap <S-Up> <C-W><C-K>
-nnoremap <S-Down> <C-W><C-J>
-nnoremap <S-Left> <C-W><C-H>
-nnoremap <S-Right> <C-W><C-L>
+nnoremap <C-A-Up> <C-W><C-K>
+nnoremap <C-A-Down> <C-W><C-J>
+nnoremap <C-A-Left> <C-W><C-H>
+nnoremap <C-A-Right> <C-W><C-L>
 
 " Splits resize
 nnoremap <A-Left> <C-W><
@@ -202,6 +195,13 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
+" Color for COC error / warning messages
+hi! CocErrorSign guifg=#ffb86c
+hi! CocErrorFloat guifg=#ffb86c guibg=#d1cd66
+hi! CocErrorHighlight guifg=#339933
+hi! CocInfoSign guibg=#353b45
+hi! CocWarningSign guifg=#d1cd66
+
 " Vim-Buffet
 " let g:buffet_powerline_separators = 1
 " let g:buffet_tab_icon = "\uf00a"
@@ -241,37 +241,37 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " Tabline settings
-function! Tabline()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    let tab = i + 1
-    let winnr = tabpagewinnr(tab)
-    let buflist = tabpagebuflist(tab)
-    let bufnr = buflist[winnr - 1]
-    let bufname = bufname(bufnr)
-    let bufmodified = getbufvar(bufnr, "&mod")
+"function! Tabline()
+  "let s = ''
+  "for i in range(tabpagenr('$'))
+    "let tab = i + 1
+    "let winnr = tabpagewinnr(tab)
+    "let buflist = tabpagebuflist(tab)
+    "let bufnr = buflist[winnr - 1]
+    "let bufname = bufname(bufnr)
+    "let bufmodified = getbufvar(bufnr, "&mod")
+"
+    "let s .= '%' . tab . 'T'
+    "let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    "let s .= ' ' . tab .':'
+    "let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
+"
+    "if bufmodified
+      "let s .= '+'
+    "else
+      "let s .= ' '
+    "endif
+"
+  "endfor
+"
+  "let s .= '%#TabLineFill#'
+"  if (exists("g:tablineclosebutton"))
+"    let s .= '%=%999XX'
+"  endif
+  "return s
+"endfunction
+"set tabline=%!Tabline()
 
-    let s .= '%' . tab . 'T'
-    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let s .= ' ' . tab .':'
-    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . ']' : '[No Name]')
-
-    if bufmodified
-      let s .= '+'
-    else
-      let s .= ' '
-    endif
-
-  endfor
-
-  let s .= '%#TabLineFill#'
-  if (exists("g:tablineclosebutton"))
-    let s .= '%=%999XX'
-  endif
-  return s
-endfunction
-set tabline=%!Tabline()
-
-hi TabLineFill guifg=#6272a4 guibg=#6272a4
-hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
-hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
+" hi TabLineFill guifg=#6272a4 guibg=#6272a4
+" hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
+" hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
