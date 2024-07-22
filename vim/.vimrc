@@ -87,6 +87,8 @@ hi DimNormal guibg=#282828
 
 " Color for COC error / warning messages
 hi! CocErrorSign guifg=#ffb86c
+hi! CocErrorFloat guifg=#ffb86c guibg=#d1cd66
+hi! CocErrorHighlight guifg=#339933
 hi! CocInfoSign guibg=#353b45
 hi! CocWarningSign guifg=#d1cd66
 
