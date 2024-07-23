@@ -133,10 +133,11 @@ nnoremap <Leader>o :call RunOrmolu()<cr>
 nnoremap <Bs> ciw
 
 "nnoremap <tab> gt
-nnoremap <tab> :bn<cr>
+"nnoremap <tab> :bn<cr>
 "nnoremap <S-tab> gT
 nnoremap <S-tab> :bp<cr>
-nnoremap <C-t> :tabnew<cr>
+nnoremap <A-tab> :bn<cr>
+"nnoremap <C-t> :tabnew<cr>
 
 nnoremap <f5> :!ctags -R<cr>
 " nnoremap <C-w> :tabclose<cr>
@@ -153,23 +154,15 @@ nnoremap <Leader>t :enew<cr>
 
 
 " Splits switch
-nnoremap <A-Up> <C-W><C-K>
-nnoremap <A-Down> <C-W><C-J>
-nnoremap <A-Left> <C-W><C-H>
-nnoremap <A-Right> <C-W><C-L>
-nnoremap <A-k> <C-W><C-K>
-nnoremap <A-j> <C-W><C-J>
-nnoremap <A-h> <C-W><C-H>
-nnoremap <A-l> <C-W><C-L>
+nnoremap <S-K> <C-W><C-K>
+nnoremap <S-J> <C-W><C-J>
+nnoremap <S-H> <C-W><C-H>
+nnoremap <S-L> <C-W><C-L>
 
 " Splits resize
-nnoremap <C-A-Left> <C-W><
 nnoremap <C-H> <C-W><
-nnoremap <C-A-Right> <C-W>>
 nnoremap <C-L> <C-W>>
-nnoremap <C-A-Up> <C-W>+
 nnoremap <C-K> <C-W>+
-nnoremap <C-A-Down> <C-W>-
 nnoremap <C-J> <C-W>-
 nnoremap == <C-W>=
 
@@ -180,10 +173,10 @@ nnoremap <silent> [B :bfirst<cr>
 nnoremap <silent> ]B :blast<cr>
 
 " Indentation
-nnoremap <S-Left> <<
-nnoremap <S-Right> >>
-vnoremap <S-Left> <gv
-vnoremap <S-Right> >gv
+nnoremap <C-Left> <<
+nnoremap <C-Right> >>
+vnoremap <C-Left> <gv
+vnoremap <C-Right> >gv
 
 " Registres
 " clear default yank register
