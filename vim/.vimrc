@@ -147,6 +147,11 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
 nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
 
+" close / create buffers
+nnoremap <Leader>w :bd<cr>
+nnoremap <Leader>t :enew<cr>
+
+
 " Splits switch
 nnoremap <A-Up> <C-W><C-K>
 nnoremap <A-Down> <C-W><C-J>
@@ -201,10 +206,10 @@ inoremap <silent><expr> <Tab>
 
 " Color for COC error / warning messages
 hi! CocErrorSign guifg=#ffb86c
-hi! CocErrorFloat guifg=#ffb86c guibg=#d1cd66
+hi! CocErrorFloat guifg=#ffb86c
 hi! CocErrorHighlight guifg=#339933
-hi! CocInfoSign guibg=#353b45
-hi! CocWarningSign guifg=#d1cd66
+"hi! CocInfoSign guibg=#353b45
+"hi! CocWarningSign guifg=#d1cd66
 
 " Vim-Buffet
 " let g:buffet_powerline_separators = 1
