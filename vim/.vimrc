@@ -167,6 +167,8 @@ nnoremap <C-J> <C-W>-
 nnoremap == <C-W>=
 
 " Buffers
+nnoremap <silent> < :bprevious<cr>
+nnoremap <silent> > :bnext<cr>
 nnoremap <silent> [b :bprevious<cr>
 nnoremap <silent> ]b :bnext<cr>
 nnoremap <silent> [B :bfirst<cr>
