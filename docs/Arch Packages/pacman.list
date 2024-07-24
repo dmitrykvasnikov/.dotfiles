@@ -64,11 +64,12 @@ maim
 nemo
 polybar
 python-i3ipc
-ranger
+ranger #file manager
 rofi
 ueberzug # image preview for rangerh
 xcompmgr # compositor
 xplr # tui file explorer
+yazi #file manager
 
 # Fonts
 ttf-fira-code
