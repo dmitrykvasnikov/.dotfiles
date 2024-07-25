@@ -132,15 +132,7 @@ nnoremap <Leader>o :call RunOrmolu()<cr>
 
 nnoremap <Bs> ciw
 
-"nnoremap <tab> gt
-"nnoremap <tab> :bn<cr>
-"nnoremap <S-tab> gT
-nnoremap <S-tab> :bp<cr>
-nnoremap <A-tab> :bn<cr>
-"nnoremap <C-t> :tabnew<cr>
-
 nnoremap <f5> :!ctags -R<cr>
-" nnoremap <C-w> :tabclose<cr>
 cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
 
 " Haskell remaps
