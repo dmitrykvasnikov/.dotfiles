@@ -96,9 +96,6 @@ augroup END
 set foldmethod=marker
 set foldmarker=/\*\*,\*\*/
 
-" Use system clipboard
-set clipboard+=unnamedplus
-
 " Vertically center documnent entering insert mode
 autocmd InsertEnter * norm zz
 
