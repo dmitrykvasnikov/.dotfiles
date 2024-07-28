@@ -97,7 +97,7 @@ set foldmethod=marker
 set foldmarker=/\*\*,\*\*/
 
 " Vertically center documnent entering insert mode
-autocmd InsertEnter * norm zz
+"autocmd InsertEnter * norm zz
 
 " Removing trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
