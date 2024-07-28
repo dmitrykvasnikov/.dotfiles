@@ -120,8 +120,8 @@ nnoremap gs i<CR><ESC>
 inoremap <c-space> <esc>
 inoremap jj <esc>
 
-cnoremap W w
-cnoremap WQ wq
+"cnoremap W w
+"cnoremap WQ wq
 
 nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
@@ -168,6 +168,9 @@ nnoremap <C-Left> <<
 nnoremap <C-Right> >>
 vnoremap <C-Left> <gv
 vnoremap <C-Right> >gv
+
+" Yand
+vnoremap y y`]
 
 " Registres
 " clear default yank register
