@@ -130,7 +130,8 @@ inoremap jj <esc>
 
 nnoremap <Leader>h :nohlsearch<cr>
 nnoremap <Leader>f :NERDTreeToggle<cr>
-nnoremap <Leader>o :call RunOrmolu()<cr>
+"nnoremap <Leader>o :call RunOrmolu()<cr>
+nnoremap <Leader>r :source ~/.vimrc<cr>
 
 nnoremap <Bs> ciw
 
