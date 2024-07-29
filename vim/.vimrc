@@ -119,6 +119,8 @@ let NERDTreeHijackNetrw=0
 
 " keyboard mappings
 nnoremap gs i<CR><ESC>
+nnoremap gj jI<bs><ESC>
+nnoremap <S-u> jI<bs><ESC>
 
 inoremap <c-space> <esc>
 inoremap jj <esc>
