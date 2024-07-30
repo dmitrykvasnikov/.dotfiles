@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
-"Plug 'sdiehl/vim-ormolu'
+Plug 'sdiehl/vim-ormolu'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -81,9 +81,9 @@ augroup END
 "augroup END
 
 " Ormolu - formatter for Haskell
-"autocmd BufWritePre *.hs :call RunOrmolu()
-"let g:ormolu_options=["--no-cabal"]
-"let g:ormolu_suppress_stderr=1
+autocmd BufWritePre *.hs :call RunOrmolu()
+let g:ormolu_options=["--no-cabal"]
+let g:ormolu_suppress_stderr=1
 
 
 
