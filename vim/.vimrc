@@ -139,14 +139,15 @@ nnoremap <f5> :!ctags -R<cr>
 cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
 
 " Haskell remaps
-" add / remove -- comments in the begining of the line
+" add / remove -- comments in the begining of the line / selected lines
 nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
+vnoremap <Leader>k :normal 0i-- <cr>
+vnoremap <Leader>l :normal 03x<cr>
 
 " close / create buffers
 nnoremap <Leader>w :bd<cr>
 nnoremap <Leader>t :enew<cr>
-
 
 " Splits switch
 nnoremap <S-K> <C-W><C-K>
