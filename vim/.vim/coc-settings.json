@@ -5,7 +5,7 @@
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
       "filetypes": ["haskell", "lhaskell"],
-      "formattingProvider": "stylish-haskell"
+      "formattingProvider": "ormolu"
     }
   },
   "snippets.userSnippetsDirectory" : "~/.vim/snippets"
