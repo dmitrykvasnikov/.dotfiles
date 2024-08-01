@@ -5,6 +5,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'sdiehl/vim-ormolu'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
@@ -150,6 +151,10 @@ vnoremap <Leader>l :normal 03x<cr>
 nnoremap <Leader>w :bd<cr>
 nnoremap <Leader>t :enew<cr>
 
+" Bubbling visually selected lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 " Splits switch
 nnoremap <S-K> <C-W><C-K>
 nnoremap <S-J> <C-W><C-J>
@@ -179,6 +184,9 @@ vnoremap <C-Right> >gv
 
 " Yand
 vnoremap y y`]
+
+" Show syntax group
+nmap <Leader>s :call <SID>SynStack()<CR>
 
 " Registres
 " clear default yank register
@@ -286,3 +294,10 @@ augroup END
 " hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
 " hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
 
+" Show highlihgt group for current world
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'),col('.')), 'synIDattr(v:val, "name")')
+endfunc
