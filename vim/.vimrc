@@ -5,7 +5,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'sdiehl/vim-ormolu'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-unimpaired'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
@@ -152,8 +152,8 @@ nnoremap <Leader>w :bd<cr>
 nnoremap <Leader>t :enew<cr>
 
 " Bubbling visually selected lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vnoremap <C-Up> xkP`[V`]
+vnoremap <C-Down> xp`[V`]
 
 " Splits switch
 nnoremap <S-K> <C-W><C-K>
