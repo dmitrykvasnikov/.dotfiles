@@ -62,6 +62,7 @@ hi LineNr guibg=#333644
 filetype plugin indent on
 set encoding=UTF-8
 set backspace=indent,eol,start
+set modifiable
 hi Normal guibg=#1d2021
 hi CursorLine guibg=#333644
 hi CursorLineNR guibg=#333644 guifg=#ebdbb2
@@ -146,6 +147,7 @@ nnoremap <Leader>k I-- <ESC>
 nnoremap <Leader>l ^df <ESC>
 vnoremap <Leader>k :normal 0i-- <cr>
 vnoremap <Leader>l :normal 03x<cr>
+nnoremap <Leader>cb :!cabal build<cr>
 
 " close / create buffers
 nnoremap <Leader>w :bd<cr>
