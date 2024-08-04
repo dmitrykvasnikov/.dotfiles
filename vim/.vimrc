@@ -121,8 +121,10 @@ let g:netrw_liststyle=3
 let NERDTreeHijackNetrw=0
 
 " keyboard mappings
+"combine & split lines
 nnoremap gs i<CR><ESC>
 nnoremap gj jI<bs><ESC>
+
 nnoremap <S-u> jI<bs><ESC>
 
 inoremap <c-space> <esc>
