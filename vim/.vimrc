@@ -1,5 +1,8 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
+"Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'sdiehl/vim-ormolu'
@@ -10,7 +13,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'nbouscal/vim-stylish-haskell'
 "Plug 'bagrat/vim-buffet'
@@ -111,14 +114,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " Alias replace all to S
 nnoremap S :%s//gI<Left><Left><Left>
 
-" file explorer
-let g:netrw_winsize=30
-let g:netrw_banner=0
-let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+'
-let g:netrw_keepdir=0
-let g:netrw_liststyle=3
-
-let NERDTreeHijackNetrw=0
 
 " keyboard mappings
 "combine & split lines
@@ -134,9 +129,7 @@ inoremap jj <esc>
 "cnoremap WQ wq
 
 nnoremap <Leader>h :nohlsearch<cr>
-nnoremap <Leader>f :NERDTreeToggle<cr>
-"nnoremap <Leader>o :call RunOrmolu()<cr>
-nnoremap <Leader>r :source ~/.vimrc<cr>
+nnoremap <Leader>r :source ~/.vimrc<cr>:noh<cr>
 
 nnoremap <Bs> ciw
 
@@ -251,7 +244,7 @@ set noshowmode
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 " Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -298,6 +291,31 @@ augroup END
 " hi TabLineSel guifg=#f8f8f2 guibg=#6272a4
 " hi TabLine term=NONE cterm=NONE gui=NONE guifg=#b8b8b8 guibg=#282a36
 
+" NERDTree plugin
+"let g:netrw_winsize=30
+"let g:netrw_banner=0
+"let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+'
+"let g:netrw_keepdir=0
+"let g:netrw_liststyle=3
+"let NERDTreeHijackNetrw=0
+"nnoremap <Leader>nt :NERDTreeToggle<cr>
+"nnoremap <Leader>o :call RunOrmolu()<cr>
+
+" FZF plugin
+nnoremap <Leader>f :Files<cr>
+nnoremap <Leader>b :Buffers<cr>
+nnoremap <Leader>m :Marks<cr>
+nnoremap <Leader>j :Jumps<cr>
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--pointer=->', '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+command! -bang -nargs=? -complete=dir Buffers
+   \ call fzf#vim#buffers(<q-args>, {'options': ['--layout=reverse', '--pointer=->']}, <bang>0)
+command! -bang -nargs=? -complete=dir Maps
+   \ call fzf#vim#maps(<q-args>, {'options': ['--layout=reverse', '--pointer=->']}, <bang>0)
+command! -bang -nargs=? -complete=dir Jumps
+   \ call fzf#vim#jumps({'options': ['--layout=reverse', '--pointer=->']}, <bang>0)
+command! -bang -nargs=? -complete=dir Marks
+   \ call fzf#vim#marks({'options': ['--layout=reverse', '--pointer=->']}, <bang>0)
 " Show highlihgt group for current world
 function! <SID>SynStack()
   if !exists("*synstack")
