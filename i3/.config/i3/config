@@ -230,7 +230,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id libinput-gestures-setup start
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nasa6.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nasa7.jpg
 exec --no-startup-id dropbox start
 exec --no-startup-id albert
 exec --no-startup-id xcompmgr
