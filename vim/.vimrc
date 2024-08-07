@@ -148,6 +148,11 @@ nnoremap <Leader>cb :!cabal build<cr>
 nnoremap <Leader>w :bd<cr>
 nnoremap <Leader>t :enew<cr>
 
+" copy / paste with xclip
+vnoremap <Leader>c :!xclip -f -sel clip<CR>
+nnoremap <Leader>v :-1r !xclip -o -sel clip<CR>
+
+
 " Bubbling visually selected lines
 vnoremap <C-Up> xkP`[V`]
 vnoremap <C-Down> xp`[V`]

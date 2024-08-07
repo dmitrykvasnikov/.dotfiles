@@ -37,6 +37,7 @@ tmux
 traceroute
 wget
 # xcape
+xclip
 xf86-input-synaptics # for Apple laptops
 xf86-video-intel # for Intel videocards + V sync - see also 20-intel.conf
 xf86-video-fbdev
