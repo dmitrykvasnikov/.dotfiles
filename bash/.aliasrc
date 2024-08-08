@@ -3,6 +3,7 @@ alias c="clear"
 alias cl="clear && printf '\e[3J'" # real clear the terminal output history
 alias df4="df -h -t ext4"
 alias ff="fastfetch"
+alias nf="neofetch"
 alias ls="ls --color=auto"
 alias l="ls -la --color=auto"
 alias ll="ls -l --color=auto"
