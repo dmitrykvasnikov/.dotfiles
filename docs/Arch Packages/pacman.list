@@ -102,6 +102,7 @@ yt-dlp
 vivaldi
 vlc
 zathura
+zathura-pdf-mupdf
 
 # Haskel
 ctags # to enable tags in Vim
