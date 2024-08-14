@@ -170,8 +170,8 @@ NumericUnderscores (1_000_000)
 PatternSynonyms
 ViewPatterns
 ScopedTypeVariables (ex.: forall a b. ... - forall is necessary in global declaration to use type variables inside the declaration)
-TypeApplications (ex.: @Maybe @_ @Int)
-GADTs (ex.: data Expr a where ...)
+TypeAbstractions - use it instead of STP, like func  @a @b a b = ..., then you can use types a and b in declarations within func
+TypeApplications (ex.: @Maybe @_ @Int) GADTs (ex.: data Expr a where ...)
 LambdaCase
 MultiwayIf
 InstanceSigs (allow type signatures in instance declaration)

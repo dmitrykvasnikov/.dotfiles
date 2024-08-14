@@ -70,6 +70,11 @@ hi Normal guibg=#1d2021
 hi CursorLine guibg=#333644
 hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
+" Cursors for different modes
+let &t_SI="\<Esc>[5 q"
+let &t_SR="\<Esc>[4 q"
+let &t_EI="\<Esc>[2 q"
+
 hi vertsplit guibg=#3c3836 guifg=#3c3836
 
 " Color for non-active splits
@@ -328,3 +333,4 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'),col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
