@@ -9,6 +9,7 @@ Plug 'fatih/vim-go'
 Plug 'sdiehl/vim-ormolu'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 "Plug 'tpope/vim-unimpaired'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'junegunn/vim-easy-align'
@@ -86,6 +87,9 @@ augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
 augroup END
+
+" on vim startup
+autocmd VimEnter * execute ":Obsess"
 
 "augroup vimrc-help-window
   "autocmd!
