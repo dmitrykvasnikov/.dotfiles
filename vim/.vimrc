@@ -88,9 +88,6 @@ augroup autosourcing
   autocmd BufWritePost .vimrc source %
 augroup END
 
-" on vim startup
-autocmd VimEnter * execute ":Obsess"
-
 "augroup vimrc-help-window
   "autocmd!
   "autocmd BufWinEnter * if &l:buftype ==# "help" | wincmd _ | endif
