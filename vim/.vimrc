@@ -124,10 +124,16 @@ nnoremap S :%s//gI<Left><Left><Left>
 "combine & split lines
 nnoremap gs i<CR><ESC>
 nnoremap gj jI<bs><ESC>
-
-nnoremap <S-u> jI<bs><ESC>
-
-inoremap <c-space> <esc>
+"navigation in insert mode
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <right>
+" brackets
+nnoremap <Leader>9 i()<esc>i
+nnoremap <Leader>8 i{}<esc>i
+nnoremap <Leader>0 i[]<esc>i
+"esc
 inoremap jj <esc>
 
 "cnoremap W w
