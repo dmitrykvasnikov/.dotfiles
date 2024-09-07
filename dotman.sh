@@ -44,6 +44,30 @@ if [ $1 == "install" ]; then
   exit 0
 fi
 
+if [ $1 == "install_" ]; then
+  # Checking arguments
+  [ ! $2 ] && echo -e "\e[0;31mERROR:\e[0m Application name missed" && exit 13
+  [ $2 == '.root' ] && echo -e "\e[0;31mERROR:\e[0m .root directory reserved for 'save' option" && exit 13
+  [ ! -d $2 ] && echo -e "\e[0;31mERROR:\e[0m No dotfiles for application \e[0;31m$2\e[0m" && exit 13
+  # loop through files in Application folder
+  for file in $(find $2"/" -type f)
+  do
+    source=$(realpath $file)
+    # remove Application_Name from path
+    file=${file#*$2/}
+    # if path contains directory separator - create destination directories structure
+    if [[ $file == *"/"* ]]; then
+      path=${file%/*}
+      create_dir_structure $path ""
+    fi
+    link=$home"/"$file
+    # remove file in home directory if it's existed already
+    [ -e $link ] && rm $link
+    ln -sf $source $link
+  done
+  exit 0
+fi
+
 # section for adding file to repository and replace it with symlink
 # arg1 = "set" option
 # arg2 = Application_Name
