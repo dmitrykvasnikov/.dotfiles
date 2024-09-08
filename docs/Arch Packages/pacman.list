@@ -24,6 +24,8 @@ mtpfs
 ncdu
 networkmanager
 net-tools
+nodejs
+npm
 notification-daemon # check /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 nvidia-470xx-dkms # for iMac - 750M
 nvidia-470xx-settings # for iMac - 750M
@@ -36,6 +38,7 @@ tlp
 tmux
 traceroute
 wget
+which
 # xcape
 xclip
 xf86-input-synaptics # for Apple laptops

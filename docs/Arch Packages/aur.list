@@ -16,6 +16,7 @@ system-monitoring-center
 tlpui
 
 # Programming / Development
+ghcup-hs-bin
 figma-linux
 nvm
 visual-studio-code-bin
