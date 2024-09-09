@@ -210,4 +210,9 @@
 ;;         ;; Set up packages
 ;;         (add-to-list 'load-path (expand-file-name "lisp/"))
 ;;         (load "use-ormolu"))
+(use-package ormolu
+ :hook (haskell-mode . ormolu-format-on-save-mode)
+ :bind
+ (:map haskell-mode-map
+   ("C-c r" . ormolu-format-buffer)))
 
