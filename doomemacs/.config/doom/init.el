@@ -139,7 +139,7 @@
        ;;gdscript          ; the language you waited for
        ;;(go +lsp)         ; the hipster dialect
        ;;(graphql +lsp)    ; Give queries a REST
-       ;;(haskell +lsp)    ; a language that's lazier than I am
+       (haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        ;;json              ; At least it ain't XML
@@ -205,3 +205,9 @@
             (("gnu" . "https://elpa.gnu.org/packages/")
                ("melpa" . "https://melpa.org/packages/")))))
        (package-initialize)
+
+;;       (let
+;;         ;; Set up packages
+;;         (add-to-list 'load-path (expand-file-name "lisp/"))
+;;         (load "use-ormolu"))
+
