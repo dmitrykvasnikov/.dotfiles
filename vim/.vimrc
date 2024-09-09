@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'scrooloose/nerdtree'
 Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'nbouscal/vim-stylish-haskell'
+Plug 'wikitopian/hardmode'
 "Plug 'bagrat/vim-buffet'
 "Plug 'tpope/vim-vinegar'
 "Plug 'tpope/vim-surround'
@@ -253,6 +254,9 @@ let @f="xi/**\<CR>**/\<CR>\<up>\<ESC>P\<up>A "
 let @h="xi-- /**\<CR>**/\<CR>\<BS>\<BS>\<BS>\<up>\<ESC>P\<up>A "
 " -- insert function :: undefined
 let @u="0yt:o\<ESC>pA= undefined\<CR>\<ESC>"
+
+" hardmode
+let g:HardMode_level = 'wannabe'
 
 " To use with vim-airlinie
 set noshowmode
