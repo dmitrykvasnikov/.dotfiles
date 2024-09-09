@@ -122,6 +122,7 @@ emacs
 fd
 ripgrep
 shellcheck
+marked # markdown compiler
 
 # git
 git-delta
