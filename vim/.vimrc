@@ -136,7 +136,8 @@ nnoremap <Leader>8 i{}<esc>i
 nnoremap <Leader>0 i[]<esc>i
 "esc
 inoremap jj <esc>
-
+"save file
+nnoremap <C-x><C-s> :w<cr>
 "cnoremap W w
 "cnoremap WQ wq
 
@@ -155,6 +156,7 @@ nnoremap <Leader>l ^df <ESC>
 vnoremap <Leader>k :normal 0i-- <cr>
 vnoremap <Leader>l :normal 03x<cr>
 nnoremap <Leader>cb :!cabal build<cr>
+
 
 " close / create buffers
 nnoremap <Leader>w :bd<cr>

@@ -1,5 +1,5 @@
 # Setting MOD key
-set $mod mod4
+set $mod mod1
 
 # Setting variables
 set $scratchpad_defW 1200
@@ -187,11 +187,11 @@ mode "resize" {
 }
 
 mode "web" {
-  bindsym g exec "google-chrome-stable", mode "default"
-  bindsym f exec "firefox", mode "default"
-  bindsym v exec "vivaldi-stable", mode "default"
-  bindsym c exec "chromium", mode "default"
-  bindsym b exec "brave", mode "default"
+  bindsym g exec "google-chrome-stable --proxy-server='http://127.0.0.1:8080'", mode "default"
+  bindsym f exec "firefox --proxy-server='http://127.0.0.1:8080'", mode "default"
+  bindsym v exec "vivaldi-stable --proxy-server='http://127.0.0.1:8080'", mode "default"
+  bindsym c exec "chromium --proxy-server='http://127.0.0.1:8080'", mode "default"
+  bindsym b exec "brave --proxy-server='http://127.0.0.1:8080'", mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+i mode "default"
@@ -216,7 +216,7 @@ bindsym $mod+t [class="kitty" title="terminal"] scratchpad show, move position c
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
-bindsym $mod+Control+n exec "notion-app"
+bindsym $mod+Control+n exec "clickup"
 bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
@@ -227,7 +227,7 @@ bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id libinput-gestures-setup start
+# exec_always --no-startup-id libinput-gestures-setup start
 # exec_always --no-startup-id autotiling
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nasa7.jpg

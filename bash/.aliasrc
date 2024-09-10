@@ -123,6 +123,7 @@ alias gh="./gh.sh"
 
 # misc
 alias emacs="emacsclient -nw"
+alias remacs="systemctl --user restart emacs"
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
 alias yt="yt-dlp --extractor-arg \"youtube:player_client=mediaconnect\" -f $1 $2"
 alias yta="yt-dlp --downloader aria2c --downloader-args \"aria2c:--continue --max-concurrent-downloads=50 --max-connection-per-server=16 --split=30 --min-split-size=1M\" -f $1 $2"

@@ -74,8 +74,8 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       ;;eshell            ; the elisp shell that works everywhere
-       ;;shell             ; simple shell REPL for Emacs
+       eshell            ; the elisp shell that works everywhere
+       shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
        ;;vterm             ; the best terminal emulation in Emacs
 
@@ -206,10 +206,6 @@
                ("melpa" . "https://melpa.org/packages/")))))
        (package-initialize)
 
-;;       (let
-;;         ;; Set up packages
-;;         (add-to-list 'load-path (expand-file-name "lisp/"))
-;;         (load "use-ormolu"))
 (use-package ormolu
  :hook (haskell-mode . ormolu-format-on-save-mode)
  :bind
