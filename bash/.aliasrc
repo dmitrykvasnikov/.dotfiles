@@ -82,10 +82,11 @@ alias gshp="git stash pop"
 
 #config edit
 alias i="vim ~/.config/i3/config"
-alias cp="rm ~/.config/i3/config && cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
+alias cpi="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
+alias rmi="rm ~/.config/i3/config"
 alias ic="vim ~/.config/i3/custom.config"
 alias p="vim ~/.config/polybar/config.ini"
-alias pc="vim ~/.config/polybar/custom.config.ini"
+alias pc="viim ~/.config/polybar/custom.config.ini"
 alias r="vim ~/.config/rofi/config.rasi"
 alias k="vim ~/.config/kitty/kitty.conf"
 alias x=startx
