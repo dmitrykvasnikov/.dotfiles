@@ -57,6 +57,9 @@ bindsym $mod+XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -p
 # Brightness control
 bindsym XF86MonBrightnessDown exec "brightnessctl s 1%-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s 1%+"
+# Mechanoid keybaord
+bindsym XF86Mail exec "brightnessctl s 1%-"
+bindsym XF86HomePage exec "brightnessctl s 1%+"
 bindsym XF86KbdBrightnessUp exec "brightnessctl --device='smc::kbd_backlight' set +10%"
 bindsym XF86KbdBrightnessDown exec "brightnessctl --device='smc::kbd_backlight' set 10%-"
 
