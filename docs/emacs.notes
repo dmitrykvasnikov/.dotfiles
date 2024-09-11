@@ -1,0 +1,10 @@
+Preliminary actions:
+
+Plugin i've installed before beginning:
+       - which-key to display available key bindings (which-key-mode should be enabled)
+Switch Cmd (Option) and Alt keys:
+       /etc/modprobe.d/hid_apple.conf
+       options hid_apple swap_opt_cmd=1
+       ... and rebuild mkinitcpio
+Change theme in init.el file
+       (load-theme 'tango-dark)
