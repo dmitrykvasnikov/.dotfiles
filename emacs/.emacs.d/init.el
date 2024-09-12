@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("603a831e0f2e466480cdc633ba37a0b1ae3c3e9a4e90183833bc4def3421a961" default))
- '(package-selected-packages '(dracula-theme which-key)))
+ '(package-selected-packages '(use-package dracula-theme which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -13,3 +13,4 @@
  ;; If there is more than one, they won't work right.
  )
 (load-theme 'tango-dark)
+;; (setq which-key-persistent-popup t)
