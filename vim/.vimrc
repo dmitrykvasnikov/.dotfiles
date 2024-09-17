@@ -16,7 +16,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'scrooloose/nerdtree'
-Plug 'dracula/vim', { 'as' : 'dracula' }
+Plug 'ghifarit53/tokyonight-vim'
+"Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'nbouscal/vim-stylish-haskell'
 Plug 'wikitopian/hardmode'
 "Plug 'bagrat/vim-buffet'
@@ -46,9 +47,6 @@ set hidden
 set mouse=a
 set termguicolors
 set cursorline
-" let ayucolor="dark"
-" set background="dark"
-colorscheme dracula
 syntax enable
 set complete=.,w,b,u
 set wildmode=longest,list,full
@@ -72,6 +70,12 @@ set modifiable
 hi Normal guibg=#1d2021
 hi CursorLine guibg=#333644
 hi CursorLineNR guibg=#333644 guifg=#ebdbb2
+
+" Colorscheme
+colorscheme tokyonight
+" tokyo-night settings
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
 
 " Cursors for different modes
 let &t_SI="\<Esc>[5 q"
