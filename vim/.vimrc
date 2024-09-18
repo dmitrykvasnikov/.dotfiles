@@ -5,7 +5,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 Plug 'sdiehl/vim-ormolu'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
@@ -16,7 +16,8 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'scrooloose/nerdtree'
-Plug 'ghifarit53/tokyonight-vim'
+"Plug 'ghifarit53/tokyonight-vim'
+Plug 'rose-pine/vim'
 "Plug 'dracula/vim', { 'as' : 'dracula' }
 Plug 'nbouscal/vim-stylish-haskell'
 Plug 'wikitopian/hardmode'
@@ -72,10 +73,12 @@ hi CursorLine guibg=#333644
 hi CursorLineNR guibg=#333644 guifg=#ebdbb2
 
 " Colorscheme
-colorscheme tokyonight
+colorscheme rosepine
+"rosepine settings
+set background=dark
 " tokyo-night settings
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
 
 " Cursors for different modes
 let &t_SI="\<Esc>[5 q"
