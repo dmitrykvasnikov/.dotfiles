@@ -30,8 +30,10 @@ alias ynstall="yay -S"
 alias update="sudo pacman -Syu"
 alias ypdate="yay -Syu"
 alias remove="sudo pacman -Rns"
+alias autoremove='orphans=$(pacman -Qdtq); [ -z "$orphans" ] && echo "There are no orphaned packages" || sudo pacman -Rsc $orphans'
 alias rymove="yay -Rns"
 alias upgrade="update && ypdate"
+alias error="journalctl -b -p err"
 
 #common foders
 alias dl="cd ~/Downloads"
@@ -135,4 +137,7 @@ alias yt="yt-dlp --downloader aria2c --extractor-arg \"youtube:player_client=med
 alias yta="yt-dlp --downloader aria2c --downloader-args \"aria2c:--continue --max-concurrent-downloads=50 --max-connection-per-server=16 --split=30 --min-split-size=1M\" -f $1 $2"
 alias ytv="yt-dlp --downloader aria2c --downloader-args \"aria2c:--continue --max-concurrent-downloads=10 --max-connection-per-server=16 --split=30 --min-split-size=1M\" --extractor-arg \"youtube:player_client=mediaconnect\" -f $1 $2"
 alias ytl="yt-dlp --extractor-arg \"youtube:player_client=mediaconnect\" -F $1"
+alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
+alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
+
 
