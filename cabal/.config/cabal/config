@@ -76,7 +76,7 @@ remote-repo-cache: /home/dmitry/.cache/cabal/packages
 -- cabal-lib-version:
 -- append:
 -- backup:
--- constraint:
+constraint: zlib -pkg-config
 -- preference:
 -- solver: modular
 -- allow-older: False
