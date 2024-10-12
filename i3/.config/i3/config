@@ -1,5 +1,5 @@
 # Setting MOD key
-set $mod mod1
+set $mod mod4
 
 # Setting variables
 set $scratchpad_defW 1200
@@ -35,28 +35,36 @@ client.background       #F8F8F2
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym $mod+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # bindsym XF86AudioPrev exec --no-startup-id sayonara-ctl previous
 # bindsym XF86AudioNext exec --no-startup-id sayonara-ctl next
 # bindsym XF86AudioPlay exec --no-startup-id sayonara-ctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id /usr/bin/cmus-remote -r
+bindsym $mod+F7 exec --no-startup-id /usr/bin/cmus-remote -r
 #bindsym XF86AudioPrev exec --no-startup-id mocp -r
 bindsym XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote -n
+bindsym $mod+F9 exec --no-startup-id /usr/bin/cmus-remote -n
 #bindsym XF86AudioNext exec --no-startup-id mocp -f
 bindsym $mod+XF86AudioPrev exec --no-startup-id /usr/bin/cmus-remote --seek -20
 #bindsym $mod+XF86AudioPrev exec --no-startup-id mocp --seek -20
 bindsym $mod+XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote --seek +20
 #bindsym $mod+XF86AudioNext exec --no-startup-id mocp --seek +20
 bindsym XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -u
+bindsym $mod+F8 exec --no-startup-id /usr/bin/cmus-remote -u
 #bindsym XF86AudioPlay exec --no-startup-id mocp -G
 bindsym $mod+XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -p
 # bindsym $mod+XF86Eject exec --no-startup-id systemctl suspend
 
 # Brightness control
 bindsym XF86MonBrightnessDown exec "brightnessctl s 1%-"
+bindsym $mod+F1 exec "brightnessctl s 1%-"
 bindsym XF86MonBrightnessUp exec "brightnessctl s 1%+"
+bindsym $mod+F2 exec "brightnessctl s 1%+"
 # Mechanoid keybaord
 bindsym XF86Mail exec "brightnessctl s 1%-"
 bindsym XF86HomePage exec "brightnessctl s 1%+"
