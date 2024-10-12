@@ -75,7 +75,7 @@ bindsym XF86KbdBrightnessDown exec "brightnessctl --device='smc::kbd_backlight' 
 bindsym $mod+Return exec kitty
 bindsym $mod+shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
-bindsym $mod+o exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
+bindsym $mod+m exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
 bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons -sort"
 
 gaps inner 6px
@@ -225,7 +225,7 @@ for_window [class="kitty" title="terminal"] move scratchpad, resize set $scratch
 bindsym $mod+p [class="kitty" title="cmus"] scratchpad show, move position center
 #bindsym $mod+p [class="kitty" title="mocp"] scratchpad show, move position center
 bindsym $mod+t [class="kitty" title="terminal"] scratchpad show, move position center
-bindsym $mod+m [class="kitty" title="terminal"] scratchpad show, move position center
+bindsym $mod+o [class="kitty" title="terminal"] scratchpad show, move position center
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
