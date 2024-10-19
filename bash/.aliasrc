@@ -34,6 +34,7 @@ alias autoremove='orphans=$(pacman -Qdtq); [ -z "$orphans" ] && echo "There are 
 alias rymove="yay -Rns"
 alias upgrade="update && ypdate"
 alias error="journalctl -b -p err"
+alias blt="blt.sh"
 
 #common foders
 alias dl="cd ~/Downloads"

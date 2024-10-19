@@ -51,8 +51,10 @@ bindsym XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote -n
 bindsym $mod+F9 exec --no-startup-id /usr/bin/cmus-remote -n
 #bindsym XF86AudioNext exec --no-startup-id mocp -f
 bindsym $mod+XF86AudioPrev exec --no-startup-id /usr/bin/cmus-remote --seek -20
+bindsym $mod+Control+F7 exec --no-startup-id /usr/bin/cmus-remote --seek -20
 #bindsym $mod+XF86AudioPrev exec --no-startup-id mocp --seek -20
 bindsym $mod+XF86AudioNext exec --no-startup-id /usr/bin/cmus-remote --seek +20
+bindsym $mod+Control+F9 exec --no-startup-id /usr/bin/cmus-remote --seek +20
 #bindsym $mod+XF86AudioNext exec --no-startup-id mocp --seek +20
 bindsym XF86AudioPlay exec --no-startup-id /usr/bin/cmus-remote -u
 bindsym $mod+F8 exec --no-startup-id /usr/bin/cmus-remote -u
