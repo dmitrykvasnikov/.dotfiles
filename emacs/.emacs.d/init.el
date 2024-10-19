@@ -11,6 +11,9 @@
 
 (load-theme 'modus-vivendi)
 
+;; editor settings
+(visual-line-mode)   ;; break lines on words
+
 ;; Initialize package sourcesi
 (require 'package)
 

@@ -8,3 +8,40 @@ Switch Cmd (Option) and Alt keys:
        ... and rebuild mkinitcpio
 Change theme in init.el file
        (load-theme 'tango-dark)
+
+C-x = - get info about pointed symbol
+
+Move cursor: C-b(ack) / C-f(orward) / C-n(extline) / C-p(revline); C-n & C-p by defualt move on visual, not logical line. SEE line-move-visual
+     	     C-a(beginofline) / C-e(ndofline)
+	     M-< M-> begin / end of buffer
+	     C-x C-n set up semipermanent goal column
+	     C-u C-x C-n cancel semipermanent goal column
+
+Exit: C-x C-c (confirm-kill-process could be a function to run, for ex yes-or-no-p)
+      C-z - send emacs process to background and stop it until resume
+
+Basic edit:
+      C-x u, C-/ - undo
+      C-j - insert new line without indentation
+      C-x 8 - some special symbols
+      C-x 8 RET - let choose unicode symbols from the list (vertico plugin needed)
+      C-d - delete char under cursor
+      C-k - delete till the end of the line
+      M-d - delete till the end of the word
+
+Lines:
+     C-j, C-o split the line
+     C-x C-o - remove blamk lines below
+
+Files:
+      C-x C-f - find file
+      C-x C-s - save file
+
+Buffers:
+     C-x left / C-x right - cycle through buffers
+
+Help:
+     C-x k - describe key
+     M-= - info about region (lines, words, symbols)
+     C-x = - info about cursor positin and char in this position
+     
