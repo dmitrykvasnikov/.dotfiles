@@ -13,6 +13,7 @@
 
 ;; editor settings
 (visual-line-mode)   ;; break lines on words
+(setq vc-follow-symlinks t) ;; don't prompt when open symlinks
 
 ;; Initialize package sourcesi
 (require 'package)
