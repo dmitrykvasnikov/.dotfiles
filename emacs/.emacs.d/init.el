@@ -9,7 +9,7 @@
 (menu-bar-mode -1)                                                 ;; disable menu bar
 (set-fringe-mode 10)
 
-(set-face-attribute 'default nil :font "VictorMonoNF" :height 120) ;; setup font
+(load-file "font.el")
 
 (load-theme 'modus-vivendi)
 
