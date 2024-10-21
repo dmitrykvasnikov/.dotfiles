@@ -10,6 +10,7 @@ cups
 curl
 dosfstools
 dust # du replacement in Rust
+eza  # replacement for ls
 fastfetch
 font-manager
 fuse2fs
@@ -47,6 +48,7 @@ xf86-video-fbdev
 xorg
 xorg-server
 xorg-xinit
+zoxide # cd improved. need to add to .bashrc - check homepage
 
 # gestures - see .config/libinput-gestures-setup.conf, libinput-gestures-setup desktop autostart start
 # sudo gpasswd -a $USER input
@@ -60,6 +62,7 @@ pulseaudio-alsa
 
 # Desktop
 alacritty
+broot #directory navigation
 feh
 gtk-engine-murrine # for GTK themes enable
 i3

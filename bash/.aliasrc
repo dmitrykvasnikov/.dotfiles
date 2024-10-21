@@ -35,6 +35,7 @@ alias rymove="yay -Rns"
 alias upgrade="update && ypdate"
 alias error="journalctl -b -p err"
 alias blt="blt.sh"
+alias ls="eza"
 
 #common foders
 alias dl="cd ~/Downloads"
