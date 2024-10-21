@@ -36,6 +36,7 @@ alias upgrade="update && ypdate"
 alias error="journalctl -b -p err"
 alias blt="blt.sh"
 alias ls="eza"
+alias cd="z"
 
 #common foders
 alias dl="cd ~/Downloads"
