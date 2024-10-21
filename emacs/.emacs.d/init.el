@@ -9,7 +9,7 @@
 (menu-bar-mode -1)                                                 ;; disable menu bar
 (set-fringe-mode 10)
 
-(load-file "font.el")
+(load-file "./font.el")
 
 (load-theme 'modus-vivendi)
 
