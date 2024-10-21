@@ -3,17 +3,19 @@
 
 (setq inhibit-startup-message t)
 
-(scroll-bar-mode -1) ;; disable visible scroll-bar
-(tool-bar-mode -1)   ;; disale the toolbar
-(tooltip-mode -1)    ;; disable tooltips
-(menu-bar-mode -1)   ;; disable menu bar
+(scroll-bar-mode -1)                                               ;; disable visible scroll-bar
+(tool-bar-mode -1)                                                 ;; disale the toolbar
+(tooltip-mode -1)                                                  ;; disable tooltips
+(menu-bar-mode -1)                                                 ;; disable menu bar
 (set-fringe-mode 10)
+
+(set-face-attribute 'default nil :font "VictorMonoNF" :height 120) ;; setup font
 
 (load-theme 'modus-vivendi)
 
 ;; editor settings
-(visual-line-mode)   ;; break lines on words
-(setq vc-follow-symlinks t) ;; don't prompt when open symlinks
+(visual-line-mode)                                                 ;; break lines on words
+(setq vc-follow-symlinks t)                                        ;; don't prompt when open symlinks
 
 ;; Initialize package sourcesi
 (require 'package)

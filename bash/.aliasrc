@@ -132,9 +132,8 @@ alias h="cd ~/code/haskell"
 alias gh="./gh.sh"
 
 # misc
-alias edoom="emacsclient -nw"
 alias redoom="systemctl --user restart emacs"
-alias emacs="/usr/bin/emacs -nw"
+#alias emacs="/usr/bin/emacs -nw"
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
 alias yt="yt-dlp --downloader aria2c --extractor-arg \"youtube:player_client=mediaconnect\" -f $1 $2"
 alias yta="yt-dlp --downloader aria2c --downloader-args \"aria2c:--continue --max-concurrent-downloads=50 --max-connection-per-server=16 --split=30 --min-split-size=1M\" -f $1 $2"
