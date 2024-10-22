@@ -14,7 +14,7 @@
 (load-theme 'modus-vivendi)
 
 ;; editor settings
-(visual-line-mode)                                                 ;; break lines on words
+(global-visual-line-mode t)                                        ;; break lines on words in both text and graphic UI
 (setq vc-follow-symlinks nil)                                      ;; don't prompt when open symlinks, only warning
 (setq make-backup-files nil)                                       ;; dont't backup files
 (global-display-line-numbers-mode)                                 ;; display line numbers ...
