@@ -7,17 +7,20 @@
 (tool-bar-mode -1)                                                 ;; disale the toolbar
 (tooltip-mode -1)                                                  ;; disable tooltips
 (menu-bar-mode -1)                                                 ;; disable menu bar
-(set-fringe-mode 10)
+(set-fringe-mode 10)                                               ;; set side margins
 
-(load-file "./font.el")
+(load-file "~/.emacs.d/font.el")
 
 (load-theme 'modus-vivendi)
 
 ;; editor settings
 (visual-line-mode)                                                 ;; break lines on words
-(setq vc-follow-symlinks t)                                        ;; don't prompt when open symlinks
+(setq vc-follow-symlinks nil)                                      ;; don't prompt when open symlinks, only warning
+(setq make-backup-files nil)                                       ;; dont't backup files
+(global-display-line-numbers-mode)                                 ;; display line numbers ...
+(setq display-line-numbers-type 'relative)                         ;; ... and make'em relative
 
-;; Initialize package sourcesi
+;; Initialize package sources
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -37,10 +40,26 @@
 
 (use-package which-key)
 (use-package vertico)
+(use-package ligature)
 
 ;; enable plugins
 (which-key-mode)
 (vertico-mode)
+;; Enable the www ligature in every possible major mode
+
+;; Enable ligatures in programming modes                                                           
+(ligature-set-ligatures 't           '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+                                     ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                                     "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                                     "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                                     "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                                     "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                                     "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                                     "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                                     "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                                     "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+
+(global-ligature-mode 't)
 
 ;; loading custom file
 (load-file custom-file)
