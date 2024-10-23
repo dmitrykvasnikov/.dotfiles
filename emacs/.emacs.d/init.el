@@ -16,7 +16,8 @@
 ;; editor settings
 (global-visual-line-mode t)                                        ;; break lines on words
 (setq vc-follow-symlinks nil)                                      ;; don't prompt when open symlinks, only warning
-(setq make-backup-files nil)                                       ;; dont't backup files
+(setq make-backup-files nil)                                       ;; don't backup files
+(setq auto-save-default nil)                                       ;; don't autosave files
 (global-display-line-numbers-mode)                                 ;; display line numbers ...
 (setq display-line-numbers-type 'relative)                         ;; ... and make'em relative
 
