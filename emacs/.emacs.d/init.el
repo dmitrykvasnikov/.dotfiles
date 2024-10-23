@@ -8,9 +8,7 @@
 (tooltip-mode -1)                                                  ;; disable tooltips
 (menu-bar-mode -1)                                                 ;; disable menu bar
 (set-fringe-mode 10)                                               ;; set side margins
-
 (load-file "~/.emacs.d/font.el")
-
 (load-theme 'modus-vivendi)
 
 ;; editor settings
