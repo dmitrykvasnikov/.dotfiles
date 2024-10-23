@@ -132,7 +132,7 @@ alias h="cd ~/code/haskell"
 alias gh="./gh.sh"
 
 # misc
-alias redoom="systemctl --user restart emacs"
+alias remacs="systemctl --user restart emacs"
 #alias emacs="/usr/bin/emacs -nw"
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
 alias yt="yt-dlp --downloader aria2c --extractor-arg \"youtube:player_client=mediaconnect\" -f $1 $2"
