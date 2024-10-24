@@ -129,3 +129,8 @@ marked # markdown compiler
 
 # git
 git-delta
+
+# Powersave
+tuned-ppd
+thermald
+powertop
