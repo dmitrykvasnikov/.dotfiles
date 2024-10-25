@@ -6,7 +6,7 @@
 '(package-archives
    (quote
      (("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")))))
+      ("melpa" . "https://melpa.org/packages/")))))
 (package-initialize)
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
