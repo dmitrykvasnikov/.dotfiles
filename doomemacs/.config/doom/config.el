@@ -12,14 +12,14 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(setq inhibit-startup-message t)
-
-;;(load-file "~/.config/doom/font.el")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-;; (setq user-full-name "John Doe"
-;;       user-mail-address "john@doe.com")
+(setq user-full-name "Dmitry Kvasnikov"
+      user-mail-address "dmitry.kvasnikov@gmail.com")
+
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+(load-file "~/.config/doom/font.el")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -85,6 +85,14 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; setup clipboard
+;; don't put deleted strings to X11 clipboard
+(setq select-enable-clipboard nil)
+
+;; copying and pasting selected blocks in visual mode to and from X11 clipboard
+(map! "S-C-c" #'clipboard-kill-ring-save)
+(map! "S-C-v" #'clipboard-yank)
 
 ;; break lines on words
 (global-visual-line-mode t)
