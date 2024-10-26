@@ -96,7 +96,9 @@ alias pc="viim ~/.config/polybar/custom.config.ini"
 alias r="vim ~/.config/rofi/config.rasi"
 alias k="vim ~/.config/kitty/kitty.conf"
 alias e="vim ~/.emacs.d/init.el"
-alias ed="vim ~/.config/doom/init.el"
+alias ei="vim ~/.config/doom/init.el"
+alias ec="vim ~/.config/doom/config.el"
+alias ep="vim ~/.config/doom/packages.el"
 alias x=startx
 
 #dotman / .dotfiles repo

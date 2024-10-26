@@ -1,10 +1,10 @@
 ;; packages
-(custom-set-variables
-'(package-archives
-   (quote
-     (("gnu" . "https://elpa.gnu.org/packages/")
-      ("melpa" . "https://melpa.org/packages/")))))
-(package-initialize)
+;;(custom-set-variables
+;;'(package-archives
+;;   (quote
+;;     (("gnu" . "https://elpa.gnu.org/packages/")
+;;      ("melpa" . "https://melpa.org/packages/")))))
+;;(package-initialize)
 
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
