@@ -9,7 +9,7 @@
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
 
-(setq doom-theme 'doom-tokyo-night)
+;;(setq doom-theme 'doom-rose-pine)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
