@@ -26,7 +26,22 @@
 (global-visual-line-mode t)
 (setq vc-follow-symlinks nil)
 (setq auto-save-default nil)
-;;
+
+;; window resize with hydra
+(use-package! hydra
+  :defer
+  :config
+  (defhydra hydra/evil-window-resize (:color red)
+    "Resize window"
+    ("h" evil-window-decrease-width "decrease width")
+    ("j" evil-window-decrease-height "decrease height")
+    ("k" evil-window-increase-height "increase height")
+    ("l" evil-window-increase-width "increase width")
+    ("q" nil "quit")))
+(map! :leader
+      :prefix ("w" . "window")
+      :n "r" #'hydra/evil-window-resize/body);;
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
