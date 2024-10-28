@@ -8,10 +8,11 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
-(package! ligature)
+;; (package! ligature)
 (package! lsp-haskell)
 (package! haskell-mode)
 (package! ormolu)
+(package! hydra)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
