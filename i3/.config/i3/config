@@ -239,7 +239,7 @@ bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -
 #bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
-bindsym $mod+Control+z exec --no-startup-id emacsclient -c
+bindsym $mod+Control+d exec --no-startup-id emacsclient -c
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
