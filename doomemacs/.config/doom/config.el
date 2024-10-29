@@ -14,6 +14,7 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (load-file "~/.config/doom/font.el")
+(setq! bookmark-default-file "/home/dmitry/.config/doom/bookmarks")
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 ;; setup clipboard

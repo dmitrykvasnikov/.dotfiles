@@ -1,0 +1,53 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("bashrc"
+ (filename . "~/.dotfiles/bash/.bashrc")
+ (front-context-string . "#\n# ~/.bashrc\n#\n")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26401 7693 301744 192000))
+("aliasrc"
+ (filename . "~/.dotfiles/bash/.aliasrc")
+ (front-context-string . "#script with my ")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26401 7669 449825 992000))
+("doom.packages"
+ (filename . "~/.dotfiles/doomemacs/.config/doom/packages.el")
+ (front-context-string . "(package! ormolu")
+ (rear-context-string . "! haskell-mode)\n")
+ (position . 381)
+ (last-modified 26401 7650 292336 186000))
+("doom.init"
+ (filename . "~/.dotfiles/doomemacs/.config/doom/init.el")
+ (front-context-string . ";;(format +onsav")
+ (rear-context-string . " folding\n       ")
+ (position . 2981)
+ (last-modified 26401 7639 163815 910000))
+("doom.config"
+ (filename . "~/.dotfiles/doomemacs/.config/doom/config.el")
+ (front-context-string . " display-line-nu")
+ (rear-context-string . "ookmarks\")\n(setq")
+ (position . 509)
+ (last-modified 26401 7617 868382 281000))
+("kitty"
+ (filename . "~/.dotfiles/kitty/.config/kitty/kitty.conf")
+ (front-context-string . "# vim:fileencodi")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26401 7592 966167 551000))
+("polybar"
+ (filename . "~/.dotfiles/polybar/.config/polybar/config.ini")
+ (front-context-string . ";===============")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26401 7574 795756 828000))
+("i3wm"
+ (filename . "~/.dotfiles/i3/.config/i3/config")
+ (front-context-string . "# Setting MOD ke")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26401 7513 544572 869000))
+)
