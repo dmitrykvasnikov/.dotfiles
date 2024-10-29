@@ -115,6 +115,8 @@ zathura-pdf-mupdf
 ctags # to enable tags in Vim
 hasktags # to enable tags in Vim
 stylish-haskell
+happy # probably necessary for emacs
+haskell-src-exts # probably necessary for emacs
 
 # USB-connection to iPhone internet, use nmtui
 usbmuxd
