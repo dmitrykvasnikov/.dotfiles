@@ -42,22 +42,6 @@
       :prefix ("w" . "window")
       :n "r" #'hydra/evil-window-resize/body);;
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom:
-;;
-;; - `doom-font' -- the primary font to use
-;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
-;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;; - `doom-symbol-font' -- for symbols
-;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
-;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-;;
-
 ;; enable ligatures
 (ligature-set-ligatures 't           '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
                                      ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
@@ -72,13 +56,13 @@
 
 (global-ligature-mode 't)
 
-
 ;; settings for haskell
 (use-package ormolu
  :hook (haskell-mode . ormolu-format-on-save-mode)
  :bind
  (:map haskell-mode-map
    ("C-c r" . ormolu-format-buffer)))
-
+(after! lsp-haskell
+  (setq lsp-haskell-formatting-provider "ormolu"))
 (custom-set-variables '(haskell-stylish-on-save t))
 (setq lsp-lens-enable nil)
