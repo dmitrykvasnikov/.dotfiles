@@ -253,7 +253,6 @@ exec --no-startup-id spoofdpi
 exec --no-startup-id xcompmgr
 exec --no-startup-id emacs --daemon
 
-
 # Scratchpads
 exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title "cmus" -e /usr/bin/cmus && cd -
 #exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
