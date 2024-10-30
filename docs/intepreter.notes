@@ -1,0 +1,19 @@
+Info about types:
+     * in node itself with additional field/attributes
+     * in special table
+     * in new tree structure
+
+Lexer:
+    start - start of lexem
+    current - current reading position
+    match metod - return true and consume char - to check for 2-char tokens after first char scan
+
+'And' / 'Or' binary operations are shor-circute
+
+Expression produce a value, Statement produce an effect
+
+Attach scope to code blocks?
+
+Fucntion call has arguments, function declaration has parameter
+
+Reporting Errors - probably return to list or Error in state

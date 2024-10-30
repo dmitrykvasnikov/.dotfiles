@@ -2,7 +2,13 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("bashrc"
+(("interpreter"
+ (filename . "~/.dotfiles/docs/intepreter.notes")
+ (front-context-string . "s\n     * in spec")
+ (rear-context-string . " field/attribute")
+ (position . 72)
+ (last-modified 26402 3231 212195 121000))
+("bashrc"
  (filename . "~/.dotfiles/bash/.bashrc")
  (front-context-string . "#\n# ~/.bashrc\n#\n")
  (rear-context-string)
