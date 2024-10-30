@@ -54,3 +54,5 @@ set recolor-darkcolor           rgba(248,248,242,1)   # Foreground
 #
 set adjust-open width
 set recolor true
+set scroll-full-overlap 0.07
+
