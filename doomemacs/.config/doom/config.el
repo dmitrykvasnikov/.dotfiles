@@ -9,12 +9,13 @@
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
 
-;;(setq doom-theme 'doom-rose-pine)
+(setq doom-theme 'ef-symbiosis)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (load-file "~/.config/doom/font.el")
-(setq! bookmark-default-file "/home/dmitry/.config/doom/bookmarks")
+(setq bookmark-default-file "/home/dmitry/.config/doom/bookmarks")
+(setq bookmark-sort-flag t)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 ;; setup clipboard
