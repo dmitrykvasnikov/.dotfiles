@@ -9,7 +9,7 @@
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
 
-(setq doom-theme 'ef-symbiosis)
+(setq doom-theme 'ef-owl)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
@@ -24,6 +24,9 @@
 ;; copying and pasting selected blocks in visual mode to and from X11 clipboard
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
+;; cycle through buffers
+(global-set-key (kbd "C-{")   'bs-cycle-previous)
+(global-set-key (kbd "C-}")   'bs-cycle-next)
 ;; break lines on words
 (global-visual-line-mode t)
 (setq vc-follow-symlinks nil)

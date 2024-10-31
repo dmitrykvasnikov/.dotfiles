@@ -4,9 +4,11 @@ Info about types:
      * in new tree structure
 
 Lexer:
-    start - start of lexem
-    current - current reading position
+    keep positions: start - start of lexem, current - current reading position, line - current line
     match metod - return true and consume char - to check for 2-char tokens after first char scan
+    peek and peekNext - return current and next char without consuming it
+    advance - consume current char and move position
+    isEOF - true if we reach end of file
 
 'And' / 'Or' binary operations are shor-circute
 
