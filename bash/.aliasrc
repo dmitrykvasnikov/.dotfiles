@@ -132,6 +132,7 @@ alias cbi="cabal build && cabal install --overwrite-policy=always"
 alias h="cd ~/code/haskell"
 alias gh="./gh.sh"
 alias haskell="source haskell.sh $1"
+alias tags="hasktags -e ."
 
 # misc
 #alias remacs="systemctl --user restart emacs"

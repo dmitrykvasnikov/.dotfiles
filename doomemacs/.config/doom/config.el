@@ -25,8 +25,11 @@
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
 ;; cycle through buffers
-(global-set-key (kbd "C-{")   'bs-cycle-previous)
-(global-set-key (kbd "C-}")   'bs-cycle-next)
+(map! "C-{" #'bs-cycle-previous)
+(map! "C-}" #'bs-cycle-next)
+;;(global-set-key (kbd "C-}")   'bs-cycle-next)
+;;(global-set-key (kbd "C-{")   'bs-cycle-previous)
+(map! "C-g" #'evil-goto-definition)
 ;; break lines on words
 (global-visual-line-mode t)
 (setq vc-follow-symlinks nil)

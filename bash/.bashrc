@@ -27,7 +27,7 @@ PS1=$prompt_color'┌──${VIRTUAL_ENV:+(\[\033[0m\]$(basename $VIRTUAL_ENV)'$
 #PS1='[\u@\h \W]\$\[\033[0;36m\]$(parse_2:git_branch)\[\033[0m '
 
 # Source aliases
-source .aliasrc
+source ~/.aliasrc
 
 # Functions
 mkcd(){
