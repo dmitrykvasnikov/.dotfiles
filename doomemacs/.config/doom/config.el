@@ -30,6 +30,7 @@
 ;;(global-set-key (kbd "C-}")   'bs-cycle-next)
 ;;(global-set-key (kbd "C-{")   'bs-cycle-previous)
 (map! "C-g" #'evil-goto-definition)
+(map! :nv "C-]" #'evil-goto-definition)
 ;; break lines on words
 (global-visual-line-mode t)
 (setq vc-follow-symlinks nil)
