@@ -18,28 +18,35 @@
 (setq bookmark-sort-flag t)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
+
+;; setup workspaces file location
+(setq +workspaces-data-file "workspaces")
+(setq persp-save-dir "~/.config/doom/")
+;; do not create new workspace on open Emacs
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main")
+  )
+
 ;; setup clipboard
 ;; don't put deleted strings to X11 clipboard
 (setq select-enable-clipboard nil)
 ;; copying and pasting selected blocks in visual mode to and from X11 clipboard
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
+
 ;; cycle through buffers
 (map! "C-{" #'bs-cycle-previous)
 (map! "C-}" #'bs-cycle-next)
-;;(global-set-key (kbd "C-}")   'bs-cycle-next)
-;;(global-set-key (kbd "C-{")   'bs-cycle-previous)
+
+;; goto function definition (need to create TAGS file first)
 (map! "C-g" #'evil-goto-definition)
 (map! :nv "C-]" #'evil-goto-definition)
+
 ;; break lines on words
 (global-visual-line-mode t)
 (setq vc-follow-symlinks nil)
 (setq auto-save-default nil)
 
-;; do not create new workspace on open Emacs
-(after! persp-mode
-  (setq persp-emacsclient-init-frame-behaviour-override "main")
-  )
 
 ;; window resize with hydra
 (use-package! hydra
