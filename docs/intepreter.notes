@@ -19,3 +19,21 @@ Attach scope to code blocks?
 Fucntion call has arguments, function declaration has parameter
 
 Reporting Errors - probably return to list or Error in state
+
+Parser:
+    must take into consideration precedence and associativity
+
+Precedence levels:
+           expression
+           equality
+           comparison
+           term
+           factor
+           unary
+           primary
+
+unary :: ("!"|"-") unary | primary
+
+An idea of object - which will be attached to Token  and then reattached to Expression
+On token-generation stage objects are literals, identifiers and syntax values (literally parts of input string), and during parsing we add more objects to AST
+Or may be generate objects on parsing stage only

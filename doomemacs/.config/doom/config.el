@@ -36,6 +36,11 @@
 (setq vc-follow-symlinks nil)
 (setq auto-save-default nil)
 
+;; do not create new workspace on open Emacs
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main")
+  )
+
 ;; window resize with hydra
 (use-package! hydra
   :defer
