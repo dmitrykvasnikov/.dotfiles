@@ -1,6 +1,9 @@
 # system
 gksu
 pacman-static
+nvidia-470xx-dkms # for iMac - 750M
+nvidia-470xx-settings # for iMac - 750M
+nvidia-470xx-utils # for iMac - 750M
 
 #free youtube
 spoofdpi
