@@ -14,14 +14,11 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (load-file "~/.config/doom/font.el")
-(setq bookmark-default-file "/home/dmitry/.config/doom/bookmarks")
+(setq bookmark-default-file "~/.config/doom/bookmarks")
 (setq bookmark-sort-flag t)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 
-;; setup workspaces file location
-(setq +workspaces-data-file "workspaces")
-(setq persp-save-dir "~/.config/doom/")
 ;; do not create new workspace on open Emacs
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main")
