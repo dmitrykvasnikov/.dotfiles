@@ -29,6 +29,7 @@ alias install="sudo pacman -S"
 alias ynstall="yay -S"
 alias update="sudo pacman -Syu"
 alias ypdate="yay -Syu"
+alias mirrors="sudo reflector --latest 5 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
 alias remove="sudo pacman -Rns"
 alias autoremove='orphans=$(pacman -Qdtq); [ -z "$orphans" ] && echo "There are no orphaned packages" || sudo pacman -Rsc $orphans'
 alias rymove="yay -Rns"
