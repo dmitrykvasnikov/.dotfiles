@@ -44,7 +44,6 @@
 (setq vc-follow-symlinks nil)
 (setq auto-save-default nil)
 
-
 ;; window resize with hydra
 (use-package! hydra
   :defer

@@ -22,6 +22,9 @@ Reporting Errors - probably return to list or Error in state
 
 Parser:
     must take into consideration precedence and associativity
+    match - consume and return true / false
+    consume - accept a token kind and a part of error message to return? Probably to wrap parsing into Except Monad
+    synchronize - find next suitable starting point after an error
 
 Precedence levels:
            expression
@@ -37,3 +40,23 @@ unary :: ("!"|"-") unary | primary
 An idea of object - which will be attached to Token  and then reattached to Expression
 On token-generation stage objects are literals, identifiers and syntax values (literally parts of input string), and during parsing we add more objects to AST
 Or may be generate objects on parsing stage only
+
+Statements:
+        VAR - is a declaration statemenet - not allowed in then/else branches, only as part of StmtBlock
+        = - is assginment as Expression Statement?
+
+Or:
+  program : [declaration]
+  declararion: varDeclaration | Stmt
+  Stmt : exprStmt | printStmt
+  IfElse - Cond Then (Maybe Else)
+
+Parser fucntions could be of type ** ExceptT (Token, Message) (State Memory) Stmt ** - in parse  (which itself runs in RWST IO () monad)
+  get function depending on first token
+  run fucntion
+    - right - return expression
+    - left - add error (tell method) and synchronize, return ErrorExpression ... (as statement holder in case of errors)
+
+Final values are objects, and we gonna have constants - objects with predefind values (like True, False, Nil)
+
+Object :: BoolObject, IntObject, StringObject, IdentifierObject ...
