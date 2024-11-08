@@ -11,7 +11,7 @@
 
 ;; themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(setq doom-theme 'monokai)
+(setq doom-theme 'ef-dream)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
