@@ -9,7 +9,9 @@
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
 
-(setq doom-theme 'ef-owl)
+;; themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(setq doom-theme 'monokai)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
