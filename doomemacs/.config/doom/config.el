@@ -60,8 +60,8 @@
       :n "r" #'hydra/evil-window-resize/body);;
 
 ;; setup Fira Code ligatures
-(use-package fira-code-mode
-  :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes;;
+;; (use-package fira-code-mode
+;;   :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes;;
 (ligature-set-ligatures 't           '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
                                      ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
                                      "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
