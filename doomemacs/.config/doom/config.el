@@ -13,7 +13,10 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (setq doom-theme 'ef-dream)
 
+;; lsp
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+(setq lsp-enable-symbol-highlighting nil)
+(setq lsp-lens-enable nil)
 
 (load-file "~/.config/doom/font.el")
 (setq bookmark-default-file "~/.config/doom/bookmarks")
@@ -86,4 +89,3 @@
 (after! lsp-haskell
   (setq lsp-haskell-formatting-provider "ormolu"))
 (custom-set-variables '(haskell-stylish-on-save t))
-(setq lsp-lens-enable nil)

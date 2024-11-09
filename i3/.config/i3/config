@@ -226,7 +226,6 @@ bindsym $mod+o [class="kitty" title="terminal"] scratchpad show, move position c
 bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
-bindsym $mod+Control+n exec "clickup"
 bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "nemo ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
@@ -234,7 +233,8 @@ bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -
 #bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
-bindsym $mod+Control+d exec --no-startup-id emacsclient -c
+bindsym $mod+Control+o exec --no-startup-id kitty --title terminal
+bindsym $mod+Control+d exec --no-startup-id emacsclient -c -a 'emacs'
 
 #!! Custom commands / scripts
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -246,7 +246,7 @@ exec --no-startup-id dropbox start
 exec_always --no-startup-id albert
 exec --no-startup-id spoofdpi
 exec --no-startup-id xcompmgr
-exec --no-startup-id emacs --daemon
+exec --no-startup-id emacs --daemon &
 
 # Scratchpads
 exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title "cmus" -e /usr/bin/cmus && cd -
