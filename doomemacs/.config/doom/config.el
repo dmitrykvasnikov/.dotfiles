@@ -18,10 +18,11 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-lens-enable nil)
 
-;; font
-(custom-set-faces '(default ((t (:height 110 :family "Iosevka Comfy")))))
+;; font, size depends on machine hostname
+(custom-set-faces '(default ((t (:family "Iosevka Comfy")))))
 (cond ((string-equal (system-name) "imac") (custom-set-faces '(default ((t (:height 110))))))
       ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 110))))))
+      (t (custom-set-faces '(default ((t (:height 110))))))
       )
 
 (setq bookmark-default-file "~/.config/doom/bookmarks")
