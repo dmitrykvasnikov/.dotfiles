@@ -18,9 +18,15 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-lens-enable nil)
 
-(setq doom-font (font-spec :family "Iosevka Comfy" :size 20))
-
+;; (setq doom-font (font-spec :family "Iosevka Comfy" :weight medium :size 20))
+;; (cond ((string-equal (system-name) "imac") (setq doom-font (font-spec :size 18))))
+;;
 ;; (load-file "~/.config/doom/font.el")
+(custom-set-faces '(default ((t (:height 110 :family "Iosevka Comfy")))))
+(cond ((string-equal (system-name) "imac") (custom-set-faces '(default ((t (:height 110))))))
+      ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 150))))))
+      )
+
 (setq bookmark-default-file "~/.config/doom/bookmarks")
 (setq bookmark-sort-flag t)
 (setq display-line-numbers-type 'relative)
