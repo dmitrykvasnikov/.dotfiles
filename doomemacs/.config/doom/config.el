@@ -15,6 +15,7 @@
 (cond ((string-equal (system-name) "imac") (custom-set-faces '(default ((t (:height 110))))))
       ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 110))))))
       ((string-equal (system-name) "air2012") (custom-set-faces '(default ((t (:height 120))))))
+      ((string-equal (system-name) "air2019") (custom-set-faces '(default ((t (:height 115))))))
       (t (custom-set-faces '(default ((t (:height 110))))))
       )
 
