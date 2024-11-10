@@ -1,11 +1,3 @@
-;; packages
-;;(custom-set-variables
-;;'(package-archives
-;;   (quote
-;;     (("gnu" . "https://elpa.gnu.org/packages/")
-;;      ("melpa" . "https://melpa.org/packages/")))))
-;;(package-initialize)
-
 (setq user-full-name "Dmitry Kvasnikov"
       user-mail-address "dmitry.kvasnikov@gmail.com")
 
@@ -22,6 +14,7 @@
 (custom-set-faces '(default ((t (:family "Iosevka Comfy")))))
 (cond ((string-equal (system-name) "imac") (custom-set-faces '(default ((t (:height 110))))))
       ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 110))))))
+      ((string-equal (system-name) "air2012") (custom-set-faces '(default ((t (:height 120))))))
       (t (custom-set-faces '(default ((t (:height 110))))))
       )
 
