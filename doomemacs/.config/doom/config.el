@@ -24,7 +24,7 @@
 ;; (load-file "~/.config/doom/font.el")
 (custom-set-faces '(default ((t (:height 110 :family "Iosevka Comfy")))))
 (cond ((string-equal (system-name) "imac") (custom-set-faces '(default ((t (:height 110))))))
-      ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 150))))))
+      ((string-equal (system-name) "asus") (custom-set-faces '(default ((t (:height 110))))))
       )
 
 (setq bookmark-default-file "~/.config/doom/bookmarks")
