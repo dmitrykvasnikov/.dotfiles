@@ -18,7 +18,7 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-lens-enable nil)
 
-(setq doom-font (font-spec :family "Iosevka Comfy" :height 120))
+(setq doom-font (font-spec :family "Iosevka Comfy" :size 20))
 
 ;; (load-file "~/.config/doom/font.el")
 (setq bookmark-default-file "~/.config/doom/bookmarks")
