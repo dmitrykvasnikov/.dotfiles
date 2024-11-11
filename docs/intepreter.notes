@@ -16,7 +16,7 @@ Expression produce a value, Statement produce an effect
 
 Attach scope to code blocks?
 
-Fucntion call has arguments, function declaration has parameter
+Function call has arguments, function declaration has parameter
 
 Reporting Errors - probably return to list or Error in state
 
@@ -60,3 +60,11 @@ Parser fucntions could be of type ** ExceptT (Token, Message) (State Memory) Stm
 Final values are objects, and we gonna have constants - objects with predefind values (like True, False, Nil)
 
 Object :: BoolObject, IntObject, StringObject, IdentifierObject ...
+
+IfStatement - it's important to decide to which if will be correspond else condition - innermost one or outermost one
+
+In logical operations if we use falthyness values - what shoud we return - TRUE/FALSE or object itself
+
+For / While loops - needs to implement break; operator
+
+Identifier itself is like call to ID function without parenthesis???
