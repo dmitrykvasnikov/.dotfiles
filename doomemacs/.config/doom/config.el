@@ -3,7 +3,8 @@
 
 ;; themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(setq doom-theme 'ef-dream)
+;; (setq doom-theme 'ef-dream)
+(setq doom-theme 'miasma)
 (setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 ;; lsp
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
