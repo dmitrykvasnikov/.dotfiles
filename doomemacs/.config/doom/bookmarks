@@ -3,7 +3,7 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("interpreter"
- (filename . "~/.dotfiles/docs/intepreter.notes")
+ (filename . "~/.dotfiles/docs/intepreter.md")
  (front-context-string . "s\n     * in spec")
  (rear-context-string . " field/attribute")
  (position . 72)

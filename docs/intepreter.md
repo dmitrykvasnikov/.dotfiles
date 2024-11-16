@@ -3,7 +3,7 @@ Info about types:
      * in special table
      * in new tree structure
 
-Lexer:
+**Lexer**:
     keep positions: start - start of lexem, current - current reading position, line - current line
     match metod - return true and consume char - to check for 2-char tokens after first char scan
     peek and peekNext - return current and next char without consuming it
@@ -20,7 +20,7 @@ Function call has arguments, function declaration has parameter
 
 Reporting Errors - probably return to list or Error in state
 
-Parser:
+**Parser**:
     must take into consideration precedence and associativity
     match - consume and return true / false
     consume - accept a token kind and a part of error message to return? Probably to wrap parsing into Except Monad
@@ -63,8 +63,35 @@ Object :: BoolObject, IntObject, StringObject, IdentifierObject ...
 
 IfStatement - it's important to decide to which if will be correspond else condition - innermost one or outermost one
 
-In logical operations if we use falthyness values - what shoud we return - TRUE/FALSE or object itself
+In logical operations if we use thruthy / falsy values - what shoud we return - TRUE/FALSE or object itself
 
 For / While loops - needs to implement break; operator
 
 Identifier itself is like call to ID function without parenthesis???
+
+
+Environment always have link to parent environment (empty map in case of main program - or could be populated with args from command line), when we evalute function call - we create new environment, populated  with call parameters and with link on current environment
+
+Return could be implemented as an exception - so we try / catch function call
+
+Closures - environment should be part of function declaration, which could be modified with each function call
+When function declared we add current environment as closure + add declaration of this function to environment too
+When we call function - we use this environent instead of globals.
+Probably we need in envaronment map of function closures as function can update them
+
+fun makeCounter() {
+  var i = 0;
+  fun count() {
+    i = i + 1;
+    print i;
+  }
+  return count;
+}
+var counter = makeCounter();
+counter(); // "1".
+counter(); // "2".
+  
+Keep variables in map with depth of call chain. So closure just keeps it's depth ... ??? So variable keeps list of possible values depending from depth of calls ... Or transform it to _xVarName,
+
+**Class**
+In case of inner classes braeakfest . meal . eggs . qty = 3. only last '.' is a setter, first two a getters
