@@ -1,22 +1,22 @@
-import = ["/home/dmitry/.config/alacritty/themes/rose-pine.toml"]
+general.import = ["/home/dmitry/.config/alacritty/themes/rose-pine.toml"]
 
 [font]
 size = 13.0
 
 [font.bold]
-family = "JetBrains Mono"
+family = "Iosevka Comfy"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrains Mono"
+family = "Iosevka Comfy"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "Iosevka Comfy"
 style = "Italic"
 
 [font.normal]
-family = "JetBrains Mono"
+family = "Iosevka Comfy"
 style = "Regular"
 
 [window.padding]

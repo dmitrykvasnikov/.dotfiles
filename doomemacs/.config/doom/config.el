@@ -82,6 +82,12 @@
 (global-ligature-mode 't)
 
 ;; settings for haskell
+;; preventing minibuffer height jumps when HLS thow errors
+(setq max-mini-window-height 1)
+;; show diagnositcs in popups
+(setq lsp-ui-sideline-enable nil)
+
+
 (use-package ormolu
  :hook (haskell-mode . ormolu-format-on-save-mode)
  :bind
