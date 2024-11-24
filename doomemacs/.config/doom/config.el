@@ -87,6 +87,8 @@
 ;; show diagnositcs in popups
 (setq lsp-ui-sideline-enable nil)
 
+;; comment / uncomment with Meta-;
+(global-set-key (kbd "s-;") 'comment-line)
 
 (use-package ormolu
  :hook (haskell-mode . ormolu-format-on-save-mode)
@@ -96,3 +98,6 @@
 (after! lsp-haskell
   (setq lsp-haskell-formatting-provider "ormolu"))
 (custom-set-variables '(haskell-stylish-on-save t))
+
+(custom-set-faces!
+  '(flycheck-error :underline (:color "red2" :style wave)))
