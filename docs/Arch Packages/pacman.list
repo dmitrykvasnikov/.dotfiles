@@ -9,6 +9,7 @@ btop
 cups
 curl
 dosfstools
+dool # system diagnostic information
 dust # du replacement in Rust
 eza  # replacement for ls
 fastfetch
@@ -22,7 +23,7 @@ linux-headers
 lsof
 lxappearance # Switch GTK themes
 mtpfs
-ncdu
+ncdu # disc space analyzer
 networkmanager
 net-tools
 nodejs
