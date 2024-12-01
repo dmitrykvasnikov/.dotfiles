@@ -90,6 +90,7 @@ ttf-nerd-fonts-symbols
 ttf-victor-mono-nerd
 
 # Applications
+bat # cat with syntax highlighting
 calibre
 cmus # or moc
 fbreader
