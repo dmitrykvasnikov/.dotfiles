@@ -81,6 +81,11 @@
 
 (global-ligature-mode 't)
 
+;; org-mode - set margin and max line width
+(add-hook! 'org-mode-hook 'turn-on-auto-fill
+  ;;(setq left-margin-width 2)
+  (setq fill-column 125))
+
 ;; settings for haskell
 ;; preventing minibuffer height jumps when HLS thow errors
 (setq max-mini-window-height 1)
