@@ -2,11 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("interpreter"
+(("CUTElang.org"
+ (filename . "~/.dotfiles/docs/CUTElang.org")
+ (front-context-string . "#+TITLE: CUTE la")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26444 29846 725084 967000))
+("interpreter"
  (filename . "~/.dotfiles/docs/intepreter.md")
  (front-context-string . "s\n     * in spec")
  (rear-context-string . " field/attribute")
- (position . 72)
+ (position . 1)
  (last-modified 26402 3231 212195 121000))
 ("bashrc"
  (filename . "~/.dotfiles/bash/.bashrc")
@@ -24,19 +30,19 @@
  (filename . "~/.dotfiles/doomemacs/.config/doom/packages.el")
  (front-context-string . "(package! ormolu")
  (rear-context-string . "! haskell-mode)\n")
- (position . 381)
+ (position . 1)
  (last-modified 26401 7650 292336 186000))
 ("doom.init"
  (filename . "~/.dotfiles/doomemacs/.config/doom/init.el")
  (front-context-string . ";;(format +onsav")
  (rear-context-string . " folding\n       ")
- (position . 2981)
+ (position . 1)
  (last-modified 26401 7639 163815 910000))
 ("doom.config"
  (filename . "~/.dotfiles/doomemacs/.config/doom/config.el")
  (front-context-string . " display-line-nu")
  (rear-context-string . "ookmarks\")\n(setq")
- (position . 509)
+ (position . 1)
  (last-modified 26401 7617 868382 281000))
 ("kitty"
  (filename . "~/.dotfiles/kitty/.config/kitty/kitty.conf")

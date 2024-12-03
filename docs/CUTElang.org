@@ -1,3 +1,27 @@
 #+TITLE: CUTE language
 #+AUTHOR: Dmitry Kvasnikov
 #+DESCRIPTION: Some thoughts about theory of interpreters and CUTE programming language implementation
+
+* Scanner / Lexer
+Scanning ...
+* Parser
+Types attached to terminal tokens or to operations to indicated types of consumed arguments
+* Grammar
+Program is a list of statements
+Any expression separated by ';' is a statement
+Declarations:
+- single declaration: int x; (like in function declaration)
+- multiple declaration: int x, y ...;
+- declaration with initialization : int x = expression;
+Comment starting with // (ignored by parser)
+Return statment: return expression;
+Function declartion: int functions(int x, string y) { [statement] }
+While loop (also For loop which will be transformed into while)
+If-then-else block
+Block / compound statements
+* Environment
+Separation of environment to functions and variables like os
+         * type Env = [Sig, [Context]]
+         * type Sig = Map Id ([Type], Type) - functions
+         * type Context = Map Id Type - variables
+Checking statements evolves updating of environment
