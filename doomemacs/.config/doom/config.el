@@ -30,6 +30,11 @@
   (setq persp-emacsclient-init-frame-behaviour-override "main")
   )
 
+;; SPC-z to add multiple cursors
+(map! :leader
+      :desc "Toggle multi-cursor here"
+      "z" #'+multiple-cursors/evil-mc-toggle-cursor-here ())
+
 ;; setup clipboard
 ;; don't put deleted strings to X11 clipboard
 (setq select-enable-clipboard nil)
