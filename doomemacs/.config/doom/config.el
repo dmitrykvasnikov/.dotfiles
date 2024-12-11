@@ -4,12 +4,34 @@
 ;; themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (setq doom-theme 'ef-dream)
-(setq doom-theme 'zerodark)
+;; (setq doom-theme 'zerodark)
+(setq doom-theme 'ef-autumn)
 (setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 ;; lsp
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-lens-enable nil)
+
+;; Paddigns with spacious-padding plugin
+;; (require 'spacious-padding)
+(setq spacious-padding-mode 1)
+;; These are the default values, but I keep them here for visibility.
+(setq spacious-padding-widths
+      '( :internal-border-width 6
+         :header-line-width 4
+         :mode-line-width 4
+         :tab-width 4
+         :right-divider-width 20
+         :scroll-bar-width 6
+         :fringe-width 5))
+
+;; Read the doc string of `spacious-padding-subtle-mode-line' as it
+;; is very flexible and provides several examples.
+(setq spacious-padding-subtle-mode-line
+      `( :mode-line-active 'default
+         :mode-line-inactive vertical-border))
+
+(spacious-padding-mode 1)
 
 ;; font, size depends on machine hostname
 ;; (custom-set-faces '(default ((t (:family "Iosevka Comfy" :height 110)))))
@@ -93,7 +115,7 @@
 
 ;; settings for haskell
 ;; preventing minibuffer height jumps when HLS thow errors
-(setq max-mini-window-height 1)
+;; (setq max-mini-window-height 1)
 ;; show diagnositcs in popups
 (setq lsp-ui-sideline-enable nil)
 
