@@ -245,6 +245,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nasa7.jpg
 exec --no-startup-id dropbox start
 exec_always --no-startup-id albert
 exec --no-startup-id spoofdpi
+exec --no-startup-id nm-applet
 exec --no-startup-id xcompmgr
 exec --no-startup-id emacs --daemon &
 

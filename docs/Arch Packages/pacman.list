@@ -25,6 +25,7 @@ lxappearance # Switch GTK themes
 mtpfs
 ncdu # disc space analyzer
 networkmanager
+network-manager-applet
 net-tools
 nodejs
 npm
