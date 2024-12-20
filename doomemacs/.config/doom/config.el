@@ -62,7 +62,7 @@
 (setq select-enable-clipboard nil)
 ;; copying and pasting selected blocks in visual mode to and from X11 clipboard
 (map! "S-C-c" #'clipboard-kill-ring-save)
-(map! "S-C-v" #'clipboard-yank)
+(map!
 
 ;; cycle through buffers
 (map! "C-{" #'bs-cycle-previous)
@@ -90,7 +90,7 @@
     ("q" nil "quit")))
 (map! :leader
       :prefix ("w" . "window")
-      :n "r" #'hydra/evil-window-resize/body);;
+      :n "r" #'hydra/evil-window-resize/body)
 
 ;; setup Fira Code ligatures
 ;; (use-package fira-code-mode
@@ -115,7 +115,7 @@
 
 ;; settings for haskell
 ;; preventing minibuffer height jumps when HLS thow errors
-;; (setq max-mini-window-height 1)
+(setq max-mini-window-height 1)
 ;; show diagnositcs in popups
 (setq lsp-ui-sideline-enable nil)
 
@@ -133,3 +133,16 @@
 
 (custom-set-faces!
   '(flycheck-error :underline (:color "red2" :style wave)))
+
+
+(defun
+    hmmb
+    ()
+    (if (equal 1 max-mini-window-height)
+        (setq max-mini-window-height nil)
+        (setq max-mini-window-height 1)
+     )
+)
+
+(map! :leader
+      "1" #'hmmb)
