@@ -62,7 +62,7 @@
 (setq select-enable-clipboard nil)
 ;; copying and pasting selected blocks in visual mode to and from X11 clipboard
 (map! "S-C-c" #'clipboard-kill-ring-save)
-(map!
+(map! "S-C-v" #'clipboard-yank)
 
 ;; cycle through buffers
 (map! "C-{" #'bs-cycle-previous)
@@ -135,14 +135,14 @@
   '(flycheck-error :underline (:color "red2" :style wave)))
 
 
+;; SPC-1 - switch max height of minibuffer
 (defun
-    hmmb
-    ()
+    minbufferheight ()
+    (interactive)
     (if (equal 1 max-mini-window-height)
         (setq max-mini-window-height nil)
         (setq max-mini-window-height 1)
      )
 )
-
 (map! :leader
-      "1" #'hmmb)
+      "1" #'minbufferheight)
