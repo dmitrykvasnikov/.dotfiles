@@ -6,7 +6,8 @@
 ;; (setq doom-theme 'ef-dream)
 ;; (setq doom-theme 'zerodark)
 ;; (setq doom-theme 'ef-autumn)
-(setq doom-theme 'oceanic)
+;; (setq doom-theme 'oceanic)
+(setq doom-theme 'gruber-darker)
 (setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 ;; lsp
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
