@@ -197,11 +197,12 @@ mode "resize" {
 }
 
 mode "web" {
-  bindsym g exec "google-chrome-stable --proxy-server='http://127.0.0.1:8080'", mode "default"
-  bindsym f exec "firefox --proxy-server='http://127.0.0.1:8080'", mode "default"
-  bindsym v exec "vivaldi-stable --proxy-server='http://127.0.0.1:8080'", mode "default"
-  bindsym c exec "chromium --proxy-server='http://127.0.0.1:8080'", mode "default"
-  bindsym b exec "brave --proxy-server='http://127.0.0.1:8080'", mode "default"
+#  bindsym g exec "google-chrome-stable --proxy-server='http://127.0.0.1:8080'", mode "default"
+  bindsym g exec "google-chrome-stable", mode "default"
+  bindsym f exec "firefox", mode "default"
+  bindsym v exec "vivaldi-stable", mode "default"
+  bindsym c exec "chromium", mode "default"
+  bindsym b exec "brave", mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+i mode "default"
@@ -245,7 +246,7 @@ exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/nasa7.jpg
 exec --no-startup-id dropbox start
 exec_always --no-startup-id albert
-exec --no-startup-id spoofdpi
+# exec --no-startup-id spoofdpi
 exec --no-startup-id nm-applet
 exec --no-startup-id xcompmgr
 exec --no-startup-id emacs --daemon &
