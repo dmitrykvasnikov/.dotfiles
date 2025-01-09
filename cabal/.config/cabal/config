@@ -152,7 +152,7 @@ init
   -- test-dir:
   language: GHC2024
   application-dir: app
-  source-dir: lib
+  source-dir: src
 
 install-dirs user
   -- prefix: /home/dmitry/.cabal
