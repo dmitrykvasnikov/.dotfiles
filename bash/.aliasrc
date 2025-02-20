@@ -128,7 +128,7 @@ alias cmus="[ -f /sbin/cmus ] && cd ~/Music && /sbin/cmus && cd - > null"
 # haskell
 alias cr="cabal repl"
 alias cb="cabal build"
-alias ci="cabal install --overwrite-polocy=always"
+alias ci="cabal install --overwrite-policy=always"
 alias cbr="cabal build && cabal run"
 alias cbi="cabal build && cabal install --overwrite-policy=always"
 alias h="cd ~/code/haskell"
@@ -150,4 +150,4 @@ alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | 
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 
 # vpn
-alias vpn="cd /etc/openvpn && sudo openvpn --config 'France, Toulon L1.ovpn' && cd -"
+alias vpn="cd /etc/openvpn && sudo openvpn --config 'Germany, Offenbach S3.ovpn' && cd -"
