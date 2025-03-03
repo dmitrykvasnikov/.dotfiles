@@ -10,9 +10,12 @@ mkdir $projectDir
 cd $projectDir
 cp ~/.dotfiles/haskell/.gitignore .
 cp ~/.dotfiles/haskell/.stylish-haskell.yaml .
+echo ""
+echo -e "\e[0;32mStarting cabal ...\e[0m"
 cabal init  .
 touch README.md
-echo -e ""
+echo ""
+echo -e "\e[0;32mStarting git ...\e[0m"
 git init
 git add .
 git commit -m "Project created"
