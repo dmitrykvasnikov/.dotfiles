@@ -1,10 +1,18 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
-(require 'package)
-(package-initialize)
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;; package repo setup
+(require 'package)
+(setq package-check-signature nil)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+(package-initialize)
+(require 'use-package)
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
+
 
 (add-to-list 'display-buffer-alist
              '("\\`\\*\\(Warnings\\|Compile-Log\\)\\*\\'"
@@ -19,34 +27,33 @@
 (setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 
 ;; setup fonts
-(defun fontify-frame (frame)
-  (set-frame-parameter frame 'font "Aporetic Sans Mono-11"))
-;; Fontify current frame
-(fontify-frame nil)
-;; Fontify any future frames
-(push 'fontify-frame after-make-frame-functions)
+(let ((mono-spaced-font "Aporetic Sans Mono")
+      (proportionately-spaced-font "Aporetic Sans"))
+  (set-face-attribute 'default nil :family mono-spaced-font :height 130)
+  (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
+  (set-face-attribute 'variable-pitch nil :family proportionately-spaced-font :height 1.0))
 
 ;; setup theme
 (use-package ef-themes
-  :ensure t
+  ;;:ensure t
   :config
   (load-theme 'ef-dream :no-confirm-loading))
 
 ;; packages
 (use-package delsel
-  :ensure nil
+  ;;:ensure nil
   :hook (after-init . delete-selection-mode))
 
 (use-package vertico
-  :ensure t
+  ;;:ensure t
   :hook (after-init . vertico-mode))
 
 (use-package marginalia
-  :ensure t
+  ;;:ensure t
   :hook (after-init . marginalia-mode))
 
 (use-package orderless
-  :ensure t
+  ;;:ensure t
   :config
   (setq completion-styles '(orderless basic))
   (setq completion-category-defaults nil)
@@ -57,7 +64,7 @@
   :hook (after-init . savehist-mode))
 
 (use-package corfu
-  :ensure t
+  ;;:ensure t
   :hook (after-init . global-corfu-mode)
   :bind (:map corfu-map ("<tab>" . corfu-complete))
   :config
@@ -74,22 +81,22 @@
 
 ;; nerd-fonts set up
 (use-package nerd-icons
-  :ensure t)
+  ;;:ensure t)
 
 (use-package nerd-icons-completion
-  :ensure t
+  ;;:ensure t
   :after marginalia
   :config
   (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 
 (use-package nerd-icons-corfu
-  :ensure t
+  ;;:ensure t
   :after corfu
   :config
   (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 
 (use-package nerd-icons-dired
-  :ensure t
+  ;;:ensure t
   :hook
   (dired-mode . nerd-icons-dired-mode))
 
@@ -107,7 +114,7 @@
   (setq dired-dwim-target t))
 
 (use-package dired-subtree
-  :ensure t
+  ;;:ensure t
   :after dired
   :bind
   ( :map dired-mode-map
@@ -119,7 +126,7 @@
   (setq dired-subtree-use-backgrounds nil))
 
 (use-package trashed
-  :ensure t
+  ;;:ensure t
   :commands (trashed)
   :config
   (setq trashed-action-confirmer 'y-or-n-p)
