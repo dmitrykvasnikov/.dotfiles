@@ -27,9 +27,9 @@
 (setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 
 ;; setup fonts
-(let ((mono-spaced-font "Aporetic Sans Mono")
-      (proportionately-spaced-font "Aporetic Sans"))
-  (set-face-attribute 'default nil :family mono-spaced-font :height 130)
+(let ((mono-spaced-font "Iosevka")
+      (proportionately-spaced-font "Iosevka"))
+  (set-face-attribute 'default nil :family mono-spaced-font :height 110)
   (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
   (set-face-attribute 'variable-pitch nil :family proportionately-spaced-font :height 1.0))
 
