@@ -117,7 +117,7 @@
 
 ;; settings for haskell
 ;; preventing minibuffer height jumps when HLS thow errors
-;; (setq max-mini-window-height 1)
+(setq max-mini-window-height 1)
 ;; show diagnositcs in popups
 (setq lsp-ui-sideline-enable nil)
 
@@ -138,13 +138,14 @@
 
 
 ;; SPC-1 - switch max height of minibuffer
-;; (defun
-    ;; minbufferheight ()
-    ;; (interactive)
-    ;; (if (equal 1 max-mini-window-height)
-        ;; (setq max-mini-window-height nil)
-        ;; (setq max-mini-window-height 1)
-     ;; )
-;; )
+(defun
+     minbufferheight ()
+     (interactive)
+     (if (equal 1 max-mini-window-height)
+         (setq max-mini-window-height nil)
+         (setq max-mini-window-height 1)
+      )
+)
+
 (map! :leader
       "1" #'minbufferheight)

@@ -37,7 +37,8 @@ dracula-icons-theme
 rose-pine-gtk-theme-full
 tokyonight-gtk-theme-git
 tokyonight-extra
-ttf-iosevka-comfy
+#ttf-iosevka-comfy
+ttf-aporetic
 ttf-iosevka
 otf-fira-code-symbol
 
