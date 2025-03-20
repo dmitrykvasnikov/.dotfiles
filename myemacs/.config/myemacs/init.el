@@ -16,13 +16,6 @@
                (display-buffer-no-window)
                (allow-no-window . t)))
 
-;; general view
-(menu-bar-mode -1)
-(scroll-bar-mode 1)
-(tool-bar-mode -1)
-(setq inhibit-startup-screen t)
-(setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
-
 ;; setup fonts
 (let ((mono-spaced-font "Iosevka")
       (proportionately-spaced-font "Iosevka"))
@@ -81,7 +74,8 @@
 
 ;; nerd-fonts set up
 (use-package nerd-icons
-  ;;:ensure t)
+  ;;:ensure t
+  )
 
 (use-package nerd-icons-completion
   ;;:ensure t
@@ -217,6 +211,8 @@
 (global-display-line-numbers-mode 1) ;; display line numbers
 (fset `yes-or-no-p `y-or-n-p)        ;; answer questions with y/n (instead of
 				     ;; yes/no)
+(setq inhibit-startup-screen t)
+(setq-default initial-scratch-message ";; He who walks alone  ... Always walks uphill but ... Beneath his feet are the ... Broken bones of flawed men ...\n\n")
 
 ;; sometimes we want to dedicate a window for a given buffer, this function
 ;; allows to quickly toggle between dedicated and not dedicated for a given
@@ -229,11 +225,6 @@
     (set-window-dedicated-p window (not state))
     (message "Window %s" (if (not state) "dedicated" "undedicated"))))
 
-;; install icons
-(use-package all-the-icons)
-;; show icons when listing files and dirs in dired mode
-(use-package all-the-icons-dired
-  :hook     (dired-mode . all-the-icons-dired-mode))
 
 ;; Displays a vertical line showing the column length limit ( is set to 80)
 (use-package display-fill-column-indicator
@@ -253,25 +244,6 @@
 (use-package rainbow-delimiters
   :commands rainbow-delimiters-mode
   :hook     (prog-mode . rainbow-delimiters-mode))
-
-;; nyan cat flying in the minibuffer
-(use-package nyan-mode
-  :config   (nyan-mode 1))
-
-;; words of encouragement in the minibuffer each time you save a file
-(use-package encourage-mode
-  :config   (encourage-mode 1)
-            (setq encourage-encouragements (nconc encourage-encouragements
-                                            '("Good job"
-                                              "Great initiative"
-                                              "Nice work"
-					      "OMG! Awesome!"))))
-
-;; load default theme called moe-theme in the dark version
-(use-package moe-theme
-  :config   (setq moe-dark-comment-delimiter -moe-dark-doc)
-            (setq moe-dark-comment -moe-dark-doc)
-            (load-theme 'moe-dark t))
 
 ;; allows quick theme change
 (use-package helm-themes)
@@ -300,11 +272,11 @@
 ;; dark themes by setting the light-themes-list and dark-themes-list variables
 
 
-(defvar light-themes-list '(moe-light solarized-light leuven)
-  "List of light themes.")
-
-(defvar dark-themes-list '(moe-dark)
-  "List of dark themes.")
+;;(defvar light-themes-list '(moe-light solarized-light leuven)
+;;  "List of light themes.")
+;;
+;;(defvar dark-themes-list '(moe-dark)
+;;  "List of dark themes.")
 
 (defun cursors-to-light ()
   "Modify cursor types and colors for different evil modes."
@@ -1020,48 +992,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Nix
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package nix-mode
-  :mode "\\.nix\\'")
-(use-package nixpkgs-fmt)
-;; format all nix files on save
-(add-hook 'nix-mode-hook 'nixpkgs-fmt-on-save-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Scala
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package scala-mode)
-(use-package sbt-mode)
-(setq sbt:prefer-nested-projects t)    ;; bug in sbt-mode fixed
-
-(setq compilation-auto-jump-to-first-error t)
-(global-set-key (kbd "C-c s") 'sbt-hydra)
-
-(add-hook 'sbt-mode-hook
-          (lambda ()
-            (setq prettify-symbols-alist
-                  `((,(expand-file-name (directory-file-name default-directory)) . ?⌂)
-                    (,(expand-file-name "~") . ?~)))
-            (prettify-symbols-mode t)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Smart programms running inside Emacs
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; rest cliesnt is an amazing tool for calling http servers
-(use-package restclient)
-(use-package company-restclient)
-(add-to-list 'company-backends 'company-restclient)
-;; speed-type allows testing your type skills, just call speed-type-test
-(use-package speed-type)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
 ;; Configuration for editing ELisp code
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1114,26 +1044,6 @@
         next-line))
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; RSS reader
-;; see: https://github.com/skeeto/elfeed
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package elfeed
-  :config
-  (setq elfeed-feeds
-        '(
-          ;; programming
-          ("https://www.reddit.com/r/haskell.rss" haskell)
-          ("https://www.reddit.com/r/emacs.rss" emacs)
-  	)
-  )
-  (setq-default elfeed-search-filter "@2-days-ago +unread")
-  (setq-default elfeed-search-title-max-width 100)
-  (setq-default elfeed-search-title-min-width 100)
-)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
