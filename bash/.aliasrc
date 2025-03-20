@@ -102,6 +102,7 @@ alias ec="emacsclient -c ~/.config/doom/config.el &"
 alias ep="emacsclient -c ~/.config/doom/packages.el &"
 alias x=startx
 alias e1="emacs --init-directory=~/.config/myemacs"
+alias e1d="emacs --daemon --init-directory=~/.config/myemacs"
 
 #dotman / .dotfiles repo
 alias dotman="~/.dotfiles/dotman.sh"
