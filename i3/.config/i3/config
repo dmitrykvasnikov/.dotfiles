@@ -229,7 +229,7 @@ bindsym $mod+Escape scratchpad show, move position center
 
 #!! Custom shortcuts
 bindsym $mod+Control+v exec "code"
-bindsym $mod+Control+e exec "nemo ~/Downloads"
+bindsym $mod+Control+e exec "caja ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -

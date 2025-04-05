@@ -63,12 +63,13 @@ pulseaudio-alsa
 # Desktop
 alacritty
 broot #directory navigation
+caja
 feh
 gtk-engine-murrine # for GTK themes enable
 i3
 ly
 maim
-nemo
+#nemo
 polybar
 python-i3ipc
 ranger #file manager
