@@ -4,19 +4,19 @@ general.import = ["/home/dmitry/.config/alacritty/themes/rose-pine.toml"]
 size = 13.0
 
 [font.bold]
-family = "Iosevka Comfy"
+family = "Iosevka"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Comfy"
+family = "Iosevka"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Comfy"
+family = "Iosevka"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Comfy"
+family = "Iosevka"
 style = "Regular"
 
 [window.padding]
