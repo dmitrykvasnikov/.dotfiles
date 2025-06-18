@@ -5,7 +5,7 @@ configuration {
   display-windowcd: "Windows / Current Workspace:";
   display-filebrowser: "Files:";
   drun-display-format: "{name}";
-  font: "Fira Code Medium 12";
+  font: "Iosevka Light 16";
 }
 
 @theme "/dev/null"
