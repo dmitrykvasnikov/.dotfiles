@@ -141,3 +141,7 @@ git-delta
 tuned-ppd
 thermald
 powertop
+
+# Theming
+materia-gtk-theme
+papirus-icon-theme
