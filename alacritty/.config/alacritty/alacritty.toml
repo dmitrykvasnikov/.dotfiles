@@ -1,22 +1,22 @@
 general.import = ["/home/dmitry/.config/alacritty/themes/rose-pine.toml"]
 
 [font]
-size = 13.0
+size = 12.0
 
 [font.bold]
-family = "Iosevka"
+family = "Aporetic Sans Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka"
+family = "Aporetic Sans Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka"
+family = "Aporetic Sans Mono"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka"
+family = "Aporetic Sans Mono"
 style = "Regular"
 
 [window.padding]
