@@ -72,7 +72,7 @@ bindsym XF86KbdBrightnessDown exec "brightnessctl --device='smc::kbd_backlight' 
 
 bindsym $mod+Return exec kitty
 bindsym $mod+shift+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run -i -p DMENU
+bindsym $mod+d exec --no-startup-id dmenu_run -i -p dmenu -fn 'Aporetic Sans Mono'
 #bindsym $mod+m exec --no-startup-id "rofi -modes drun,filebrowser,run,window,windowcd -show drun -show-icons -sort"
 bindsym $mod+m exec --no-startup-id "rofi -show drun -show-icons -sort"
 bindsym $mod+Tab exec --no-startup-id "rofi -modes window,windowcd -show window -show-icons -sort"
