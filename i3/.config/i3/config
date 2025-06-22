@@ -219,7 +219,7 @@ for_window [class="mpv"] floating enable, resize set 1200 800, move position cen
 for_window [window_role="About"] floating enable
 
 # Setting scratchpads
-for_window [class="kitty" title="cmus"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
+for_window [class="kitty" title="cmusplayer"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
 #for_window [class="kitty" title="mocp"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
 for_window [class="kitty" title="terminal"] move scratchpad, resize set $scratchpad_defW $scratchpad_defH, border pixel 4
 bindsym $mod+p [class="kitty" title="cmus"] scratchpad show, move position center
@@ -233,7 +233,7 @@ bindsym $mod+Control+v exec "code"
 bindsym $mod+Control+e exec "caja ~/Downloads"
 bindsym $mod+Shift+p exec "maim ~/Pictures/$(date +%s).png"
 bindsym $mod+Control+s exec "maim -s ~/Pictures/$(date +%s).png"
-bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmus -e /usr/bin/cmus && cd -
+bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title cmusplayer -e /usr/bin/cmus && cd -
 #bindsym $mod+Control+p exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 bindsym $mod+Control+t exec --no-startup-id kitty --title terminal
 bindsym $mod+Control+o exec --no-startup-id kitty --title terminal
@@ -253,7 +253,7 @@ exec --no-startup-id xcompmgr
 exec --no-startup-id emacs --daemon &
 
 # Scratchpads
-exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title "cmus" -e /usr/bin/cmus && cd -
+exec --no-startup-id [ -f /usr/bin/cmus ] && cd ~/Music && kitty --title "cmusplayer" -e /usr/bin/cmus && cd -
 #exec --no-startup-id [ -f /usr/bin/mocp ] && cd ~/Music && kitty --title mocp -e mocp -T $HOME/.moc/themes/drakula_theme && cd -
 exec --no-startup-id kitty --title terminal
 
