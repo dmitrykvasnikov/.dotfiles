@@ -1,6 +1,6 @@
 [General]
-frontend=widgetsboxmodel
-hotkey=Ctrl+Space
+frontend=widgetsboxmodel-ng
+hotkey=Ctrl+Home
 showTray=false
 telemetry=false
 terminal=Kitty
@@ -53,3 +53,14 @@ showFallbacksOnEmpty=true
 systemShadow=false
 theme=Numix
 windowPosition=@Point(445 174)
+
+[widgetsboxmodel-ng]
+alwaysOnTop=true
+clearOnHide=true
+displayScrollbar=false
+followCursor=true
+hideOnFocusLoss=true
+historySearch=true
+itemCount=5
+quitOnClose=false
+showCentered=true
