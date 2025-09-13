@@ -1,6 +1,5 @@
 ;;; init.el --- Initialization file for Emacs -*- lexical-binding: t -*-
 ;; Author: Dmitry Kvasnikov
-;; Co-author: DeepSeek arvan
 
 ;;; Commentary:
 ;;Emacs Startup File --- initialization for Emacs
@@ -33,26 +32,15 @@
 ;; Auto-refresh buffers when files on disk change.
 (global-auto-revert-mode t)
 
-;; Macros
-(defmacro append-to-list (target suffix)
-  "Append SUFFIX to TARGET in place."
-  `(setq ,target (append ,target ,suffix)))
-
-;; Package initialization
+;; Initialize package management
 (require 'package)
-(setq package-check-signature nil)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("gnu" . "https://elpa.gnu.org/packages/"))
-      package-archive-priorities '(("melpa" . 1)))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-;; Ensure use-package is installed
+
+;; Ensure 'use-package' is installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
-;;(when (not package-archive-contents)
-;;  (package-refresh-contents)
-;;  (package-install 'use-package))
 
 (require 'use-package)
 (require 'use-package-ensure)
@@ -64,10 +52,56 @@
 (setq use-package-verbose t)
 (setq use-package-compute-statistics t)
 
-;; Packages
-(use-package vertico
+;; Packages installation
+(use-package recentf
   :init
-  (vertico-mode))
+  (recentf-mode))
+
+(use-package vertico
+  :ensure t
+  :hook (after-init . vertico-mode)
+  :init (vertico-mode)
+  :custom
+  (vertico-count 8)
+  (vertico-cycle t)
+  (vertico-resize nil)
+  (vertico-scroll-margin 0))
+
+(use-package orderless
+  :ensure t
+  :after vertico
+  :custom
+  (completion-category-defaults nil)
+  (completion-styles '(orderless partial-completion))
+  (completion-category-overrides '((file (styles . (partial-completion))))))
+
+(use-package corfu
+  :ensure t
+  :hook ((org-mode
+          js2-mode
+          css-mode
+          json-mode
+          html-mode
+          emacs-lisp-mode
+          typescript-mode) . corfu-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-info t)
+  (corfu-cycle t)
+  (corfu-auto-prefix 2)
+  (corfu-auto-delay 0.0)
+  (corfu-preselect 'first)
+  (corfu-preview-current 'insert)
+  (corfu-completion-styles '(orderless))
+  (text-mode-ispell-word-completion . nil)
+  :config
+  (keymap-unset corfu-map "RET")
+  :bind
+  (:map corfu-map
+        ("TAB" . corfu-insert)
+        ([tab] . corfu-insert)
+        ("ESC" . corfu-quit)
+        ([esc] . corfu-quit)))
 
 (use-package marginalia
   :after vertico
@@ -78,47 +112,24 @@
   :init
   (savehist-mode))
 
-(use-package orderless
-  :custom
-  (completion-styles '(orderless basic))
-  (completion-category-overrides '((file (styles basic partial-completion)))))
-
 (use-package which-key
   :init
   (which-key-mode))
 
-(use-package recentf
-  :init
-  (recentf-mode))
+;; Windows navigation
+(windmove-default-keybindings)
+
+;; Icons
+(use-package all-the-icons)
+(use-package all-the-icons-dired)
+;;(use-package treemacs-all-the-icons)
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 ;;Keyboard mappings
 (global-set-key (kbd "C-x C-r") 'recentf-open)
-(global-set-key (kbd "M-o") 'other-window)
-
-;; Delete selection
-(delete-selection-mode t)
-
-;; Files navigation
-(setq vc-follow-symlinks t)		;; Follow symlinks without confirmation
-
-;; Themes
-(append-to-list load-path '("~/.emacs.d/themes"))
-(use-package ef-themes)
-(use-package dracula-theme)
-(load-theme 'dracula t)
-
-;; Keep custom settings in separate file and load them if this file exists
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(when (file-exists-p custom-file)
-  (load custom-file))
-
-;; Windows management
-;;(setq winner-mode `t)
-
-(windmove-default-keybindings)
-
-;; Search setting
-(setq isearch-allow-motion t)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-M-s") 'window-toggle-side-windows)
 
 ;; Auto-save on change
 (defun save-buffer-if-visiting-file (&optional args)
@@ -129,11 +140,21 @@
 (add-hook 'auto-save-hook 'save-buffer-if-visiting-file)
 (setq auto-save-interval 1)
 
+;; Install and configure themes
+(use-package dracula-theme)
+(use-package ef-themes)
+(load-theme 'dracula t)
+
 ;; Switch between Emacs windows
 (use-package ace-window
-  :ensure t
   :config
   (global-set-key (kbd "M-o") 'ace-window))
+
+;; Delete selection
+(delete-selection-mode t)
+
+;; Files navigation
+(setq vc-follow-symlinks t)		;; Follow symlinks without confirmation
 
 ;; Switch to treemacs
 (defvar previous-window nil
@@ -185,18 +206,11 @@
 ;; This parameter sets the width (in pixels) of the internal border to 5
 ;; The internal border is the space between the frame content and the window edges
 
-;; Install and configure doom-modeline
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1)
-  )
-
 ;; Disable async compilation warnings
 (setq comp-async-warnings nil)
 
 ;; Haskell Mode configuration
 (use-package haskell-mode
-  :ensure t
   :bind (("C-M-x" . haskell-interactive-bring) ;; Bind Haskell REPL to C-M-x
          ("C-f" . ormolu-format-buffer)) ;; Bind formatting to C-f
   :config
@@ -205,9 +219,7 @@
   )
 
 ;; Install and configure ormolu
-(use-package ormolu
-  :ensure t
-  )
+(use-package ormolu)
 
 ;; Hook to bind formatting to C-f in haskell-mode
 (add-hook 'haskell-mode-hook
@@ -216,33 +228,84 @@
             )
           )
 
-;; Enable lsp-mode and configure for haskell-mode
+
 (use-package lsp-mode
-  :hook (haskell-mode . lsp-deferred)
-  :commands lsp
+  :hook ((css-mode
+	  js2-mode
+	  html-mode
+	  json-mode
+	  java-mode
+	  typescript-mode
+	  haskell-mode) . lsp-deferred)
+  :commands lsp lsp-deferred
   :config
   (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper")
   (setq lsp-haskell-process-args-hie '("-d" "-l" "/tmp/hls.log"))
   (setq lsp-enable-snippet nil) ;; Disable snippet support
   (setq lsp-auto-configure t)
-  )
+  :custom
+  (lsp-log-io nil)
+  (lsp-keep-workspace-alive nil)
+  (lsp-semantic-tokens-enable nil)
+  (lsp-session-file "~/.emacs.d/.lsp-session-v1")
+  
+  (lsp-enable-xref t)
+  (lsp-enable-links t)
+  (lsp-enable-imenu nil)
+  (lsp-enable-indentation nil)
+  (lsp-eldoc-enable-hover nil)
+  (lsp-enable-file-watchers nil)
+  (lsp-enable-symbol-highlighting t)
+  (lsp-enable-on-type-formatting nil)
+  (lsp-enable-text-document-color nil)
+  (lsp-enable-suggest-server-download t)
+
+  (lsp-ui-doc-enable nil)
+  (lsp-ui-sideline-delay 0)
+  (lsp-ui-sideline-show-hover nil)
+  (lsp-ui-sideline-update-mode 'line)
+  (lsp-ui-sideline-diagnostic-max-lines 20)
+  
+  (lsp-signature-auto-activate nil)
+  (lsp-signature-render-documentation nil)
+
+  (lsp-modeline-diagnostics-enable nil)
+  (lsp-modeline-code-actions-enable nil)
+  (lsp-modeline-workspace-status-enable nil)
+  
+  (lsp-headerline-breadcrumb-enable nil)
+  (lsp-headerline-breadcrumb-icons-enable nil)
+  (lsp-headerline-breadcrumb-enable-diagnostics nil)
+  (lsp-headerline-breadcrumb-enable-symbol-numbers nil)
+  
+  (lsp-completion-show-kind t)
+  (lsp-completion-provider :none)
+  (lsp-diagnostics-provider :flycheck))
 
 ;; Install and configure lsp-haskell
 (use-package lsp-haskell
-  :ensure t
   :config
   (setq lsp-haskell-server-path "haskell-language-server-wrapper")
   )
 
-;; Enable lsp-ui for additional UI features
 (use-package lsp-ui
-  :ensure t
+  :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode)
-  )
+  :config
+  (setq lsp-ui-peek-enable t)
+  (define-key lsp-ui-mode-map (kbd "M-.") #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map (kbd "M-?") #'lsp-ui-peek-find-references))
+
+
+(use-package flycheck
+  :hook (after-init . global-flycheck-mode)
+  :custom
+  (flycheck-help-echo-function nil)
+  (flycheck-display-errors-delay 0.0)
+  (flycheck-auto-display-errors-after-checking t))
 
 ;; Install and configure company-mode
 (use-package company
-  :ensure t
   :hook (prog-mode . company-mode)
   :config
   (define-key company-active-map (kbd "<escape>") #'hide-company-tooltip)
@@ -270,34 +333,27 @@
 ;; Disable pop-up errors in Haskell mode
 (setq haskell-interactive-popup-errors nil)
 
-;; Disable the tool bar
-(tool-bar-mode -1)
-
-(use-package all-the-icons)
-(use-package treemacs-all-the-icons)
-
 (use-package treemacs
   :after all-the-icons
   :config
-  (require 'treemacs-all-the-icons)
+  (require 'all-the-icons)
   (treemacs-load-theme "all-the-icons")
 
   ;; Customize the sizes for Treemacs faces
   (custom-set-faces
-   '(treemacs-directory-face ((t (:height 0.90))))
+   '(treemacs-directory-face ((t (:height 0.80))))
    '(treemacs-file-face ((t (:height 0.80))))
-   '(treemacs-root-face ((t (:height 0.90)))))
+   '(treemacs-root-face ((t (:height 0.80)))))
+  (treemacs-resize-icons 14)
   )
 
 (use-package treemacs-evil
-  :ensure t
-  :after treemacs evil)
+   :after treemacs evil)
 ;; Use the 'use-package' macro to configure the 'treemacs-evil' package
 ;; The ':ensure t' ensures that the package is installed if not already present
 ;; The ':after treemacs evil' specifies that the package should be loaded after 'treemacs' and 'evil'
 
 (use-package treemacs-projectile
-  :ensure t
   :after treemacs projectile)
 ;; Use the 'use-package' macro to configure the 'treemacs-projectile' package
 ;; The ':ensure t' ensures that the package is installed if not already present
@@ -310,62 +366,22 @@
             (treemacs)
             (treemacs-follow-mode t)))
 
+(use-package magit
+  :defer t)
 ;; Set C-M-s keybinding to toggle side window
-(global-set-key (kbd "C-M-s") 'window-toggle-side-windows)
-
-;; Dashboard
-(use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook))
-
-(setq dashboard-startup-banner nil)
-(setq dashboard-banner-logo-title "
-            ▓▓▓▓      ▓▓              ▓▓      ▓▓▓▓          
-                ▓▓      ██▓▓████▓▓▓▓██      ▓▓              
-                ▓▓    ▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓██    ▓▓              
-                  ██  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓                
-                    ▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒░░▒▒▓▓                  
-                  ▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒                
-                ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▓▓              
-                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░▒▒▓▓▓▓              
-              ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▒▒▒▒░░▒▒▓▓▓▓▓▓            
-            ▓▓  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▓▓▒▒▒▒▒▒▓▓  ▓▓          
-            ▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▓▓▒▒▒▒  ▓▓          
-        ▓▓▒▒    ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▓▓▒▒▒▒    ▒▒▓▓      
-                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▓▓▒▒▒▒▒▒▒▒              
-                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▒▒░░▒▒▒▒▒▒              
-                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒              
-              ██  ▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▒▒▒▒  ▓▓            
-              ▓▓    ▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▒▒    ▓▓            
-              ▓▓        ▓▓▒▒▒▒▓▓▒▒▒▒▒▒        ▓▓            
-                ▓▓                          ▓▓              
-                  ▓▓                      ▓▓                
-                  ▓▓                      ▓▓                
-")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(menu-bar-mode nil)
- '(package-selected-packages
-   '(company use-package treemacs-all-the-icons lsp-ui lsp-haskell flycheck dracula-theme))
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil)
- '(warning-suppress-types '((comp) (comp))))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(treemacs-directory-face ((t (:height 0.9))))
+ '(treemacs-directory-face ((t (:height 0.8))))
  '(treemacs-file-face ((t (:height 0.8))))
- '(treemacs-root-face ((t (:height 0.9)))))
-
-;; Custom key bindings for common tasks
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+ '(treemacs-root-face ((t (:height 0.8)))))
 
 ;;; init.el ends here
