@@ -22,8 +22,13 @@
 (setq initial-scratch-message nil)   ;; no message in scratch buffer
 (fset `yes-or-no-p `y-or-n-p)        ;; answer questions with y/n (instead of
 				     ;; yes/no)
-(custom-set-faces
- '(default ((t (:inherit nil :extend nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight medium :height 120 :width normal :family "VictorMono Nerd Font")))))
+
+(set-face-attribute 'default nil
+		    :font "Aporetic Sans Mono"
+		    :height 120)
+
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
 
 ;; Auto-refresh buffers when files on disk change.
 (global-auto-revert-mode t)
@@ -98,10 +103,9 @@
 
 ;; Themes
 (append-to-list load-path '("~/.emacs.d/themes"))
-;; (load-theme 'ef-duo-light t)
-(use-package acme-theme
-  :config
-  (load-theme 'acme t))
+(use-package ef-themes)
+(use-package dracula-theme)
+(load-theme 'dracula t)
 
 ;; Keep custom settings in separate file and load them if this file exists
 (setq custom-file (locate-user-emacs-file "custom.el"))
@@ -116,206 +120,252 @@
 ;; Search setting
 (setq isearch-allow-motion t)
 
-;; Enable package manager
+;; Auto-save on change
+(defun save-buffer-if-visiting-file (&optional args)
+   "Save the current buffer only if it is visiting a file"
+   (interactive)
+   (if (and (buffer-file-name) (buffer-modified-p))
+       (save-buffer args)))
+(add-hook 'auto-save-hook 'save-buffer-if-visiting-file)
+(setq auto-save-interval 1)
 
-;; Basic Haskell mode setup
+;; Switch between Emacs windows
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "M-o") 'ace-window))
+
+;; Switch to treemacs
+(defvar previous-window nil
+  "Variable to store the previous window.")
+
+(defun switch-to-treemacs ()
+  "Switch to the Treemacs window."
+  (interactive)
+  (if (eq (selected-window) (treemacs-get-local-window))
+      (when previous-window
+        (select-window previous-window)
+        (setq previous-window nil))
+    (progn
+      (setq previous-window (selected-window))
+      (let ((treemacs-win (treemacs-get-local-window)))
+        (when treemacs-win
+          (select-window treemacs-win))))))
+
+(global-set-key (kbd "M-t") 'switch-to-treemacs)
+
+;; Bind the function to the key sequence "<S-f1>"
+(global-set-key (kbd "<S-f1>")
+                (lambda ()
+                  (interactive)
+                  ;; Save all buffers and kill Emacs
+                  (save-buffers-kill-emacs 1)))
+
+(eval-after-load "frame"
+  '(progn
+     ;; This code is evaluated after the "frame" library is loaded
+     ;; It ensures that the key binding is set only after the "frame" library is available
+     
+     ;; Bind Shift + F12 to toggle maximization
+     (global-set-key (kbd "<S-f12>") 'toggle-frame-maximized)
+     ;; This line sets the key binding for Shift + F12
+     ;; which toggles the maximization state of the frame
+     ))
+
+(setq default-frame-alist '((undecorated . t)))
+;; Set the default frame parameters to make it undecorated (without window decorations)
+
+(add-to-list 'default-frame-alist '(drag-internal-border . 1))
+;; Add 'drag-internal-border' parameter to the default frame alist
+;; This parameter sets the width (in pixels) of the internal border to 1
+;; The internal border is the space between the frame content and the window edges
+
+(add-to-list 'default-frame-alist '(internal-border-width . 5))
+;; Add 'internal-border-width' parameter to the default frame alist
+;; This parameter sets the width (in pixels) of the internal border to 5
+;; The internal border is the space between the frame content and the window edges
+
+;; Install and configure doom-modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  )
+
+;; Disable async compilation warnings
+(setq comp-async-warnings nil)
+
+;; Haskell Mode configuration
 (use-package haskell-mode
   :ensure t
-  :mode ("\\.hs\\'" "\\.lhs\\'" "\\.cabal\\'")
-  :bind (:map haskell-mode-map
-         ("C-c C-f" . apheleia-format-buffer)
-         ("C-c C-o" . haskell-format-and-organize-imports)
-         ("C-c C-t" . haskell-show-signature)
-         ("M-." . lsp-find-definition))
+  :bind (("C-M-x" . haskell-interactive-bring) ;; Bind Haskell REPL to C-M-x
+         ("C-f" . ormolu-format-buffer)) ;; Bind formatting to C-f
   :config
-  (setq haskell-indentation-layout-offset 4
-        haskell-indentation-left-offset 4
-        haskell-indentation-ifte-offset 4)
-  
-  ;; Set up .cabal files
-  (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
-  
-  ;; Custom function to format and organize imports
-  (defun haskell-format-and-organize-imports ()
-    "Format buffer and organize imports using HLS."
-    (interactive)
-    (when (lsp-workspaces)
-      (apheleia-format-buffer)
-      (lsp-execute-code-action "Organize imports"))))
+  (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
+  (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile)
+  )
 
-;; Company mode for completion - using built-in company-capf
-(use-package company
+;; Install and configure ormolu
+(use-package ormolu
   :ensure t
-  :config
-  (setq company-idle-delay 0.3
-        company-minimum-prefix-length 2
-        company-tooltip-limit 10
-        company-tooltip-align-annotations t
-        company-backends '(company-capf company-dabbrev-code company-keywords company-files))
-  (global-company-mode 1))
+  )
 
-;; Flycheck for error checking
-(use-package flycheck
-  :ensure t
-  :config
-  (setq flycheck-check-syntax-automatically '(save mode-enabled)
-        flycheck-indication-mode 'right-fringe)
-  (global-flycheck-mode 1))
+;; Hook to bind formatting to C-f in haskell-mode
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-f") 'ormolu-format-buffer)
+            )
+          )
 
-;; Apheleia for formatting
-(use-package apheleia
-  :ensure t
-  :config
-  (setf (alist-get 'fourmolu apheleia-formatters)
-        '("fourmolu" "--stdin-input-file" filepath))
-  (setf (alist-get 'haskell-mode apheleia-mode-alist)
-        'fourmolu)
-  
-  (defun haskell-enable-apheleia ()
-    "Enable apheleia formatting for Haskell buffers."
-    (when (executable-find "fourmolu")
-      (apheleia-mode 1)))
-  
-  :hook (haskell-mode . haskell-enable-apheleia))
-
-;; lsp-mode setup for Haskell
+;; Enable lsp-mode and configure for haskell-mode
 (use-package lsp-mode
-  :ensure t
-  :init
-  (setq lsp-keymap-prefix "C-c l"
-        lsp-enable-symbol-highlighting t
-        lsp-signature-auto-activate t
-        lsp-signature-render-documentation t
-        lsp-enable-indentation nil
-        lsp-enable-on-type-formatting nil
-        lsp-headerline-breadcrumb-enable t
-        lsp-auto-configure t
-        lsp-completion-enable t
-        lsp-lens-enable t)
-  
+  :hook (haskell-mode . lsp-deferred)
+  :commands lsp
   :config
-  ;; Add Haskell to language ID configuration
-  (add-to-list 'lsp-language-id-configuration '(haskell-mode . "haskell"))
-  
-  ;; Proper LSP client registration for Haskell
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection 
-                                    (lambda () 
-                                      (list "haskell-language-server-wrapper" "--lsp")))
-                    :activation-fn (lsp-activate-on "haskell")
-                    :priority 1
-                    :server-id 'hls
-                    :multi-root t
-                    :initialized-fn (lambda (workspace)
-                                      (with-lsp-workspace workspace
-                                        (lsp--set-configuration 
-                                         (lsp-configuration-section "haskell"))))))
-  
-  ;; Function to show signature in minibuffer
-  (defun haskell-show-signature ()
-    "Show type signature of function at point in minibuffer."
-    (interactive)
-    (when (lsp-workspaces)
-      (let ((help (lsp--text-document-signature-help)))
-        (when help
-          (let ((signatures (lsp:signature-help-signatures help)))
-            (when signatures
-              (message "%s" (lsp:signature-information-label (elt signatures 0)))))))))
-  
-  :hook
-  (haskell-mode . lsp)
-  (haskell-mode . (lambda ()
-                    ;; Ensure completion works with LSP
-                    (setq-local company-backends '(company-capf company-dabbrev-code)))))
+  (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper")
+  (setq lsp-haskell-process-args-hie '("-d" "-l" "/tmp/hls.log"))
+  (setq lsp-enable-snippet nil) ;; Disable snippet support
+  (setq lsp-auto-configure t)
+  )
 
-;; lsp-ui for enhanced UI features
+;; Install and configure lsp-haskell
+(use-package lsp-haskell
+  :ensure t
+  :config
+  (setq lsp-haskell-server-path "haskell-language-server-wrapper")
+  )
+
+;; Enable lsp-ui for additional UI features
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
-  :commands lsp-ui-mode
-  :config
-  (setq lsp-ui-doc-enable t
-        lsp-ui-doc-header t
-        lsp-ui-doc-include-signature t
-        lsp-ui-doc-position 'at-point
-        lsp-ui-doc-delay 0.5
-        lsp-ui-sideline-enable t
-        lsp-ui-sideline-show-hover t
-        lsp-ui-sideline-show-code-actions t
-        lsp-ui-sideline-delay 0.1
-        lsp-ui-peek-enable t
-        lsp-ui-imenu-enable t)
-  :hook (lsp-mode . lsp-ui-mode))
+  :hook (lsp-mode . lsp-ui-mode)
+  )
 
-;; Optional: helpful for better help buffers
-(use-package helpful
+;; Install and configure company-mode
+(use-package company
   :ensure t
-  :bind (("C-h f" . helpful-callable)
-         ("C-h v" . helpful-variable)
-         ("C-h k" . helpful-key)
-         ("C-h F" . helpful-function)))
+  :hook (prog-mode . company-mode)
+  :config
+  (define-key company-active-map (kbd "<escape>") #'hide-company-tooltip)
+  (define-key company-active-map (kbd "<return>") nil)
+  (define-key company-active-map (kbd "RET") nil)
+  (define-key company-active-map (kbd "<tab>") #'company-complete-selection)
+  (define-key company-active-map (kbd "TAB") #'company-complete-selection)
+  )
 
-;; Better performance settings
-(setq gc-cons-threshold 100000000
-      read-process-output-max (* 1024 1024)
-      company-idle-delay 0.3
-      lsp-idle-delay 0.5
-      lsp-log-io nil)
+;; Function to hide company tooltip
+(defun hide-company-tooltip ()
+  (interactive)
+  (when (company-tooltip-visible-p)
+    (company-cancel))
+  )
 
-;; Enable line numbers and other visual enhancements
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-(add-hook 'prog-mode-hook #'hl-line-mode)
+;; Function to disable beep sound
+(defun disable-beep-sound ()
+  (setq ring-bell-function 'ignore)
+  )
 
-;; Customize faces for better readability
+;; Disable beep sound
+(add-hook 'after-init-hook 'disable-beep-sound)
+
+;; Disable pop-up errors in Haskell mode
+(setq haskell-interactive-popup-errors nil)
+
+;; Disable the tool bar
+(tool-bar-mode -1)
+
+(use-package all-the-icons)
+(use-package treemacs-all-the-icons)
+
+(use-package treemacs
+  :after all-the-icons
+  :config
+  (require 'treemacs-all-the-icons)
+  (treemacs-load-theme "all-the-icons")
+
+  ;; Customize the sizes for Treemacs faces
+  (custom-set-faces
+   '(treemacs-directory-face ((t (:height 0.90))))
+   '(treemacs-file-face ((t (:height 0.80))))
+   '(treemacs-root-face ((t (:height 0.90)))))
+  )
+
+(use-package treemacs-evil
+  :ensure t
+  :after treemacs evil)
+;; Use the 'use-package' macro to configure the 'treemacs-evil' package
+;; The ':ensure t' ensures that the package is installed if not already present
+;; The ':after treemacs evil' specifies that the package should be loaded after 'treemacs' and 'evil'
+
+(use-package treemacs-projectile
+  :ensure t
+  :after treemacs projectile)
+;; Use the 'use-package' macro to configure the 'treemacs-projectile' package
+;; The ':ensure t' ensures that the package is installed if not already present
+;; The ':after treemacs projectile' specifies that the package should be loaded after 'treemacs' and 'projectile'
+
+;; Display Treemacs as a side window on startup
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (delete-other-windows)
+            (treemacs)
+            (treemacs-follow-mode t)))
+
+;; Set C-M-s keybinding to toggle side window
+(global-set-key (kbd "C-M-s") 'window-toggle-side-windows)
+
+;; Dashboard
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(setq dashboard-startup-banner nil)
+(setq dashboard-banner-logo-title "
+            ▓▓▓▓      ▓▓              ▓▓      ▓▓▓▓          
+                ▓▓      ██▓▓████▓▓▓▓██      ▓▓              
+                ▓▓    ▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓██    ▓▓              
+                  ██  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓                
+                    ▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒░░▒▒▓▓                  
+                  ▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒                
+                ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▓▓              
+                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░▒▒▓▓▓▓              
+              ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▓▒▒▒▒░░▒▒▓▓▓▓▓▓            
+            ▓▓  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▓▓▒▒▒▒▒▒▓▓  ▓▓          
+            ▓▓  ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▓▓▒▒▒▒  ▓▓          
+        ▓▓▒▒    ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▓▓▒▒▒▒    ▒▒▓▓      
+                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▓▓▒▒▒▒▒▒▒▒              
+                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▒▒░░▒▒▒▒▒▒              
+                ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒              
+              ██  ▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▒▒▒▒  ▓▓            
+              ▓▓    ▓▓▓▓▓▓▓▓▒▒▓▓▒▒▓▓▓▓▒▒▒▒    ▓▓            
+              ▓▓        ▓▓▒▒▒▒▓▓▒▒▒▒▒▒        ▓▓            
+                ▓▓                          ▓▓              
+                  ▓▓                      ▓▓                
+                  ▓▓                      ▓▓                
+")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   '(company use-package treemacs-all-the-icons lsp-ui lsp-haskell flycheck dracula-theme))
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil)
+ '(warning-suppress-types '((comp) (comp))))
 (custom-set-faces
- '(lsp-ui-doc-background ((t (:background "#2a2a2a"))))
- '(lsp-ui-sideline-current-symbol ((t (:foreground "gold" :weight bold))))
- '(company-tooltip-annotation ((t (:foreground "light gray"))))
- '(flycheck-error ((t (:underline (:color "red" :style wave)))))
- '(flycheck-warning ((t (:underline (:color "yellow" :style wave))))))
-
-;; Save place in files
-(save-place-mode 1)
-
-;; Enable electric-pair for automatic bracket matching
-(electric-pair-mode 1)
-
-;; Show matching parentheses
-(show-paren-mode 1)
-
-;; Enable winner-mode for window configuration undo/redo
-(winner-mode 1)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(treemacs-directory-face ((t (:height 0.9))))
+ '(treemacs-file-face ((t (:height 0.8))))
+ '(treemacs-root-face ((t (:height 0.9)))))
 
 ;; Custom key bindings for common tasks
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
-
-;; Function to check if HLS is available
-(defun haskell-check-hls ()
-  "Check if Haskell Language Server is available."
-  (interactive)
-  (if (executable-find "haskell-language-server-wrapper")
-      (message "Haskell Language Server is available")
-    (message "Haskell Language Server NOT found. Please install it.")))
-
-;; Initialize packages
-(defun ensure-packages (packages)
-  "Ensure all PACKAGES are installed."
-  (dolist (package packages)
-    (unless (package-installed-p package)
-      (package-install package))))
-
-(ensure-packages '(haskell-mode company flycheck lsp-mode lsp-ui apheleia which-key helpful))
-
-;; Debug function to check LSP status
-(defun haskell-debug-lsp ()
-  "Debug LSP status in current buffer."
-  (interactive)
-  (message "LSP workspaces: %s" (lsp-workspaces))
-  (message "LSP enabled: %s" (lsp--buffer-workspaces))
-  (message "HLS available: %s" (executable-find "haskell-language-server-wrapper"))
-  (message "Company backends: %s" company-backends))
-
-(message "Haskell development environment configured. Use M-x haskell-check-hls to verify HLS installation.")
 
 ;;; init.el ends here
