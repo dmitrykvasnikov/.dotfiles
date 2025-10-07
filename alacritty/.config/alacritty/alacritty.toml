@@ -1,4 +1,4 @@
-general.import = ["/home/dmitry/.config/alacritty/themes/rose-pine.toml"]
+general.import = ["/home/dmitry/.config/alacritty/themes/dracula.toml"]
 
 [font]
 size = 12.0
