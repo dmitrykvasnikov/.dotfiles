@@ -2,7 +2,7 @@
 	email = dmitry.kvasnikov@gmail.com
 	name = Dmitry Kvasnikov
 [core]
-	editor = vim
+	editor = emacs
 	pager = delta
 	autocrlf = input
 	safecrlf = warn
