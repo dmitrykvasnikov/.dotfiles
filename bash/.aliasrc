@@ -152,5 +152,5 @@ alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | 
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 
 # vpn
-# alias vpn="cd /etc/openvpn && sudo openvpn --config 'Germany, Offenbach S2.ovpn' && cd -"
-alias vpn="cd /etc/openvpn && sudo openvpn --config 'Norway, Sandefjord S12.ovpn' && cd -"
+#alias vpn="cd /etc/openvpn && sudo openvpn --config 'Norway, Sandefjord S12.ovpn' && cd -"
+alias vpn="cd /etc/openvpn && sudo openvpn --config 'Netherlands, Amsterdam H5.ovpn' && cd -"
