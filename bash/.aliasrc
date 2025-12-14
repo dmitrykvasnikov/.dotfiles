@@ -39,6 +39,7 @@ alias blt="blt.sh"
 alias ls="eza"
 alias cd="z"
 alias cat="bat"
+alias grep="rg"
 
 #common foders
 alias dl="cd ~/Downloads"
