@@ -155,3 +155,7 @@ alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 # vpn
 #alias vpn="cd /etc/openvpn && sudo openvpn --config 'Norway, Sandefjord S12.ovpn' && cd -"
 alias vpn="cd /etc/openvpn && sudo openvpn --config 'Netherlands, Amsterdam H5.ovpn' && cd -"
+alias vpnon="sudo resolvconf -u && systemctl start awg-quick@wg0.service"
+alias vpnoff="systemctl stop awg-quick@wg0.service && systemctl restart NetworkManager"
+alias vpnon1="sudo resolvconf -u && systemctl start awg-quick@wg1.service"
+alias vpnoff2="systemctl stop awg-quick@wg1.service && systemctl restart NetworkManager"
