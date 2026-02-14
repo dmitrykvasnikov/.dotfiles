@@ -157,3 +157,6 @@ alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 alias vpn="cd /etc/openvpn && sudo openvpn --config 'Netherlands, Amsterdam H5.ovpn' && cd -"
 alias vpnon="sudo resolvconf -u && systemctl start awg-quick@wg0.service"
 alias vpnoff="systemctl stop awg-quick@wg0.service && nmcli con down id 'RT-5GPON-800C' && nmcli con up id 'RT-5GPON-800C'"
+
+# security
+alias unlock="sudo faillock --user $USER --reset"
