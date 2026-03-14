@@ -123,7 +123,8 @@ alias mx="chmod +x"
 alias psg="ps -aux | grep"
 
 # 7Z
-alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
+#alias unzip="7z x '*.zip';7z x '*.7z';7z x '*.rar'"
+alias unzip="unzip.sh"
 
 # cmus
 alias cmus="[ -f /sbin/cmus ] && cd ~/Music && /sbin/cmus && cd - > null"
