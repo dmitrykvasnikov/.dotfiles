@@ -88,7 +88,7 @@ process_file() {
     echo "📝 MODIFY: $rel_path"
     
     if [ "$dry_run" = true ]; then
-        echo "   (would add: ;;; $(basename "$file") -*- lexical-binding: t -*-)"
+        echo "   (would add: ;;; $(basename "$file") -*- lexical-binding: t; -*-)"
         return 3
     fi
     
@@ -109,7 +109,7 @@ process_file() {
     if [[ "$first_line" =~ ^#! ]]; then
         # Has shebang - add cookie on second line
         echo "$first_line" > "$tmp_file"
-        echo ";;; $(basename "$file") -*- lexical-binding: t -*-" >> "$tmp_file"
+        echo ";;; $(basename "$file") -*- lexical-binding: t; -*-" >> "$tmp_file"
         tail -n +2 "$file" >> "$tmp_file"
     else
         # No shebang - check for existing file-local variables
@@ -117,14 +117,14 @@ process_file() {
             # Replace existing file-local variables
             local clean_line=$(echo "$first_line" | sed -E 's/-\*-[^-]*-\*-\s*//g')
             if [[ -z "$clean_line" ]] || [[ "$clean_line" =~ ^[[:space:]]*$ ]]; then
-                echo ";;; $(basename "$file") -*- lexical-binding: t -*-" > "$tmp_file"
+                echo ";;; $(basename "$file") -*- lexical-binding: t; -*-" > "$tmp_file"
             else
-                echo "$clean_line -*- lexical-binding: t -*-" > "$tmp_file"
+                echo "$clean_line -*- lexical-binding: t; -*-" > "$tmp_file"
             fi
             tail -n +2 "$file" >> "$tmp_file"
         else
             # Normal case - add as first line
-            echo ";;; $(basename "$file") -*- lexical-binding: t -*-" > "$tmp_file"
+            echo ";;; $(basename "$file") -*- lexical-binding: t; -*-" > "$tmp_file"
             cat "$file" >> "$tmp_file"
         fi
     fi
