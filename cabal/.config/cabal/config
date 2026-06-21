@@ -9,8 +9,8 @@
 --
 -- This config file was generated using the following versions
 -- of Cabal and cabal-install:
--- Cabal library version: 3.10.3.0
--- cabal-install version: 3.10.3.0
+-- Cabal library version: 3.14.2.0
+-- cabal-install version: 3.14.2.0
 
 
 repository hackage.haskell.org
@@ -29,8 +29,8 @@ remote-repo-cache: /home/dmitry/.cache/cabal/packages
 -- logs-dir: /home/dmitry/.cache/cabal/logs
 -- default-user-config:
 -- verbose: 1
--- compiler: ghc
 -- cabal-file:
+-- compiler: ghc
 -- with-compiler:
 -- with-hc-pkg:
 -- program-prefix:
@@ -42,6 +42,7 @@ remote-repo-cache: /home/dmitry/.cache/cabal/packages
 -- executable-dynamic: False
 -- executable-static: False
 -- profiling:
+-- profiling-shared:
 -- executable-profiling:
 -- profiling-detail:
 -- library-profiling-detail:
@@ -73,10 +74,12 @@ remote-repo-cache: /home/dmitry/.cache/cabal/packages
 -- relocatable: False
 -- response-files:
 -- allow-depending-on-private-libs:
+-- coverage-for:
+-- ignore-build-tools:
 -- cabal-lib-version:
 -- append:
 -- backup:
-constraint: zlib -pkg-config
+-- constraint:
 -- preference:
 -- solver: modular
 -- allow-older: False
@@ -110,6 +113,7 @@ remote-build-reporting: none
 -- report-planning-failure: False
 -- per-component: True
 -- run-tests:
+-- semaphore: False
 jobs: $ncpus
 -- keep-going: False
 -- offline: False
@@ -118,12 +122,15 @@ jobs: $ncpus
 -- overwrite-policy:
 -- install-method:
 installdir: /home/dmitry/.local/bin
+-- token:
 -- username:
 -- password:
 -- password-command:
+-- multi-repl:
 -- builddir:
 
 haddock
+  -- cabal-file:
   -- keep-temp-files: False
   -- hoogle: False
   -- html: False
@@ -141,18 +148,24 @@ haddock
   -- contents-location:
   -- index-location:
   -- base-url:
-  -- lib:
+  -- resources-dir:
+  -- output-dir:
+  -- use-unicode: False
 
 init
-  interactive: True
+  -- interactive: False
+  -- quiet: False
+  -- no-comments: False
+  -- minimal: False
   -- cabal-version: 3.0
-  license: MIT
+  -- license:
   -- extra-doc-file:
-  tests: False
+  -- tests:
   -- test-dir:
-  language: GHC2024
-  application-dir: app
-  source-dir: src
+  -- simple: False
+  -- language: Haskell2010
+  -- application-dir: app
+source-dir: lib
 
 install-dirs user
   -- prefix: /home/dmitry/.cabal
