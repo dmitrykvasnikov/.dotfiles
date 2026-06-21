@@ -155,17 +155,17 @@ haddock
 init
   -- interactive: False
   -- quiet: False
-  -- no-comments: False
+  no-comments: True
   -- minimal: False
   -- cabal-version: 3.0
-  -- license:
+  license: MIT
   -- extra-doc-file:
-  -- tests:
+  tests: False
   -- test-dir:
   -- simple: False
-  -- language: Haskell2010
-  -- application-dir: app
-source-dir: lib
+  language: GHC2024
+  application-dir: app
+  source-dir: lib
 
 install-dirs user
   -- prefix: /home/dmitry/.cabal
