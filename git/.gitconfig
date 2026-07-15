@@ -28,3 +28,5 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[advice]
+	addIgnoredFile = false
