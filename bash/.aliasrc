@@ -135,7 +135,6 @@ alias ci="cabal install --overwrite-policy=always"
 alias cbr="cabal build && cabal run"
 alias cbi="cabal build && cabal install --overwrite-policy=always"
 alias h="cd ~/code/haskell"
-alias gh="./gh.sh"
 alias haskell="~/.scripts/haskell.sh $1"
 alias tags="hasktags -e ."
 

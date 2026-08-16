@@ -58,3 +58,6 @@ source /home/dmitry/.config/broot/launcher/bash/br
 
 # zoxide
 eval "$(zoxide init bash)"
+
+# kimi-code
+export PATH="/home/dmitry/.kimi-code/bin:$PATH"
