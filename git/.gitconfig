@@ -16,6 +16,7 @@
 	date = short
 [push]
 	autoSetupRemote = true
+	followTags = true
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -30,3 +31,5 @@
     colorMoved = default
 [advice]
 	addIgnoredFile = false
+[remote "origin"]
+	tagOpt = --tags
