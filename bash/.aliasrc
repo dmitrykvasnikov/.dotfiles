@@ -143,10 +143,10 @@ alias tags="hasktags -e ."
 #alias emacs="/usr/bin/emacs -nw"
 alias i3asus="cp ~/.dotfiles/i3/.config/i3/config ~/.config/i3/"
 alias yt="yt-dlp -f $1 $2"
-alias ytc="yt-dlp --cookies-from-browser=brave -f $1 $2"
+alias ytc="yt-dlp --cookies-from-browser=brave+gnomekeyring -f $1 $2"
 alias ytl="yt-dlp -F $1"
-alias ytlc="yt-dlp --cookies-from-browser=brave -F $1"
-alias yt1="yt-dlp --cookies-from-browser brave $1"
+alias ytlc="yt-dlp --cookies-from-browser=brave+gnomekeyring -F $1"
+alias yt1="yt-dlp --cookies-from-browser brave+gnomekeyring $1"
 alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'"
 
@@ -159,3 +159,7 @@ alias vpnoff="systemctl stop awg-quick@wg0.service && nmcli con down id 'RT-5GPO
 
 # security
 alias unlock="sudo faillock --user $USER --reset"
+
+# llm
+# chrome dev browser
+alias gdev="google-chrome-stable --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug --profile-directory=\"DebugProfile\""
