@@ -4,6 +4,8 @@ configuration {
     show-icons:      true;
     display-drun:    "";
     disable-history: false;
+    max-history-size: 25;
+    sort: false;
 }
 
 * {
