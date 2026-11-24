@@ -163,3 +163,7 @@ alias unlock="sudo faillock --user $USER --reset"
 # llm
 # chrome dev browser
 alias gdev="google-chrome-stable --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug --profile-directory=\"DebugProfile\""
+
+alias f="fzf --style full \
+    --preview 'if [[ -d {} ]]; then eza --tree --level=1 --color=always {}; elif file --brief --mime {} | grep -q binary; then :; else bat --style=numbers --color=always {}; fi' \
+    --bind 'focus:transform-header:file --brief {}'"
